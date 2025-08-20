@@ -1,0 +1,15 @@
+dbt_models:
+  fct_purchases:
+    description: "Contains all purchase transactions including amount, vendor, and date."
+  dim_vendor:
+    description: "Lookup table for vendor metadata including discipline."
+  spend_by_discipline:
+    description: "Aggregates purchases by spending category (discipline)."
+
+reports:
+  Purchase Overview:
+    description: "Shows total purchases over time by vendor and category."
+  Discipline Spend Analysis:
+    description: "Shows how much was spent per discipline."
+  Vendor Insights:
+    description: "Detailed vendor activity report."
