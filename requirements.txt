@@ -1,3 +1,6 @@
 transformers
 pyyaml
 flask
+torch
+sentence_transformers
+faiss-cpu
