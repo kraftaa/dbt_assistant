@@ -1,0 +1,59 @@
+# embed_search.py
+
+import yaml
+import faiss
+import numpy as np
+import torch
+from sentence_transformers import SentenceTransformer
+
+class EmbeddingSearch:
+    def __init__(self, yaml_file, embedding_model="all-MiniLM-L6-v2"):
+        with open(yaml_file, "r") as f:
+            self.knowledge = yaml.safe_load(f)
+
+        self.entries = []
+        self.labels = []
+
+        # Pick the best device: MPS > CUDA > CPU
+        if torch.backends.mps.is_available():
+            self.device = "mps"
+        elif torch.cuda.is_available():
+            self.device = "cuda"
+        else:
+            self.device = "cpu"
+
+        print(f"[EmbeddingSearch] Using device: {self.device}")
+
+        self.model = SentenceTransformer(embedding_model, device=self.device)
+
+        self.build_index()
+
+    def build_index(self):
+        for model, details in self.knowledge.get("dbt_models", {}).items():
+            self.entries.append(details["description"])
+            self.labels.append(f"DBT Model: {model}")
+
+        for report, details in self.knowledge.get("reports", {}).items():
+            self.entries.append(details["description"])
+            self.labels.append(f"Report: {report}")
+
+        # Encode entries → embeddings
+        embeddings = self.model.encode(
+            self.entries,
+            convert_to_numpy=True,
+            device=self.device
+        )
+        self.index = faiss.IndexFlatL2(embeddings.shape[1])
+        self.index.add(embeddings)
+
+    def search(self, query, top_k=1):
+        query_embedding = self.model.encode(
+            [query],
+            convert_to_numpy=True,
+            device=self.device
+        )
+        distances, indices = self.index.search(query_embedding, top_k)
+        results = []
+        for idx in indices[0]:
+            results.append(self.labels[idx])
+        return results
