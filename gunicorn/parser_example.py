@@ -21,16 +21,25 @@ def strip_schema(full_name):
 def extract_info(sql_text):
     parsed = parse_one(sql_text, read="postgres")
     # columns = [c.sql() for c in parsed.find_all(exp.Column)]
-    columns = set()
+    columns = []
 
-    for select_expr in parsed.expressions:
-        if isinstance(select_expr, exp.Alias):
-            # Prefer alias name
-            columns.add(select_expr.alias)
-        elif isinstance(select_expr, exp.Column):
-            columns.add(select_expr.name)
+    for alias in parsed.find_all(exp.Alias):
+        expr_str = alias.this.sql()   # full expression including array indexing
+        alias_name = alias.alias       # AS name
+        columns.append(f"{expr_str} AS {alias_name}")
 
-    columns = list(columns)
+    print(columns)
+
+    # columns = set()
+    #
+    # for select_expr in parsed.expressions:
+    #     if isinstance(select_expr, exp.Alias):
+    #         # Prefer alias name
+    #         columns.add(select_expr.alias)
+    #     elif isinstance(select_expr, exp.Column):
+    #         columns.add(select_expr.name)
+    #
+    # columns = list(columns)
     tables = [strip_schema(resolve_table_name(t)) for t in parsed.find_all(exp.Table)
               if t.name.lower() != "transformed_data"
               and "__dbt_tmp" not in t.name.lower() ]
@@ -72,7 +81,9 @@ def export_knowledge(knowledge, output_file="models_and_reports.yaml"):
 # --- run ---
 
 if __name__ == "__main__":
-    knowledge = ("models")
+    # knowledge = ("models")
+    knowledge = build_knowledge("/Users/maria/Documents/GitHub/sparkle-dbt/target/rx_dbt_assets-fdeec0e-61e026f/compiled/rx/models/gold/")  # put your dbt models path here
+
     export_knowledge(knowledge)
     print("Knowledge extracted and saved to models_and_reports.yaml")
 
