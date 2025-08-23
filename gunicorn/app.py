@@ -47,8 +47,8 @@ def run_search():
     )
 
     return jsonify({
-        "llm_suggestion": llm_response
-        # "embedding_matches": embed_results
+        "llm_suggestion": llm_response,
+        "embedding_matches": matches
     })
 
     # embed_results = search_engine.search(query, top_k=3)
