@@ -7,6 +7,7 @@ from embed_search import EmbeddingSearch
 from agent import ModelRouterAgent
 from build_knowledge  import build_knowledge, export_models_and_reports
 # from parser_example
+import json
 
 app = Flask(__name__)
 
@@ -50,6 +51,17 @@ def run_search():
         "llm_suggestion": llm_response,
         "embedding_matches": matches
     })
+
+    # llm_response_text = agent.route_query(query, embed_results)
+    # try:
+    #     llm_response_json = json.loads(llm_response_text)
+    # except json.JSONDecodeError:
+    #     llm_response_json = {"error": "LLM output was not valid JSON", "raw_output": llm_response_text}
+    #
+    # return jsonify({
+    #     "llm_suggestion": llm_response_json,
+    #     "embedding_matches": embed_results
+    # })
 
     # embed_results = search_engine.search(query, top_k=3)
     # llm_response = agent.route_query(query)

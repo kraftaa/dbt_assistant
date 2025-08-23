@@ -70,40 +70,42 @@ class ModelRouterAgent:
             self.llm = pipeline("text2text-generation", model="google/flan-t5-small")
 
     def build_prompt(self, user_query, embed_results=None):
-        context = "You are an assistant that helps map user questions to the correct dbt model or report.\n\n"
+        context = (
+            "You are an assistant that helps map user questions to the correct dbt model, exposure, or report.\n\n"
+            "For each candidate, the columns are listed. Use them to determine which model or exposure contains relevant information.\n\n"
+        )
 
         if embed_results:
-            context += "Here are the most relevant candidates based on embeddings:\n"
+            context += "Candidate models/exposures:\n"
             for match in embed_results:
-                # Use 'name' from your embedding search results
-                context += f"- {match.get('name', 'UNKNOWN')}: {match.get('description', '')} (score: {match.get('score', 0):.3f})\n"
+                key = match.get("key") or match.get("name")
+                info = self.knowledge.get(key, {})
+                desc = info.get("description", "No description")
+                columns = info.get("columns", [])
+                columns_str = ", ".join(columns) if columns else "No columns listed"
+                score = match.get("score", 0.0)
+                context += f"- Name: {key}\n  Description: {desc}\n  Columns: {columns_str}\n  Score: {score:.3f}\n\n"
 
-        context += f"\nUser query: \"{user_query}\"\n"
-        # context += "Based on the candidates above, return the best matching dbt model or report and briefly explain why you chose it."
-        context += """
-            Instructions:
-    - Return the best matching model(s) or exposure(s).
-    - Include the columns that are relevant to the query.
-    - Provide a short reasoning for why you chose them.
-    - Output in this JSON format(example answer):
-    
-        [
-          {
-            "type": "model" or "exposure",
-            "name": "model_or_exposure_name",
-            "description": "description text",
-            "columns": ["column1", "column2"],
-            "reasoning": "short explanation"
-          }
-        ]
-    """
+        context += (
+            f"User query: \"{user_query}\"\n\n"
+            "Task: Select the **most relevant model or exposure** for this query. "
+            "Return **only** a single JSON object with the fields: type ('model' or 'exposure'), "
+            "name, description, columns (list of relevant columns), and reasoning (short explanation of why this is relevant).\n"
+            "Do not include any text outside this JSON."
+        )
+
         return context
+
 
     def route_query(self, user_query, embed_results=None):
         prompt = self.build_prompt(user_query, embed_results)
 
         if self.use_hf_model:
-            output = self.llm(prompt, max_length=150)[0]["generated_text"]
+            # output = self.llm(prompt, max_length=150)[0]["generated_text"]
+            # output = self.llm(prompt, max_length=400)[0]["generated_text"]
+            output = self.llm(prompt, max_length=400, do_sample=False)[0]["generated_text"]
+
+
             return output
         else:
             return "OpenAI option is disabled. Enable it in the code if needed."

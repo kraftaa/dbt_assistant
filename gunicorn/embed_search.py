@@ -48,23 +48,17 @@ class EmbeddingSearch:
         self.index = faiss.IndexFlatIP(dim)  # inner product == cosine since normalized
         self.index.add(embeddings)
 
-    def search(self, query, top_k=3):
-        """Return top_k matches as {name, description} dicts"""
-        query_emb = self.embedding_model.encode([query], convert_to_numpy=True)
-        query_emb = query_emb / np.linalg.norm(query_emb)
-
-        scores, indices = self.index.search(query_emb, top_k)
-
+    def search(self, query, top_k=5):
+        query_vec = self.embedding_model.encode(query).astype("float32").reshape(1, -1)
+        D, I = self.index.search(query_vec, top_k)
         results = []
-        for idx, score in zip(indices[0], scores[0]):
-            if idx == -1:
-                continue
-            key = self.id_to_key[idx]
-            item = self.knowledge[key]
-            results.append({
-                "name": item.get("name", ""),
-                "description": item.get("description", ""),
-                "score": float(score)
-            })
-
+        for i, dist in zip(I[0], D[0]):
+            if i >= 0:
+                key = self.id_to_key[i]
+                info = self.knowledge[key]
+                results.append({
+                    "name": key,                   # name of the dbt model or report
+                    "description": info.get("description", ""),
+                    "score": float(dist)
+                })
         return results
