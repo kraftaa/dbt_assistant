@@ -75,11 +75,28 @@ class ModelRouterAgent:
         if embed_results:
             context += "Here are the most relevant candidates based on embeddings:\n"
             for match in embed_results:
-                context += f"- {match['item']}: {match['description']} (score: {match['score']:.3f})\n"
+                # Use 'name' from your embedding search results
+                context += f"- {match.get('name', 'UNKNOWN')}: {match.get('description', '')} (score: {match.get('score', 0):.3f})\n"
 
         context += f"\nUser query: \"{user_query}\"\n"
-        context += "Return the best matching dbt model or report with a short explanation."
-
+        # context += "Based on the candidates above, return the best matching dbt model or report and briefly explain why you chose it."
+        context += """
+            Instructions:
+    - Return the best matching model(s) or exposure(s).
+    - Include the columns that are relevant to the query.
+    - Provide a short reasoning for why you chose them.
+    - Output in this JSON format(example answer):
+    
+        [
+          {
+            "type": "model" or "exposure",
+            "name": "model_or_exposure_name",
+            "description": "description text",
+            "columns": ["column1", "column2"],
+            "reasoning": "short explanation"
+          }
+        ]
+    """
         return context
 
     def route_query(self, user_query, embed_results=None):
