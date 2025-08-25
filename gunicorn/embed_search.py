@@ -56,10 +56,14 @@ class EmbeddingSearch:
             if i >= 0:
                 key = self.id_to_key[i]
                 info = self.knowledge[key]
+                # print("info")
+                # print(info)
                 results.append({
                     "name": key,                   # name of the dbt model or report
                     "description": info.get("description", ""),
                     "columns": info.get("columns", []),
+                    "tables": info.get("tables", []),
+                    "conditions": info.get("conditions", []),
                     "score": float(dist)
                 })
         return results

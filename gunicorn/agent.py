@@ -55,7 +55,7 @@
 # agent.py
 
 import yaml
-from transformers import pipeline, AutoTokenizer, AutoModelForSeq2SeqLM
+from transformers import pipeline, AutoTokenizer, AutoModelForSeq2SeqLM, AutoModelForCausalLM
 
 from embed_search import EmbeddingSearch  # import your embedding search
 
@@ -82,16 +82,20 @@ class ModelRouterAgent:
         self.search_engine = EmbeddingSearch(yaml_file)  # initialize embeddings
 
         if use_hf_model:
-            # Initialize a strong instruction-following model
-            model_name = "google/flan-t5-base"
+            # Use a smaller model for faster loading and inference
+            model_name = "google/flan-t5-large"
+            # model_name = "meta-llama/Llama-2-7b-chat-hf"
+            # model_name = "TinyLlama/TinyLlama-1.1B-Chat-v1.0"
             tokenizer = AutoTokenizer.from_pretrained(model_name)
             model = AutoModelForSeq2SeqLM.from_pretrained(model_name)
+            # model = AutoModelForCausalLM.from_pretrained(model_name)
+            
             self.llm = pipeline(
                 "text2text-generation",
                 model=model,
                 tokenizer=tokenizer,
-                max_length=512,    # increase if you have long prompts
-                do_sample=False    # deterministic output
+                max_length=512,
+                do_sample=False
             )
     def build_prompt(self, user_query, embed_results=None):
         context = "You are an assistant that helps map user questions to the correct dbt model or report.\n\n"
@@ -99,21 +103,21 @@ class ModelRouterAgent:
         if embed_results:
             context += "Here are the most relevant candidates based on embeddings:\n"
             for match in embed_results:
-                info = match.get("info", {})
-                columns = info.get("columns", [])
+                columns = match.get("columns", [])
                 context += f"- {match.get('name', 'unknown')}: {match.get('description', '')}\n"
                 context += f"  Columns: {', '.join(columns) if columns else 'unknown'}\n"
 
-        context += f"\nUser query: \"{user_query}\"\n"
-        context += (
-            "Return ONLY a single valid JSON object with these fields:\n"
-            "- type: 'model' or 'exposure'\n"
-            "- name: the model or exposure name\n"
-            "- description: description text\n"
-            "- columns: list of relevant columns\n"
-            "- reasoning: short explanation of why this model/exposure matches the query\n"
-            "Do NOT return anything else."
-        )
+        context += "\nUser query: \"{}\"\n".format(user_query)
+        context += "\nReturn ONLY a single valid JSON object with these fields:\n"
+        context += "- type: 'model' or 'exposure'\n"
+        context += "- name: the model or exposure name\n"
+        context += "- description: description text\n"
+        context += "- columns: list of relevant columns\n"
+        context += "- reasoning: short explanation of why this model/exposure matches the query\n"
+        context += "Do NOT return anything else.\n"
+        context += "\nImportant: In your output, use the actual column names listed above for the selected model/exposure. Do not use placeholder names like 'column1'.\n"
+        context += "\nExample output:\n"
+        context += '{"type": "model", "name": "some_model_name", "description": "Short description", "columns": ["colA", "colB", "colC"], "reasoning": "Explanation of why this model matches."}'
 
         return context
 
@@ -153,14 +157,60 @@ class ModelRouterAgent:
         prompt = self.build_prompt(user_query, embed_results)
 
         if self.use_hf_model:
-            # max_length increased to allow full JSON output
             output = self.llm(prompt, max_length=600, do_sample=False)[0]["generated_text"]
-            # Optional: try to parse it as JSON and return, fallback to raw text
+            import json
+            generic_columns = set(["colA", "colB", "colC", "column1", "column2", "column3"])
             try:
-                import json
-                return json.loads(output)
-            except:
-                return output
+                result = json.loads(output)
+                # If columns, name, or description are generic/missing, replace with actual from top embedding match
+                if embed_results and len(embed_results) > 0:
+                    top_match = embed_results[0]
+                    if "columns" in result and set(result["columns"]).intersection(generic_columns):
+                        result["columns"] = top_match.get("columns", [])
+                    if ("name" not in result or result["name"] in ["some_model_name", "unknown", ""]):
+                        result["name"] = top_match.get("name", "unknown")
+                    if ("description" not in result or result["description"] in ["Short description", "", None]):
+                        result["description"] = top_match.get("description", "")
+                return result
+            except Exception:
+                # Fallback: try to extract model name from output and build valid JSON
+                import re
+                name = None
+                description = None
+                reasoning = None
+                # Try to extract model name
+                match_name = re.search(r'"name"\s*:\s*"([^\"]+)"', output)
+                if match_name and match_name.group(1) not in ["some_model_name", "unknown", ""]:
+                    name = match_name.group(1)
+                elif embed_results and len(embed_results) > 0:
+                    name = embed_results[0].get("name", "unknown")
+                else:
+                    name = "unknown"
+                # Try to extract description
+                match_desc = re.search(r'"description"\s*:\s*"([^\"]+)"', output)
+                if match_desc and match_desc.group(1) not in ["Short description", "", None]:
+                    description = match_desc.group(1)
+                elif embed_results and len(embed_results) > 0:
+                    description = embed_results[0].get("description", "")
+                else:
+                    description = ""
+                # Try to extract reasoning
+                match_reasoning = re.search(r'"reasoning"\s*:\s*"([^\"]+)"', output)
+                if match_reasoning:
+                    reasoning = match_reasoning.group(1)
+                else:
+                    reasoning = "Selected based on embedding match."
+                # Always use columns from top embedding match
+                columns = []
+                if embed_results and len(embed_results) > 0:
+                    columns = embed_results[0].get("columns", [])
+                return {
+                    "type": "model",
+                    "name": name,
+                    "description": description,
+                    "columns": columns,
+                    "reasoning": reasoning
+                }
         else:
             return "OpenAI option is disabled. Enable it in the code if needed."
 
