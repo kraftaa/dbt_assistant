@@ -39,18 +39,40 @@ def run_search():
     # embed_results = search_engine.search(query, top_k=3)
     # llm_response = agent.route_query(query, embed_results)
     matches = search_engine.search(query, top_k=3)
-    # context_text = "\n".join(
-    #     f"- {m['name']}: {m['description']}" for m in matches
-    # )
     llm_response = agent.route_query(query, matches)
 
-    # llm_response = agent.route_query(
-    #     f"User query: {query}\n\nRelevant models:\n{context_text}"
-    # )
+    # Remove columns from response if not requested
+    def wants_field(q, field):
+        return field in q.lower()
+
+    # Determine which fields to include
+    include_columns = wants_field(query, "column") or wants_field(query, "columns")
+    include_name = wants_field(query, "name") or wants_field(query, "model") or wants_field(query, "report")
+    include_description = wants_field(query, "description")
+
+    def filter_fields(obj):
+        if not isinstance(obj, dict):
+            return obj
+        filtered = {}
+        if include_name and "name" in obj:
+            filtered["name"] = obj["name"]
+        if include_description and "description" in obj:
+            filtered["description"] = obj["description"]
+        if include_columns and "columns" in obj:
+            filtered["columns"] = obj["columns"]
+        # Always include type and reasoning if present
+        if "type" in obj:
+            filtered["type"] = obj["type"]
+        if "reasoning" in obj:
+            filtered["reasoning"] = obj["reasoning"]
+        return filtered if filtered else obj
+
+    llm_response_filtered = filter_fields(llm_response)
+    matches_filtered = [filter_fields(m) for m in matches]
 
     return jsonify({
-        "llm_suggestion": llm_response,
-        "embedding_matches": matches
+        "llm_suggestion": llm_response_filtered,
+        "embedding_matches": matches_filtered
     })
 
 
