@@ -59,6 +59,7 @@ class EmbeddingSearch:
                 results.append({
                     "name": key,                   # name of the dbt model or report
                     "description": info.get("description", ""),
+                    "columns": info.get("columns", []),
                     "score": float(dist)
                 })
         return results
