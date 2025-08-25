@@ -79,5 +79,13 @@ if __name__ == "__main__":
 # export FLASK_APP=app.py
 # export FLASK_ENV=development
 # flask run --port 5000
+# FLASK_APP=app flask run --host=0.0.0.0 --port=5000
+
+# python app.py
 #  or
 # gunicorn --bind 0.0.0.0:5000 --workers 1 --threads 2 app:app
+# gunicorn --bind 0.0.0.0:5000 --workers 1 --threads 2 --preload app:app
+# curl -X POST http://localhost:5000/search \
+#                               -H "Content-Type: application/json" \
+#                                  -d '{"query": "i need columns from model ..."}' | jq '.embedding_matches[0].columns[:10]'
+
