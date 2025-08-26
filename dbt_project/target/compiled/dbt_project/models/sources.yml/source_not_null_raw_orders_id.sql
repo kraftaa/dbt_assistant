@@ -5,7 +5,7 @@
 
 
 select id
-from "sci_rx_production"."raw"."orders"
+from "database_name"."raw"."orders"
 where id is null
 
 

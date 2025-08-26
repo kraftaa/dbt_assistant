@@ -4,7 +4,7 @@ with transformed_data as (
         product_name as product_name,
         category as category,
         price as price
-    from "sci_rx_production"."transform"."stg_products"
+    from "database_name"."transform"."stg_products"
     where price > 0
 )   
 

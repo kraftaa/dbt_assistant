@@ -6,7 +6,7 @@ with transformed_data as (
         name as customer_name,
         email as email,
         created_at as created_at
-    from "sci_rx_production"."raw"."customers"
+    from "database_name"."raw"."customers"
 ) 
 
 select * from transformed_data

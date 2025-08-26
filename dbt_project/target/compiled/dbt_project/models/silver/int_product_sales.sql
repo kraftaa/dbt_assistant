@@ -7,8 +7,8 @@ select
     p.product_name as product_name,
     p.category as category,
     o.total_amount as total_amount
-from "sci_rx_production"."transform"."stg_orders" o
-join "sci_rx_production"."transform"."stg_products" p
+from "database_name"."transform"."stg_orders" o
+join "database_name"."transform"."stg_products" p
     on true  -- placeholder join
 
 
