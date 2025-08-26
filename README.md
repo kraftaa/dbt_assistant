@@ -34,6 +34,8 @@ You can link this API with your Superset instance by extracting YAML metadata fr
 
 ## Usage
 
+### API Server
+
 1. Build knowledge from dbt models and exposures:
 	```bash
 	python gunicorn/parser_example_compiled.py
@@ -50,6 +52,67 @@ You can link this API with your Superset instance by extracting YAML metadata fr
 		  -H "Content-Type: application/json" \
 		  -d '{"query": "what is url for sales dashboard"}'
 	```
+
+### CLI Tool
+
+The project also includes a command-line interface that provides the same functionality without needing to run a web server:
+
+1. Build knowledge from dbt models and exposures:
+	```bash
+	python gunicorn/parser_example_compiled.py
+	```
+
+2. Run the CLI tool:
+	```bash
+	python gunicorn/cli_combined.py
+	```
+
+3. Or run a demo to see functionality without interaction:
+	```bash
+	python gunicorn/demo_cli.py
+	```
+
+#### CLI Example Output
+
+```
+🔎 AI Agent with LLM + Embedding Search
+Type 'exit' or 'quit' to quit.
+
+❓ Your question: show me columns from sales models
+
+============================================================
+💡 LLM Suggestion:
+------------------------------
+  type: model
+  name: fct_sales
+  description: Fact table containing sales transactions with revenue metrics
+  columns: order_id, product_id, customer_id, sales_amount, order_date
+  reasoning: This model contains sales data with detailed transaction information
+
+💡 Embedding-based Top Matches:
+------------------------------
+  1. fct_sales
+     Description: Fact table containing sales transactions with revenue metrics
+     Columns: order_id, product_id, customer_id, sales_amount, order_date
+     Score: 0.847
+
+  2. sales_dashboard
+     Description: Executive dashboard showing sales performance metrics
+     Columns: total_sales, sales_count, avg_order_value
+     Score: 0.623
+
+  3. dim_products
+     Description: Product dimension table with category information
+     Columns: product_id, product_name, category, price
+     Score: 0.412
+
+============================================================
+```
+
+The CLI provides the same intelligent field filtering as the API:
+- **Columns**: Include `column` or `columns` in your query to see column details
+- **Names**: Include `name`, `model`, or `report` to focus on model/report names
+- **Descriptions**: Include `description` to see detailed descriptions
 
 ## Example API Response
 
@@ -93,3 +156,5 @@ This is a lightweight Python agent that maps user questions to relevant **dbt mo
 
 ```bash
 pip install -r requirements.txt
+
+```
