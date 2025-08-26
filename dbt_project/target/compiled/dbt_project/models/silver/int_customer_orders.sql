@@ -7,8 +7,8 @@ select
     o.order_date as order_date,
     o.total_amount as total_amount,
     c.customer_name as customer_name
-from "database_name"."transform"."stg_orders" o
-join "database_name"."transform"."stg_customers" c
+from "sci_rx_production"."transform"."stg_orders" o
+join "sci_rx_production"."transform"."stg_customers" c
     on o.customer_id = c.customer_id
 
 

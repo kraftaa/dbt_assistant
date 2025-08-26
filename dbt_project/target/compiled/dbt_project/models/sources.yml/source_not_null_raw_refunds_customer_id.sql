@@ -5,7 +5,7 @@
 
 
 select customer_id
-from "database_name"."raw"."refunds"
+from "sci_rx_production"."raw"."refunds"
 where customer_id is null
 
 

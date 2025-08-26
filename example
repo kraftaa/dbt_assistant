@@ -1,3 +1,0 @@
-curl -X POST http://localhost:5000/query \
-     -H "Content-Type: application/json" \
-     -d '{"query": "What is the vendor activity report?"}'

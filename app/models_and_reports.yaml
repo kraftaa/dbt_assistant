@@ -1,0 +1,231 @@
+stg_products:
+  type: dbt_model
+  path: ../dbt_project/target/compiled/dbt_project/models/bronze/stg_products.sql
+  description: DBT model located at ../dbt_project/target/compiled/dbt_project/models/bronze/stg_products.sql
+  columns:
+  - id AS product_id
+  - product_name AS product_name
+  - category AS category
+  - price AS price
+  tables:
+  - products
+  conditions: []
+  lineage_start: products
+stg_customers:
+  type: dbt_model
+  path: ../dbt_project/target/compiled/dbt_project/models/bronze/stg_customers.sql
+  description: DBT model located at ../dbt_project/target/compiled/dbt_project/models/bronze/stg_customers.sql
+  columns:
+  - id AS customer_id
+  - name AS customer_name
+  - email AS email
+  - created_at AS created_at
+  tables:
+  - customers
+  conditions: []
+  lineage_start: customers
+stg_orders:
+  type: dbt_model
+  path: ../dbt_project/target/compiled/dbt_project/models/bronze/stg_orders.sql
+  description: DBT model located at ../dbt_project/target/compiled/dbt_project/models/bronze/stg_orders.sql
+  columns:
+  - id AS order_id
+  - customer_id AS customer_id
+  - order_date AS order_date
+  - total_amount AS total_amount
+  tables:
+  - orders
+  conditions: []
+  lineage_start: orders
+stg_refunds:
+  type: dbt_model
+  path: ../dbt_project/target/compiled/dbt_project/models/bronze/stg_refunds.sql
+  description: DBT model located at ../dbt_project/target/compiled/dbt_project/models/bronze/stg_refunds.sql
+  columns:
+  - id AS refund_id
+  - order_id AS order_id
+  - customer_id AS customer_id
+  - refund_date AS refund_date
+  - refund_amount AS refund_amount
+  tables:
+  - refunds
+  conditions: []
+  lineage_start: refunds
+executive_dashboard:
+  type: exposure
+  url: https://bi.example.com/dashboards/executive
+  description: Executive-level dashboard for revenue and customer KPIs
+  maturity: high
+  depends_on:
+  - ref('fct_sales')
+  - ref('dim_customers')
+  - ref('dim_products')
+  - ref('dim_date')
+  owner:
+    name: Analytics Team
+    email: maria.dubyaga@gmail.com
+sales_dashboard:
+  type: exposure
+  url: https://dashboard.example.com/sales
+  description: Sales dashboard for business users.
+  maturity: high
+  depends_on:
+  - ref('fct_sales')
+  - ref('dim_products')
+  owner:
+    name: Maria
+    email: kraftaa@gmail.com
+refunds_report:
+  type: exposure
+  url: https://dashboard.example.com/refunds
+  description: Refunds report for finance team.
+  maturity: medium
+  depends_on:
+  - ref('fct_refunds')
+  - ref('dim_customers')
+  owner:
+    name: Maria
+    email: kraftaa@gmail.com
+int_customer_lifetime_value:
+  type: dbt_model
+  path: ../dbt_project/target/compiled/dbt_project/models/silver/int_customer_lifetime_value.sql
+  description: DBT model located at ../dbt_project/target/compiled/dbt_project/models/silver/int_customer_lifetime_value.sql
+  columns:
+  - customer_id AS customer_id
+  - SUM(total_amount) AS lifetime_value
+  tables:
+  - int_customer_orders
+  conditions: []
+  lineage_start: int_customer_orders
+int_product_sales:
+  type: dbt_model
+  path: ../dbt_project/target/compiled/dbt_project/models/silver/int_product_sales.sql
+  description: DBT model located at ../dbt_project/target/compiled/dbt_project/models/silver/int_product_sales.sql
+  columns:
+  - o.order_id AS order_id
+  - p.product_id AS product_id
+  - p.product_name AS product_name
+  - p.category AS category
+  - o.total_amount AS total_amount
+  tables:
+  - stg_orders AS o
+  - stg_products AS p
+  conditions: []
+  lineage_start: stg_orders AS o
+int_customer_orders:
+  type: dbt_model
+  path: ../dbt_project/target/compiled/dbt_project/models/silver/int_customer_orders.sql
+  description: DBT model located at ../dbt_project/target/compiled/dbt_project/models/silver/int_customer_orders.sql
+  columns:
+  - o.order_id AS order_id
+  - o.customer_id AS customer_id
+  - o.order_date AS order_date
+  - o.total_amount AS total_amount
+  - c.customer_name AS customer_name
+  tables:
+  - stg_orders AS o
+  - stg_customers AS c
+  conditions: []
+  lineage_start: stg_orders AS o
+int_order_product_count:
+  type: dbt_model
+  path: ../dbt_project/target/compiled/dbt_project/models/silver/int_order_product_count.sql
+  description: DBT model located at ../dbt_project/target/compiled/dbt_project/models/silver/int_order_product_count.sql
+  columns:
+  - order_id AS order_id
+  - COUNT(product_id) AS product_count
+  tables:
+  - int_product_sales
+  conditions: []
+  lineage_start: int_product_sales
+fct_sales:
+  type: dbt_model
+  path: ../dbt_project/target/compiled/dbt_project/models/gold/fct_sales.sql
+  description: DBT model located at ../dbt_project/target/compiled/dbt_project/models/gold/fct_sales.sql
+  columns:
+  - order_id AS order_id
+  - product_id AS product_id
+  - total_amount AS sales_amount
+  tables:
+  - int_product_sales
+  conditions: []
+  lineage_start: int_product_sales
+fct_refunds:
+  type: dbt_model
+  path: ../dbt_project/target/compiled/dbt_project/models/gold/fct_refunds.sql
+  description: DBT model located at ../dbt_project/target/compiled/dbt_project/models/gold/fct_refunds.sql
+  columns:
+  - refund_id AS refund_id
+  - order_id AS order_id
+  - customer_id AS customer_id
+  - refund_date AS refund_date
+  - refund_amount AS refund_amount
+  tables:
+  - stg_refunds
+  conditions: []
+  lineage_start: stg_refunds
+dim_customers:
+  type: dbt_model
+  path: ../dbt_project/target/compiled/dbt_project/models/gold/dim_customers.sql
+  description: DBT model located at ../dbt_project/target/compiled/dbt_project/models/gold/dim_customers.sql
+  columns:
+  - customer_id AS customer_id
+  - customer_name AS customer_name
+  - email AS email
+  tables:
+  - stg_customers
+  conditions: []
+  lineage_start: stg_customers
+dim_products:
+  type: dbt_model
+  path: ../dbt_project/target/compiled/dbt_project/models/gold/dim_products.sql
+  description: DBT model located at ../dbt_project/target/compiled/dbt_project/models/gold/dim_products.sql
+  columns:
+  - product_id AS product_id
+  - product_name AS product_name
+  - category AS category
+  - price AS price
+  tables:
+  - stg_products
+  conditions:
+  - WHERE price > 0
+  lineage_start: stg_products
+dim_category:
+  type: dbt_model
+  path: ../dbt_project/target/compiled/dbt_project/models/gold/dim_category.sql
+  description: DBT model located at ../dbt_project/target/compiled/dbt_project/models/gold/dim_category.sql
+  columns:
+  - category AS category
+  - COUNT(product_id) AS product_count
+  tables:
+  - stg_products
+  conditions: []
+  lineage_start: stg_products
+fct_orders:
+  type: dbt_model
+  path: ../dbt_project/target/compiled/dbt_project/models/gold/fct_orders.sql
+  description: DBT model located at ../dbt_project/target/compiled/dbt_project/models/gold/fct_orders.sql
+  columns:
+  - order_id AS order_id
+  - customer_id AS customer_id
+  - order_date AS order_date
+  - total_amount AS total_amount
+  tables:
+  - stg_orders
+  conditions: []
+  lineage_start: stg_orders
+dim_date:
+  type: dbt_model
+  path: ../dbt_project/target/compiled/dbt_project/models/gold/dim_date.sql
+  description: DBT model located at ../dbt_project/target/compiled/dbt_project/models/gold/dim_date.sql
+  columns:
+  - UNNEST(GENERATE_SERIES(CAST('2020-01-01' AS DATE), CAST('2030-01-01' AS DATE),
+    INTERVAL '1' DAY)) AS date_day
+  - date_day AS date_day
+  - EXTRACT(YEAR FROM date_day) AS year
+  - EXTRACT(MONTH FROM date_day) AS month
+  - EXTRACT(DAY FROM date_day) AS day
+  tables:
+  - dates
+  conditions: []
+  lineage_start: dates

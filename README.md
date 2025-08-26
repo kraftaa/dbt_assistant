@@ -4,6 +4,31 @@
 
 This project is a dbt-powered assistant API that makes your data models and business reports searchable and explainable. It combines embedding search, LLM reasoning, and flexible API responses to answer questions about dbt models, columns, and published reports (exposures).
 
+## Project Structure
+
+```
+dbt_assistant/
+├── dbt_project/           # Your dbt models and configuration
+├── app/                   # Main application source code
+│   ├── agent.py          # AI agent for query routing
+│   ├── app.py            # Flask web API
+│   ├── cli.py            # Command-line interface
+│   ├── embed_search.py   # Embedding-based search engine
+│   ├── parser_example_compiled.py  # Knowledge base builder
+│   └── models_and_reports.yaml     # Knowledge base data
+├── deploy/                # Deployment configurations
+│   ├── Dockerfile        # Docker container setup
+│   ├── docker-compose.yml # Docker Compose configuration
+│   ├── nginx.conf        # Nginx configuration
+│   └── gunicorn_conf.py  # Gunicorn server configuration
+├── tests/                 # Test files
+│   ├── test_mps.py       # MPS (Apple Silicon) performance test
+│   └── torch_gpu_test.py # GPU availability test
+├── main.py                # Main entry point script
+├── requirements.txt       # Python dependencies
+└── README.md             # This file
+```
+
 ## Features
 
 - Natural language search for dbt models, columns, and exposures (reports/dashboards)
@@ -32,45 +57,50 @@ You can link this API with your Superset instance by extracting YAML metadata fr
 - Empower everyone in your organization to find, understand, and use data
 - Automated, up-to-date documentation for all analytics assets
 
+## Quick Start
+
+### 1. Build Knowledge Base
+
+First, build the knowledge base from your dbt models:
+
+```bash
+python3 app/parser_example_compiled.py
+```
+
+### 2. Run the Assistant
+
+The project provides multiple ways to run the assistant:
+
+#### Option A: Main Script (Recommended)
+```bash
+# Run CLI (interactive mode)
+python3 main.py
+
+# Run API server
+python3 main.py api
+
+# Show help
+python3 main.py help
+```
+
+#### Option B: Direct Module Execution
+```bash
+# Run CLI directly
+python3 app/cli.py
+
+# Run API server directly
+python3 app/app.py
+```
+
 ## Usage
-
-### API Server
-
-1. Build knowledge from dbt models and exposures:
-	```bash
-	python gunicorn/parser_example_compiled.py
-	```
-2. Start the API server:
-	```bash
-	python gunicorn/app.py
-	# or
-	gunicorn --bind 0.0.0.0:5000 --workers 1 --threads 2 gunicorn/app:app
-	```
-3. Query the API:
-	```bash
-	curl -X POST http://localhost:5000/search \
-		  -H "Content-Type: application/json" \
-		  -d '{"query": "what is url for sales dashboard"}'
-	```
 
 ### CLI Tool
 
-The project also includes a command-line interface that provides the same functionality without needing to run a web server:
+The command-line interface provides interactive access to the assistant:
 
-1. Build knowledge from dbt models and exposures:
-	```bash
-	python gunicorn/parser_example_compiled.py
-	```
-
-2. Run the CLI tool:
-	```bash
-	python gunicorn/cli_combined.py
-	```
-
-3. Or run a demo to see functionality without interaction:
-	```bash
-	python gunicorn/demo_cli.py
-	```
+```bash
+python3 main.py cli
+```
 
 #### CLI Example Output
 
@@ -109,10 +139,47 @@ Type 'exit' or 'quit' to quit.
 ============================================================
 ```
 
-The CLI provides the same intelligent field filtering as the API:
+The CLI provides intelligent field filtering based on your query:
 - **Columns**: Include `column` or `columns` in your query to see column details
 - **Names**: Include `name`, `model`, or `report` to focus on model/report names
 - **Descriptions**: Include `description` to see detailed descriptions
+
+### API Server
+
+For production use or integration with other systems:
+
+```bash
+python3 main.py api
+```
+
+The API will be available at `http://localhost:5000` with the following endpoints:
+
+- `GET /` - Health check
+- `GET/POST /search` - Search endpoint
+
+#### Example API Usage
+
+```bash
+curl -X POST http://localhost:5000/search \
+     -H "Content-Type: application/json" \
+     -d '{"query": "what is url for sales dashboard"}'
+```
+
+#### Example API Response
+
+```json
+{
+  "llm_suggestion": {
+    "type": "exposure",
+    "name": "sales_dashboard",
+    "description": "Sales dashboard for business users.",
+    "columns": ["order_id", "product_id", "sales_amount"],
+    "url": "https://dashboard.example.com/sales",
+    "reasoning": "This exposure is a published dashboard for sales."
+  },
+  "embedding_matches": [ ... ]
+}
+```
 
 ### Testing GPU/MPS Support
 
@@ -120,32 +187,43 @@ The project includes test files to verify GPU acceleration support:
 
 #### MPS Test (Apple Silicon)
 ```bash
-python test_mps.py
+python3 tests/test_mps.py
 ```
 This script benchmarks matrix multiplication performance on CPU vs MPS (Metal Performance Shaders) for Apple Silicon Macs. It compares computation time between devices and helps verify MPS backend availability.
 
 #### GPU Test
 ```bash
-python torch_gpu_test.py
+python3 tests/torch_gpu_test.py
 ```
 A simple test to check if MPS is available and verify basic tensor operations work on the selected device. Useful for troubleshooting GPU acceleration issues.
 
 **Note**: These tests are particularly useful for Apple Silicon Mac users to ensure optimal performance when running the AI models in the agent.
 
-## Example API Response
+## Deployment
 
-```json
-{
-  "llm_suggestion": {
-	 "type": "exposure",
-	 "name": "sales_dashboard",
-	 "description": "Sales dashboard for business users.",
-	 "columns": ["order_id", "product_id", "sales_amount"],
-	 "url": "https://dashboard.example.com/sales",
-	 "reasoning": "This exposure is a published dashboard for sales."
-  },
-  "embedding_matches": [ ... ]
-}
+### Docker Deployment
+
+The project includes Docker configuration for easy deployment:
+
+```bash
+# Build and run with Docker Compose
+cd deploy
+docker-compose up --build
+```
+
+### Manual Deployment
+
+For manual deployment:
+
+```bash
+# Install dependencies
+pip3 install -r requirements.txt
+
+# Build knowledge base
+python3 app/parser_example_compiled.py
+
+# Run with Gunicorn
+gunicorn --bind 0.0.0.0:5000 --workers 1 --threads 2 app.app:app
 ```
 
 ## Contributing
@@ -155,24 +233,3 @@ Pull requests and suggestions are welcome!
 ## License
 
 MIT
-# 🧠 AI Agent for DBT Models & Reports
-
-This is a lightweight Python agent that maps user questions to relevant **dbt models** or **reports** using Hugging Face Transformers (Flan-T5) or OpenAI (commented out).
-
----
-
-## 🚀 Features
-- ✅ Load model/report metadata from YAML
-- ✅ Use Hugging Face `flan-t5-base` for prompt-based matching
-- ✅ Optional OpenAI support (commented out)
-- ✅ CLI tool
-- ✅ Flask Web API
-
----
-
-## 🛠️ Setup
-
-```bash
-pip install -r requirements.txt
-
-```

@@ -1,8 +1,0 @@
-flask
-gunicorn
-pyyaml
-faiss-cpu
-sentence-transformers
-sqlparse
-faiss-cpu
-sqlglot

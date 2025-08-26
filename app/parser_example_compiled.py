@@ -103,10 +103,64 @@ def export_knowledge(knowledge, output_file="models_and_reports.yaml"):
 # --- run ---
 # dbt compile --profiles-dir config --target dev
 if __name__ == "__main__":
-    # knowledge = ("models")
-    # knowledge = build_knowledge("/Users/maria/Documents/GitHub/sparkle-dbt/target/rx_dbt_assets-fdeec0e-61e026f/compiled/rx/models/gold/")  # put your dbt models path here
-    knowledge = build_knowledge("../dbt_project/target/compiled/dbt_project/models/gold")  # put your dbt models path here
-
-    export_knowledge(knowledge)
-    print("Knowledge extracted and saved to models_and_reports.yaml")
+    # Build knowledge from all model directories
+    base_models_dir = "../dbt_project/target/compiled/dbt_project/models"
+    
+    print("🔍 Building knowledge base from dbt models...")
+    print(f"📁 Looking in: {base_models_dir}")
+    
+    # Check if the directory exists
+    if not os.path.exists(base_models_dir):
+        print(f"❌ Error: Models directory not found at {base_models_dir}")
+        print("💡 Make sure to run 'dbt compile' first in your dbt_project directory")
+        exit(1)
+    
+    # Build knowledge from all model layers
+    knowledge = {}
+    
+    # Process each model layer (bronze, silver, gold)
+    for layer in ["bronze", "silver", "gold"]:
+        layer_path = os.path.join(base_models_dir, layer)
+        if os.path.exists(layer_path):
+            print(f"📂 Processing {layer} models...")
+            layer_knowledge = build_knowledge(layer_path)
+            knowledge.update(layer_knowledge)
+            print(f"✅ Found {len(layer_knowledge)} {layer} models")
+        else:
+            print(f"⚠️  {layer} directory not found, skipping...")
+    
+    # Parse exposures
+    exposures_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "../dbt_project/exposures.yml"))
+    if os.path.exists(exposures_path):
+        print(f"📊 Found exposures file: {exposures_path}")
+        with open(exposures_path) as f:
+            exposures_yaml = yaml.safe_load(f)
+        exposures = exposures_yaml.get("exposures", [])
+        for exposure in exposures:
+            if not isinstance(exposure, dict):
+                continue
+            name = exposure.get("name")
+            if not name:
+                continue
+            knowledge[name] = {
+                "type": "exposure",
+                "url": exposure.get("url"),
+                "description": exposure.get("description"),
+                "maturity": exposure.get("maturity"),
+                "depends_on": exposure.get("depends_on"),
+                "owner": exposure.get("owner"),
+            }
+        print(f"✅ Found {len(exposures)} exposures")
+    else:
+        print(f"⚠️  Exposures file not found at: {exposures_path}")
+    
+    # Export the complete knowledge base
+    output_file = "models_and_reports.yaml"
+    export_knowledge(knowledge, output_file)
+    
+    print(f"\n🎉 Knowledge base built successfully!")
+    print(f"📊 Total items: {len(knowledge)}")
+    print(f"📁 Models: {len([k for k, v in knowledge.items() if v.get('type') == 'dbt_model'])}")
+    print(f"📊 Exposures: {len([k for k, v in knowledge.items() if v.get('type') == 'exposure'])}")
+    print(f"💾 Saved to: {output_file}")
 

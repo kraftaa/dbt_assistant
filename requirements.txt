@@ -1,6 +1,8 @@
-transformers
-pyyaml
 flask
-torch
-sentence_transformers
+gunicorn
+pyyaml
 faiss-cpu
+sentence-transformers
+sqlparse
+faiss-cpu
+sqlglot

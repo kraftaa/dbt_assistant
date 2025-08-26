@@ -1,15 +1,35 @@
-dbt_models:
-  fct_purchases:
-    description: "Contains all purchase transactions including amount, vendor, and date."
-  dim_vendor:
-    description: "Lookup table for vendor metadata including discipline."
-  spend_by_discipline:
-    description: "Aggregates purchases by spending category (discipline)."
-
-reports:
-  Purchase Overview:
-    description: "Shows total purchases over time by vendor and category."
-  Discipline Spend Analysis:
-    description: "Shows how much was spent per discipline."
-  Vendor Insights:
-    description: "Detailed vendor activity report."
+executive_dashboard:
+  type: exposure
+  url: https://bi.example.com/dashboards/executive
+  description: Executive-level dashboard for revenue and customer KPIs
+  maturity: high
+  depends_on:
+  - ref('fct_sales')
+  - ref('dim_customers')
+  - ref('dim_products')
+  - ref('dim_date')
+  owner:
+    name: Analytics Team
+    email: maria.dubyaga@gmail.com
+sales_dashboard:
+  type: exposure
+  url: https://dashboard.example.com/sales
+  description: Sales dashboard for business users.
+  maturity: high
+  depends_on:
+  - ref('fct_sales')
+  - ref('dim_products')
+  owner:
+    name: Maria
+    email: kraftaa@gmail.com
+refunds_report:
+  type: exposure
+  url: https://dashboard.example.com/refunds
+  description: Refunds report for finance team.
+  maturity: medium
+  depends_on:
+  - ref('fct_refunds')
+  - ref('dim_customers')
+  owner:
+    name: Maria
+    email: kraftaa@gmail.com
