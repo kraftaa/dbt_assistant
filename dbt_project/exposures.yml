@@ -15,26 +15,26 @@ exposures:
       name: "Analytics Team"
       email: "maria.dubyaga@gmail.com"
 
-    - name: sales_dashboard
-      type: dashboard
-      maturity: high
-      url: https://dashboard.example.com/sales
-      description: "Sales dashboard for business users."
-      depends_on:
-        - ref('fct_sales')
-        - ref('dim_products')
-      owner:
-        name: Maria
-        email: kraftaa@gmail.com
+  - name: sales_dashboard
+    type: dashboard
+    maturity: high
+    url: https://dashboard.example.com/sales
+    description: "Sales dashboard for business users."
+    depends_on:
+      - ref('fct_sales')
+      - ref('dim_products')
+    owner:
+      name: Maria
+      email: kraftaa@gmail.com
 
-    - name: refunds_report
-      type: report
-      maturity: medium
-      url: https://dashboard.example.com/refunds
-      description: "Refunds report for finance team."
-      depends_on:
-        - ref('fct_refunds')
-        - ref('dim_customers')
-      owner:
-        name: Maria
-        email: kraftaa@gmail.com
+  - name: refunds_report
+    type: report
+    maturity: medium
+    url: https://dashboard.example.com/refunds
+    description: "Refunds report for finance team."
+    depends_on:
+      - ref('fct_refunds')
+      - ref('dim_customers')
+    owner:
+      name: Maria
+      email: kraftaa@gmail.com
