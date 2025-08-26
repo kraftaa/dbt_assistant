@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: stg_customers
+    description: "Staging customers from raw"
+    columns:
+      - name: customer_id
+        tests: [unique, not_null]
+
+  - name: stg_orders
+    description: "Staging orders from raw"
+    columns:
+      - name: order_id
+        tests: [unique, not_null]
+
+  - name: stg_products
+    description: "Staging products from raw"
+    columns:
+      - name: product_id
+        tests: [unique, not_null]

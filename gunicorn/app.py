@@ -5,8 +5,7 @@ import os
 # sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 from embed_search import EmbeddingSearch
 from agent import ModelRouterAgent
-from build_knowledge  import build_knowledge, export_models_and_reports
-# from parser_example
+from parser_example_compiled import build_knowledge, export_knowledge
 import json
 
 app = Flask(__name__)
@@ -14,16 +13,11 @@ app = Flask(__name__)
 from pathlib import Path
 
 # Paths
-# project_path = "/Users/maria/Documents/GitHub/sparkle-dbt"
-# exposures_file = Path(project_path) / "models" / "gold/exposures.yml"
+# models_dir = "../dbt_project/models"  # adjust path as needed
+models_dir = "../dbt_project/target/compiled/dbt_project/models/gold"  # adjust path as needed
+knowledge = build_knowledge(models_dir)
+export_knowledge(knowledge, "models_and_reports.yaml")
 
-# Load models + exposures into memory
-# knowledge = build_knowledge(project_path, exposures_file)
-
-# Save to yaml
-# export_models_and_reports(knowledge, "models_and_reports2.yaml")
-
-# print("✅ Exported knowledge to models_and_reports2.yaml")
 search_engine = EmbeddingSearch("models_and_reports.yaml")
 agent = ModelRouterAgent("models_and_reports.yaml", use_hf_model=True)
 @app.route("/")

@@ -1,0 +1,1104 @@
+[0m17:48:35.605154 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1045cf0a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1057463d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105746550>]}
+
+
+============================== 17:48:35.607948 | 25ce5fc5-54f5-4297-be55-f2c0ee2340a7 ==============================
+[0m17:48:35.607948 [info ] [MainThread]: Running with dbt=1.9.3
+[0m17:48:35.608292 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'version_check': 'True', 'log_path': '/Users/maria/Documents/GitHub/extra/dbt_assistant/dbt_project/logs', 'debug': 'False', 'profiles_dir': '/Users/maria/.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'invocation_command': 'dbt init', 'log_format': 'default', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m17:48:35.618340 [info ] [MainThread]: Setting up your profile.
+[0m17:49:05.063684 [info ] [MainThread]: Profile default written to /Users/maria/.dbt/profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m17:49:05.077056 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 29.528595, "process_in_blocks": "0", "process_kernel_time": 0.180329, "process_mem_max_rss": "96862208", "process_out_blocks": "0", "process_user_time": 0.805612}
+[0m17:49:05.077741 [debug] [MainThread]: Command `dbt init` succeeded at 17:49:05.077660 after 29.53 seconds
+[0m17:49:05.078055 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1045cf0a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10575ae80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10572a400>]}
+[0m17:49:05.078336 [debug] [MainThread]: Flushing usage events
+[0m17:49:05.283212 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m17:52:55.372023 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1079d1070>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109367df0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109367550>]}
+
+
+============================== 17:52:55.375069 | 36e943f1-5f55-4749-8641-78716359182b ==============================
+[0m17:52:55.375069 [info ] [MainThread]: Running with dbt=1.9.3
+[0m17:52:55.375563 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/maria/Documents/GitHub/extra/dbt_assistant/dbt_project', 'fail_fast': 'False', 'version_check': 'True', 'log_path': '/Users/maria/Documents/GitHub/extra/dbt_assistant/dbt_project/logs', 'warn_error': 'None', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt run --target dev', 'log_format': 'default', 'introspect': 'True', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m17:52:55.377635 [error] [MainThread]: Encountered an error:
+Runtime Error
+  Could not find profile named 'default'
+[0m17:52:55.386420 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.06959963, "process_in_blocks": "0", "process_kernel_time": 0.157997, "process_mem_max_rss": "94486528", "process_out_blocks": "0", "process_user_time": 0.781119}
+[0m17:52:55.387047 [debug] [MainThread]: Command `dbt run` failed at 17:52:55.386974 after 0.07 seconds
+[0m17:52:55.387542 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1079d1070>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1093675e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108e1b610>]}
+[0m17:52:55.387835 [debug] [MainThread]: Flushing usage events
+[0m17:52:55.560450 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m17:54:12.698009 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108819130>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1099e7d00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1099e74c0>]}
+
+
+============================== 17:54:12.700355 | 2802efec-859e-4e1b-ab00-e7a5c0abecd6 ==============================
+[0m17:54:12.700355 [info ] [MainThread]: Running with dbt=1.9.3
+[0m17:54:12.700720 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/maria/Documents/GitHub/extra/dbt_assistant/dbt_project', 'fail_fast': 'False', 'warn_error': 'None', 'log_path': '/Users/maria/Documents/GitHub/extra/dbt_assistant/dbt_project/logs', 'version_check': 'True', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'invocation_command': 'dbt run --target dev', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m17:54:12.702857 [error] [MainThread]: Encountered an error:
+Runtime Error
+  Could not find profile named 'dbt_project'
+[0m17:54:12.704274 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.058104835, "process_in_blocks": "0", "process_kernel_time": 0.119724, "process_mem_max_rss": "94732288", "process_out_blocks": "0", "process_user_time": 0.77986}
+[0m17:54:12.704664 [debug] [MainThread]: Command `dbt run` failed at 17:54:12.704605 after 0.06 seconds
+[0m17:54:12.704877 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108819130>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10939c250>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10939cee0>]}
+[0m17:54:12.705092 [debug] [MainThread]: Flushing usage events
+[0m17:54:12.870027 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m17:54:39.948397 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x103a41100>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105ba09d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105ba0880>]}
+
+
+============================== 17:54:39.950811 | 3e06836c-8d29-4ad2-8c77-d7642cefe4e6 ==============================
+[0m17:54:39.950811 [info ] [MainThread]: Running with dbt=1.9.3
+[0m17:54:39.951165 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'version_check': 'True', 'log_path': '/Users/maria/Documents/GitHub/extra/dbt_assistant/dbt_project/logs', 'fail_fast': 'False', 'profiles_dir': '/Users/maria/Documents/GitHub/extra/dbt_assistant/dbt_project', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'invocation_command': 'dbt run --target dev', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m17:54:39.953137 [error] [MainThread]: Encountered an error:
+Runtime Error
+  Could not find profile named 'dev'
+[0m17:54:39.954660 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.054929875, "process_in_blocks": "0", "process_kernel_time": 0.106558, "process_mem_max_rss": "94224384", "process_out_blocks": "0", "process_user_time": 0.740976}
+[0m17:54:39.955022 [debug] [MainThread]: Command `dbt run` failed at 17:54:39.954968 after 0.06 seconds
+[0m17:54:39.955223 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x103a41100>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105b84ee0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1056f4370>]}
+[0m17:54:39.955422 [debug] [MainThread]: Flushing usage events
+[0m17:54:40.071799 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m17:56:36.733706 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105059100>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1076e39d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1076e3880>]}
+
+
+============================== 17:56:36.736589 | 6904db83-494a-4501-a47f-63942e02b096 ==============================
+[0m17:56:36.736589 [info ] [MainThread]: Running with dbt=1.9.3
+[0m17:56:36.736968 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'version_check': 'True', 'log_path': '/Users/maria/Documents/GitHub/extra/dbt_assistant/dbt_project/logs', 'profiles_dir': '/Users/maria/Documents/GitHub/extra/dbt_assistant/dbt_project', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt run --target dev', 'introspect': 'True', 'log_format': 'default', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m17:56:36.739205 [error] [MainThread]: Encountered an error:
+Runtime Error
+  Could not find profile named 'dev'
+[0m17:56:36.747662 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.067340665, "process_in_blocks": "0", "process_kernel_time": 0.157381, "process_mem_max_rss": "93011968", "process_out_blocks": "0", "process_user_time": 0.7634}
+[0m17:56:36.748188 [debug] [MainThread]: Command `dbt run` failed at 17:56:36.748120 after 0.07 seconds
+[0m17:56:36.748416 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105059100>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1076c3ee0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1059f8370>]}
+[0m17:56:36.748631 [debug] [MainThread]: Flushing usage events
+[0m17:56:36.923650 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m17:57:17.532143 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1219d90a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x122ca7d30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x122ca7520>]}
+
+
+============================== 17:57:17.534524 | 36c55836-2343-4943-b0e7-7215db985937 ==============================
+[0m17:57:17.534524 [info ] [MainThread]: Running with dbt=1.9.3
+[0m17:57:17.534899 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'version_check': 'True', 'log_path': '/Users/maria/Documents/GitHub/extra/dbt_assistant/dbt_project/logs', 'profiles_dir': '/Users/maria/Documents/GitHub/extra/dbt_assistant/dbt_project', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'invocation_command': 'dbt run --target dev', 'static_parser': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m17:57:17.537085 [error] [MainThread]: Encountered an error:
+Runtime Error
+  Could not find profile named 'dev'
+[0m17:57:17.538547 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.05827921, "process_in_blocks": "0", "process_kernel_time": 0.117233, "process_mem_max_rss": "93782016", "process_out_blocks": "0", "process_user_time": 0.756222}
+[0m17:57:17.538934 [debug] [MainThread]: Command `dbt run` failed at 17:57:17.538873 after 0.06 seconds
+[0m17:57:17.539155 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1219d90a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104640c10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x122c4fc40>]}
+[0m17:57:17.539377 [debug] [MainThread]: Flushing usage events
+[0m17:57:17.660641 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m17:58:46.058347 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106281040>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107237310>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107237a60>]}
+
+
+============================== 17:58:46.060869 | 2258e6f0-fab1-444e-91a1-d2f0cd128f15 ==============================
+[0m17:58:46.060869 [info ] [MainThread]: Running with dbt=1.9.3
+[0m17:58:46.061247 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/maria/Documents/GitHub/extra/dbt_assistant/dbt_project', 'version_check': 'True', 'debug': 'False', 'log_path': '/Users/maria/Documents/GitHub/extra/dbt_assistant/dbt_project/logs', 'fail_fast': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt run --target dev', 'introspect': 'True', 'static_parser': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m17:58:46.063284 [error] [MainThread]: Encountered an error:
+Runtime Error
+  Could not find profile named 'dev'
+[0m17:58:46.064874 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.05775575, "process_in_blocks": "0", "process_kernel_time": 0.111236, "process_mem_max_rss": "94060544", "process_out_blocks": "0", "process_user_time": 0.749977}
+[0m17:58:46.065224 [debug] [MainThread]: Command `dbt run` failed at 17:58:46.065165 after 0.06 seconds
+[0m17:58:46.065438 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106281040>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106cf56a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1071c0a30>]}
+[0m17:58:46.065638 [debug] [MainThread]: Flushing usage events
+[0m17:58:46.237801 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m17:58:54.480061 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1048d10a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105867d30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105867520>]}
+
+
+============================== 17:58:54.482537 | e6d22dcf-594c-45dc-b026-e44222420eaf ==============================
+[0m17:58:54.482537 [info ] [MainThread]: Running with dbt=1.9.3
+[0m17:58:54.482896 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'version_check': 'True', 'log_path': '/Users/maria/Documents/GitHub/extra/dbt_assistant/dbt_project/logs', 'profiles_dir': '/Users/maria/.dbt', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt run --target dev', 'static_parser': 'True', 'introspect': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m17:58:54.484969 [error] [MainThread]: Encountered an error:
+Runtime Error
+  Could not find profile named 'dev'
+[0m17:58:54.486486 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.058059625, "process_in_blocks": "0", "process_kernel_time": 0.107683, "process_mem_max_rss": "95256576", "process_out_blocks": "0", "process_user_time": 0.767626}
+[0m17:58:54.486907 [debug] [MainThread]: Command `dbt run` failed at 17:58:54.486843 after 0.06 seconds
+[0m17:58:54.487140 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1048d10a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1006a8c10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105810c40>]}
+[0m17:58:54.487351 [debug] [MainThread]: Flushing usage events
+[0m17:58:54.620977 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m18:00:15.345599 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106e910d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107f27d90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107f27460>]}
+
+
+============================== 18:00:15.347952 | e8ec9d0f-c958-4c36-825b-7031904f6154 ==============================
+[0m18:00:15.347952 [info ] [MainThread]: Running with dbt=1.9.3
+[0m18:00:15.348301 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'fail_fast': 'False', 'log_path': '/Users/maria/Documents/GitHub/extra/dbt_assistant/dbt_project/logs', 'profiles_dir': '/Users/maria/Documents/GitHub/extra/dbt_assistant/dbt_project', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'log_format': 'default', 'static_parser': 'True', 'invocation_command': 'dbt run --target dev --profile profiles.yml', 'introspect': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m18:00:15.350335 [error] [MainThread]: Encountered an error:
+Runtime Error
+  Could not find profile named 'profiles.yml'
+[0m18:00:15.351656 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.0575685, "process_in_blocks": "0", "process_kernel_time": 0.097322, "process_mem_max_rss": "94011392", "process_out_blocks": "0", "process_user_time": 0.741913}
+[0m18:00:15.351994 [debug] [MainThread]: Command `dbt run` failed at 18:00:15.351944 after 0.06 seconds
+[0m18:00:15.352202 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106e910d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107f00be0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107a30fa0>]}
+[0m18:00:15.352388 [debug] [MainThread]: Flushing usage events
+[0m18:00:15.514895 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m18:00:28.685585 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107751160>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1087e7dc0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1087e73a0>]}
+
+
+============================== 18:00:28.687999 | 8ad6c2a7-b468-42c3-a467-6a8743e5b9a9 ==============================
+[0m18:00:28.687999 [info ] [MainThread]: Running with dbt=1.9.3
+[0m18:00:28.688363 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'profiles_dir': '/Users/maria/Documents/GitHub/extra/dbt_assistant/dbt_project', 'log_path': '/Users/maria/Documents/GitHub/extra/dbt_assistant/dbt_project/logs', 'fail_fast': 'False', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'invocation_command': 'dbt run --target dev --profile profiles.yml', 'static_parser': 'True', 'introspect': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m18:00:28.690427 [error] [MainThread]: Encountered an error:
+Runtime Error
+  Could not find profile named 'profiles.yml'
+[0m18:00:28.692008 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.056086875, "process_in_blocks": "0", "process_kernel_time": 0.113858, "process_mem_max_rss": "95223808", "process_out_blocks": "0", "process_user_time": 0.747817}
+[0m18:00:28.692386 [debug] [MainThread]: Command `dbt run` failed at 18:00:28.692324 after 0.06 seconds
+[0m18:00:28.692609 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107751160>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1087a9490>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1082bc9d0>]}
+[0m18:00:28.692829 [debug] [MainThread]: Flushing usage events
+[0m18:00:28.874526 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m18:00:34.669497 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104651100>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1057e7d90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1057e7430>]}
+
+
+============================== 18:00:34.671786 | 26163bb8-21e3-4477-9214-5c0a8ec0204c ==============================
+[0m18:00:34.671786 [info ] [MainThread]: Running with dbt=1.9.3
+[0m18:00:34.672136 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'profiles_dir': '/Users/maria/Documents/GitHub/extra/dbt_assistant/dbt_project', 'log_path': '/Users/maria/Documents/GitHub/extra/dbt_assistant/dbt_project/logs', 'debug': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'static_parser': 'True', 'log_format': 'default', 'target_path': 'None', 'invocation_command': 'dbt run --target dev --profile ./profiles.yml', 'send_anonymous_usage_stats': 'True'}
+[0m18:00:34.674111 [error] [MainThread]: Encountered an error:
+Runtime Error
+  Could not find profile named './profiles.yml'
+[0m18:00:34.675407 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.0567015, "process_in_blocks": "0", "process_kernel_time": 0.103316, "process_mem_max_rss": "94142464", "process_out_blocks": "0", "process_user_time": 0.732194}
+[0m18:00:34.675767 [debug] [MainThread]: Command `dbt run` failed at 18:00:34.675709 after 0.06 seconds
+[0m18:00:34.675964 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104651100>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1057e76d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1051f0fd0>]}
+[0m18:00:34.676160 [debug] [MainThread]: Flushing usage events
+[0m18:00:34.800621 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m18:00:55.222435 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106711130>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1077a7d00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1077a74c0>]}
+
+
+============================== 18:00:55.224577 | 0731c06b-b678-4a0f-ae13-8e1be661d90c ==============================
+[0m18:00:55.224577 [info ] [MainThread]: Running with dbt=1.9.3
+[0m18:00:55.224913 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'fail_fast': 'False', 'log_path': '/Users/maria/Documents/GitHub/extra/dbt_assistant/dbt_project/logs', 'profiles_dir': '/Users/maria/.dbt', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'log_format': 'default', 'invocation_command': 'dbt run --target dev', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m18:00:55.226743 [error] [MainThread]: Encountered an error:
+Runtime Error
+  Could not find profile named 'dev'
+[0m18:00:55.228065 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.055233918, "process_in_blocks": "0", "process_kernel_time": 0.107244, "process_mem_max_rss": "95338496", "process_out_blocks": "0", "process_user_time": 0.730402}
+[0m18:00:55.228435 [debug] [MainThread]: Command `dbt run` failed at 18:00:55.228372 after 0.06 seconds
+[0m18:00:55.228654 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106711130>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10777fa90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107758e80>]}
+[0m18:00:55.228860 [debug] [MainThread]: Flushing usage events
+[0m18:00:55.351720 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m18:01:09.410424 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1038510d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1049e7d90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1049e7520>]}
+
+
+============================== 18:01:09.412849 | 10d4c12c-0682-4996-92e1-118de5ccf4dd ==============================
+[0m18:01:09.412849 [info ] [MainThread]: Running with dbt=1.9.3
+[0m18:01:09.413186 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'debug': 'False', 'log_path': '/Users/maria/Documents/GitHub/extra/dbt_assistant/dbt_project/logs', 'profiles_dir': 'config', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'invocation_command': 'dbt run --target dev --profiles-dir config', 'static_parser': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m18:01:09.415210 [error] [MainThread]: Encountered an error:
+Runtime Error
+  Could not find profile named 'dev'
+[0m18:01:09.416526 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.058398876, "process_in_blocks": "0", "process_kernel_time": 0.110121, "process_mem_max_rss": "94584832", "process_out_blocks": "0", "process_user_time": 0.733426}
+[0m18:01:09.416869 [debug] [MainThread]: Command `dbt run` failed at 18:01:09.416818 after 0.06 seconds
+[0m18:01:09.417067 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1038510d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1049c0be0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1043f1fa0>]}
+[0m18:01:09.417260 [debug] [MainThread]: Flushing usage events
+[0m18:01:09.555787 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m18:02:55.287479 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105f550d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1077e7d90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1077e7460>]}
+
+
+============================== 18:02:55.290406 | a92dafe9-5947-4b67-9a24-c4ed329967a2 ==============================
+[0m18:02:55.290406 [info ] [MainThread]: Running with dbt=1.9.3
+[0m18:02:55.290771 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'profiles_dir': 'config', 'log_path': '/Users/maria/Documents/GitHub/extra/dbt_assistant/dbt_project/logs', 'version_check': 'True', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt run --target dev --profiles-dir config', 'log_format': 'default', 'static_parser': 'True', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m18:02:55.293919 [error] [MainThread]: Encountered an error:
+Parsing Error
+  Env var required but not provided: 'POSTGRES_HOST'
+[0m18:02:55.295932 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.05893121, "process_in_blocks": "0", "process_kernel_time": 0.146048, "process_mem_max_rss": "93356032", "process_out_blocks": "0", "process_user_time": 0.764756}
+[0m18:02:55.296364 [debug] [MainThread]: Command `dbt run` failed at 18:02:55.296304 after 0.06 seconds
+[0m18:02:55.296580 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105f550d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10783d3d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10783de80>]}
+[0m18:02:55.296786 [debug] [MainThread]: Flushing usage events
+[0m18:02:55.471095 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m18:37:42.170284 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106c911c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107c2bd90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107c2b340>]}
+
+
+============================== 18:37:42.172726 | 55e66ba4-a189-44b1-9331-5b3013a72075 ==============================
+[0m18:37:42.172726 [info ] [MainThread]: Running with dbt=1.9.3
+[0m18:37:42.173237 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'version_check': 'True', 'log_path': '/Users/maria/Documents/GitHub/extra/dbt_assistant/dbt_project/logs', 'fail_fast': 'False', 'profiles_dir': '/Users/maria/.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'log_format': 'default', 'introspect': 'True', 'invocation_command': 'dbt compile', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m18:37:42.175283 [error] [MainThread]: Encountered an error:
+Runtime Error
+  Could not find profile named 'dev'
+[0m18:37:42.176782 [debug] [MainThread]: Resource report: {"command_name": "compile", "command_success": false, "command_wall_clock_time": 0.056883834, "process_in_blocks": "0", "process_kernel_time": 0.10455, "process_mem_max_rss": "95649792", "process_out_blocks": "0", "process_user_time": 0.768111}
+[0m18:37:42.177194 [debug] [MainThread]: Command `dbt compile` failed at 18:37:42.177132 after 0.06 seconds
+[0m18:37:42.177433 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106c911c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10713d9d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107a77bb0>]}
+[0m18:37:42.177646 [debug] [MainThread]: Flushing usage events
+[0m18:37:42.321714 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m18:38:01.856620 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1090d1280>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a06bd30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a06b280>]}
+
+
+============================== 18:38:01.858828 | c619fd56-5096-403c-b880-72e37c19df8f ==============================
+[0m18:38:01.858828 [info ] [MainThread]: Running with dbt=1.9.3
+[0m18:38:01.859179 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'fail_fast': 'False', 'log_path': '/Users/maria/Documents/GitHub/extra/dbt_assistant/dbt_project/logs', 'version_check': 'True', 'profiles_dir': 'config', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'static_parser': 'True', 'log_format': 'default', 'target_path': 'None', 'invocation_command': 'dbt compile --profiles-dir config --target dev', 'send_anonymous_usage_stats': 'True'}
+[0m18:38:01.862820 [error] [MainThread]: Encountered an error:
+Parsing Error
+  Env var required but not provided: 'POSTGRES_HOST'
+[0m18:38:01.864196 [debug] [MainThread]: Resource report: {"command_name": "compile", "command_success": false, "command_wall_clock_time": 0.056604125, "process_in_blocks": "0", "process_kernel_time": 0.107889, "process_mem_max_rss": "95289344", "process_out_blocks": "0", "process_user_time": 0.748469}
+[0m18:38:01.864678 [debug] [MainThread]: Command `dbt compile` failed at 18:38:01.864575 after 0.06 seconds
+[0m18:38:01.864953 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1090d1280>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a017040>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a0179a0>]}
+[0m18:38:01.865197 [debug] [MainThread]: Flushing usage events
+[0m18:38:01.990964 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m18:38:37.979757 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107eb1340>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108d48b80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108d483d0>]}
+
+
+============================== 18:38:37.981925 | 9522cc7c-6bf4-4598-aec1-e96516740b4c ==============================
+[0m18:38:37.981925 [info ] [MainThread]: Running with dbt=1.9.3
+[0m18:38:37.982287 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'version_check': 'True', 'log_path': '/Users/maria/Documents/GitHub/extra/dbt_assistant/dbt_project/logs', 'profiles_dir': 'config', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'log_format': 'default', 'introspect': 'True', 'invocation_command': 'dbt compile --profiles-dir config --target dev', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m18:38:37.985760 [error] [MainThread]: Encountered an error:
+Parsing Error
+  Env var required but not provided: 'POSTGRES_PORT'
+[0m18:38:37.987077 [debug] [MainThread]: Resource report: {"command_name": "compile", "command_success": false, "command_wall_clock_time": 0.05485579, "process_in_blocks": "0", "process_kernel_time": 0.10921, "process_mem_max_rss": "94158848", "process_out_blocks": "0", "process_user_time": 0.73314}
+[0m18:38:37.987590 [debug] [MainThread]: Command `dbt compile` failed at 18:38:37.987489 after 0.06 seconds
+[0m18:38:37.987890 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107eb1340>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108cf3820>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108cf3370>]}
+[0m18:38:37.988146 [debug] [MainThread]: Flushing usage events
+[0m18:38:38.111685 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m18:38:56.054102 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104850370>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1058ecc40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1058ec280>]}
+
+
+============================== 18:38:56.056323 | 1ca93874-7324-4883-85c9-2c47203078f1 ==============================
+[0m18:38:56.056323 [info ] [MainThread]: Running with dbt=1.9.3
+[0m18:38:56.056675 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'config', 'fail_fast': 'False', 'warn_error': 'None', 'log_path': '/Users/maria/Documents/GitHub/extra/dbt_assistant/dbt_project/logs', 'debug': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'log_format': 'default', 'static_parser': 'True', 'introspect': 'True', 'invocation_command': 'dbt compile --profiles-dir config --target dev', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m18:38:56.340970 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '1ca93874-7324-4883-85c9-2c47203078f1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105ca9730>]}
+[0m18:38:56.380618 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '1ca93874-7324-4883-85c9-2c47203078f1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105cc0a00>]}
+[0m18:38:56.381459 [info ] [MainThread]: Registered adapter: postgres=1.9.0
+[0m18:38:56.446921 [debug] [MainThread]: checksum: 832ccc19e5146dd41eb231211d90ac7a4e1ff8e4c869b5af4f43785a9ac82e23, vars: {}, profile: , target: dev, version: 1.9.3
+[0m18:38:56.447470 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m18:38:56.447700 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '1ca93874-7324-4883-85c9-2c47203078f1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105ef51c0>]}
+[0m18:38:57.220044 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '1ca93874-7324-4883-85c9-2c47203078f1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107094130>]}
+[0m18:38:57.276387 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/maria/Documents/GitHub/extra/dbt_assistant/dbt_project/target/manifest.json
+[0m18:38:57.280282 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/maria/Documents/GitHub/extra/dbt_assistant/dbt_project/target/semantic_manifest.json
+[0m18:38:57.293120 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '1ca93874-7324-4883-85c9-2c47203078f1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1070b7c40>]}
+[0m18:38:57.293470 [info ] [MainThread]: Found 10 models, 9 data tests, 3 sources, 433 macros
+[0m18:38:57.293682 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '1ca93874-7324-4883-85c9-2c47203078f1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107087a30>]}
+[0m18:38:57.294774 [info ] [MainThread]: 
+[0m18:38:57.294984 [info ] [MainThread]: Concurrency: 2 threads (target='dev')
+[0m18:38:57.295163 [info ] [MainThread]: 
+[0m18:38:57.295451 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m18:38:57.298008 [debug] [ThreadPool]: Acquiring new postgres connection 'list_sci_rx_production_transform'
+[0m18:38:57.347597 [debug] [ThreadPool]: Using postgres connection "list_sci_rx_production_transform"
+[0m18:38:57.347920 [debug] [ThreadPool]: On list_sci_rx_production_transform: BEGIN
+[0m18:38:57.348110 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m18:38:57.511318 [debug] [ThreadPool]: SQL status: BEGIN in 0.163 seconds
+[0m18:38:57.511838 [debug] [ThreadPool]: Using postgres connection "list_sci_rx_production_transform"
+[0m18:38:57.512188 [debug] [ThreadPool]: On list_sci_rx_production_transform: /* {"app": "dbt", "dbt_version": "1.9.3", "profile_name": "dev", "target_name": "dev", "connection_name": "list_sci_rx_production_transform"} */
+select
+      'sci_rx_production' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'transform'
+    union all
+    select
+      'sci_rx_production' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'transform'
+    union all
+    select
+      'sci_rx_production' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'transform'
+  
+[0m18:38:57.564675 [debug] [ThreadPool]: SQL status: SELECT 264 in 0.052 seconds
+[0m18:38:57.612634 [debug] [ThreadPool]: On list_sci_rx_production_transform: ROLLBACK
+[0m18:38:57.613630 [debug] [ThreadPool]: On list_sci_rx_production_transform: Close
+[0m18:38:57.634840 [debug] [MainThread]: Using postgres connection "master"
+[0m18:38:57.635168 [debug] [MainThread]: On master: BEGIN
+[0m18:38:57.635362 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m18:38:57.644027 [debug] [MainThread]: SQL status: BEGIN in 0.009 seconds
+[0m18:38:57.644301 [debug] [MainThread]: Using postgres connection "master"
+[0m18:38:57.644555 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.9.3", "profile_name": "dev", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v', 'm')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m18:38:57.674611 [debug] [MainThread]: SQL status: SELECT 495 in 0.030 seconds
+[0m18:38:57.693084 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '1ca93874-7324-4883-85c9-2c47203078f1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1070d7370>]}
+[0m18:38:57.693429 [debug] [MainThread]: On master: ROLLBACK
+[0m18:38:57.694734 [debug] [MainThread]: On master: Close
+[0m18:38:57.696949 [debug] [Thread-1  ]: Began running node model.dbt_project.dim_date
+[0m18:38:57.697219 [debug] [Thread-2  ]: Began running node model.dbt_project.stg_customers
+[0m18:38:57.697525 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly list_sci_rx_production_transform, now model.dbt_project.dim_date)
+[0m18:38:57.697810 [debug] [Thread-2  ]: Acquiring new postgres connection 'model.dbt_project.stg_customers'
+[0m18:38:57.698030 [debug] [Thread-1  ]: Began compiling node model.dbt_project.dim_date
+[0m18:38:57.698234 [debug] [Thread-2  ]: Began compiling node model.dbt_project.stg_customers
+[0m18:38:57.702888 [debug] [Thread-1  ]: Writing injected SQL for node "model.dbt_project.dim_date"
+[0m18:38:57.705426 [debug] [Thread-2  ]: Writing injected SQL for node "model.dbt_project.stg_customers"
+[0m18:38:57.706131 [debug] [Thread-1  ]: Began executing node model.dbt_project.dim_date
+[0m18:38:57.706353 [debug] [Thread-2  ]: Began executing node model.dbt_project.stg_customers
+[0m18:38:57.706767 [debug] [Thread-1  ]: Finished running node model.dbt_project.dim_date
+[0m18:38:57.707117 [debug] [Thread-2  ]: Finished running node model.dbt_project.stg_customers
+[0m18:38:57.707340 [debug] [Thread-1  ]: Began running node model.dbt_project.stg_orders
+[0m18:38:57.707595 [debug] [Thread-2  ]: Began running node model.dbt_project.stg_products
+[0m18:38:57.707907 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.dbt_project.dim_date, now model.dbt_project.stg_orders)
+[0m18:38:57.708135 [debug] [Thread-2  ]: Re-using an available connection from the pool (formerly model.dbt_project.stg_customers, now model.dbt_project.stg_products)
+[0m18:38:57.708343 [debug] [Thread-1  ]: Began compiling node model.dbt_project.stg_orders
+[0m18:38:57.708538 [debug] [Thread-2  ]: Began compiling node model.dbt_project.stg_products
+[0m18:38:57.710267 [debug] [Thread-1  ]: Writing injected SQL for node "model.dbt_project.stg_orders"
+[0m18:38:57.711907 [debug] [Thread-2  ]: Writing injected SQL for node "model.dbt_project.stg_products"
+[0m18:38:57.712327 [debug] [Thread-1  ]: Began executing node model.dbt_project.stg_orders
+[0m18:38:57.712518 [debug] [Thread-2  ]: Began executing node model.dbt_project.stg_products
+[0m18:38:57.712863 [debug] [Thread-1  ]: Finished running node model.dbt_project.stg_orders
+[0m18:38:57.713203 [debug] [Thread-2  ]: Finished running node model.dbt_project.stg_products
+[0m18:38:57.713417 [debug] [Thread-1  ]: Began running node test.dbt_project.source_not_null_raw_customers_id.bb348d55ac
+[0m18:38:57.713708 [debug] [Thread-2  ]: Began running node test.dbt_project.source_not_null_raw_orders_id.f232a64478
+[0m18:38:57.713993 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.dbt_project.stg_orders, now test.dbt_project.source_not_null_raw_customers_id.bb348d55ac)
+[0m18:38:57.714221 [debug] [Thread-2  ]: Re-using an available connection from the pool (formerly model.dbt_project.stg_products, now test.dbt_project.source_not_null_raw_orders_id.f232a64478)
+[0m18:38:57.714432 [debug] [Thread-1  ]: Began compiling node test.dbt_project.source_not_null_raw_customers_id.bb348d55ac
+[0m18:38:57.714685 [debug] [Thread-2  ]: Began compiling node test.dbt_project.source_not_null_raw_orders_id.f232a64478
+[0m18:38:57.721194 [debug] [Thread-1  ]: Writing injected SQL for node "test.dbt_project.source_not_null_raw_customers_id.bb348d55ac"
+[0m18:38:57.723650 [debug] [Thread-2  ]: Writing injected SQL for node "test.dbt_project.source_not_null_raw_orders_id.f232a64478"
+[0m18:38:57.724222 [debug] [Thread-1  ]: Began executing node test.dbt_project.source_not_null_raw_customers_id.bb348d55ac
+[0m18:38:57.724432 [debug] [Thread-2  ]: Began executing node test.dbt_project.source_not_null_raw_orders_id.f232a64478
+[0m18:38:57.724812 [debug] [Thread-1  ]: Finished running node test.dbt_project.source_not_null_raw_customers_id.bb348d55ac
+[0m18:38:57.725139 [debug] [Thread-2  ]: Finished running node test.dbt_project.source_not_null_raw_orders_id.f232a64478
+[0m18:38:57.725355 [debug] [Thread-1  ]: Began running node test.dbt_project.source_not_null_raw_products_id.ffffd25704
+[0m18:38:57.725609 [debug] [Thread-2  ]: Began running node model.dbt_project.dim_customers
+[0m18:38:57.725853 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly test.dbt_project.source_not_null_raw_customers_id.bb348d55ac, now test.dbt_project.source_not_null_raw_products_id.ffffd25704)
+[0m18:38:57.726081 [debug] [Thread-2  ]: Re-using an available connection from the pool (formerly test.dbt_project.source_not_null_raw_orders_id.f232a64478, now model.dbt_project.dim_customers)
+[0m18:38:57.726285 [debug] [Thread-1  ]: Began compiling node test.dbt_project.source_not_null_raw_products_id.ffffd25704
+[0m18:38:57.726475 [debug] [Thread-2  ]: Began compiling node model.dbt_project.dim_customers
+[0m18:38:57.729033 [debug] [Thread-1  ]: Writing injected SQL for node "test.dbt_project.source_not_null_raw_products_id.ffffd25704"
+[0m18:38:57.731835 [debug] [Thread-2  ]: Writing injected SQL for node "model.dbt_project.dim_customers"
+[0m18:38:57.732388 [debug] [Thread-1  ]: Began executing node test.dbt_project.source_not_null_raw_products_id.ffffd25704
+[0m18:38:57.732588 [debug] [Thread-2  ]: Began executing node model.dbt_project.dim_customers
+[0m18:38:57.732978 [debug] [Thread-1  ]: Finished running node test.dbt_project.source_not_null_raw_products_id.ffffd25704
+[0m18:38:57.733308 [debug] [Thread-2  ]: Finished running node model.dbt_project.dim_customers
+[0m18:38:57.733531 [debug] [Thread-1  ]: Began running node test.dbt_project.not_null_stg_customers_customer_id.e2cfb1f9aa
+[0m18:38:57.733783 [debug] [Thread-2  ]: Began running node test.dbt_project.unique_stg_customers_customer_id.c7614daada
+[0m18:38:57.734022 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly test.dbt_project.source_not_null_raw_products_id.ffffd25704, now test.dbt_project.not_null_stg_customers_customer_id.e2cfb1f9aa)
+[0m18:38:57.734247 [debug] [Thread-2  ]: Re-using an available connection from the pool (formerly model.dbt_project.dim_customers, now test.dbt_project.unique_stg_customers_customer_id.c7614daada)
+[0m18:38:57.734451 [debug] [Thread-1  ]: Began compiling node test.dbt_project.not_null_stg_customers_customer_id.e2cfb1f9aa
+[0m18:38:57.734644 [debug] [Thread-2  ]: Began compiling node test.dbt_project.unique_stg_customers_customer_id.c7614daada
+[0m18:38:57.736932 [debug] [Thread-1  ]: Writing injected SQL for node "test.dbt_project.not_null_stg_customers_customer_id.e2cfb1f9aa"
+[0m18:38:57.740318 [debug] [Thread-2  ]: Writing injected SQL for node "test.dbt_project.unique_stg_customers_customer_id.c7614daada"
+[0m18:38:57.741233 [debug] [Thread-2  ]: Began executing node test.dbt_project.unique_stg_customers_customer_id.c7614daada
+[0m18:38:57.741430 [debug] [Thread-1  ]: Began executing node test.dbt_project.not_null_stg_customers_customer_id.e2cfb1f9aa
+[0m18:38:57.741794 [debug] [Thread-2  ]: Finished running node test.dbt_project.unique_stg_customers_customer_id.c7614daada
+[0m18:38:57.742128 [debug] [Thread-1  ]: Finished running node test.dbt_project.not_null_stg_customers_customer_id.e2cfb1f9aa
+[0m18:38:57.742345 [debug] [Thread-2  ]: Began running node model.dbt_project.fct_orders
+[0m18:38:57.742593 [debug] [Thread-1  ]: Began running node model.dbt_project.int_customer_orders
+[0m18:38:57.742828 [debug] [Thread-2  ]: Re-using an available connection from the pool (formerly test.dbt_project.unique_stg_customers_customer_id.c7614daada, now model.dbt_project.fct_orders)
+[0m18:38:57.743052 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly test.dbt_project.not_null_stg_customers_customer_id.e2cfb1f9aa, now model.dbt_project.int_customer_orders)
+[0m18:38:57.743254 [debug] [Thread-2  ]: Began compiling node model.dbt_project.fct_orders
+[0m18:38:57.743447 [debug] [Thread-1  ]: Began compiling node model.dbt_project.int_customer_orders
+[0m18:38:57.744994 [debug] [Thread-2  ]: Writing injected SQL for node "model.dbt_project.fct_orders"
+[0m18:38:57.748237 [debug] [Thread-1  ]: Writing injected SQL for node "model.dbt_project.int_customer_orders"
+[0m18:38:57.748778 [debug] [Thread-2  ]: Began executing node model.dbt_project.fct_orders
+[0m18:38:57.748982 [debug] [Thread-1  ]: Began executing node model.dbt_project.int_customer_orders
+[0m18:38:57.749351 [debug] [Thread-2  ]: Finished running node model.dbt_project.fct_orders
+[0m18:38:57.749674 [debug] [Thread-1  ]: Finished running node model.dbt_project.int_customer_orders
+[0m18:38:57.749889 [debug] [Thread-2  ]: Began running node test.dbt_project.not_null_stg_orders_order_id.81cfe2fe64
+[0m18:38:57.750127 [debug] [Thread-1  ]: Began running node test.dbt_project.unique_stg_orders_order_id.e3b841c71a
+[0m18:38:57.750363 [debug] [Thread-2  ]: Re-using an available connection from the pool (formerly model.dbt_project.fct_orders, now test.dbt_project.not_null_stg_orders_order_id.81cfe2fe64)
+[0m18:38:57.750589 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.dbt_project.int_customer_orders, now test.dbt_project.unique_stg_orders_order_id.e3b841c71a)
+[0m18:38:57.750793 [debug] [Thread-2  ]: Began compiling node test.dbt_project.not_null_stg_orders_order_id.81cfe2fe64
+[0m18:38:57.750984 [debug] [Thread-1  ]: Began compiling node test.dbt_project.unique_stg_orders_order_id.e3b841c71a
+[0m18:38:57.753416 [debug] [Thread-2  ]: Writing injected SQL for node "test.dbt_project.not_null_stg_orders_order_id.81cfe2fe64"
+[0m18:38:57.755848 [debug] [Thread-1  ]: Writing injected SQL for node "test.dbt_project.unique_stg_orders_order_id.e3b841c71a"
+[0m18:38:57.756388 [debug] [Thread-2  ]: Began executing node test.dbt_project.not_null_stg_orders_order_id.81cfe2fe64
+[0m18:38:57.756602 [debug] [Thread-1  ]: Began executing node test.dbt_project.unique_stg_orders_order_id.e3b841c71a
+[0m18:38:57.757004 [debug] [Thread-2  ]: Finished running node test.dbt_project.not_null_stg_orders_order_id.81cfe2fe64
+[0m18:38:57.757333 [debug] [Thread-1  ]: Finished running node test.dbt_project.unique_stg_orders_order_id.e3b841c71a
+[0m18:38:57.757556 [debug] [Thread-2  ]: Began running node model.dbt_project.dim_products
+[0m18:38:57.757801 [debug] [Thread-1  ]: Began running node model.dbt_project.int_product_sales
+[0m18:38:57.758038 [debug] [Thread-2  ]: Re-using an available connection from the pool (formerly test.dbt_project.not_null_stg_orders_order_id.81cfe2fe64, now model.dbt_project.dim_products)
+[0m18:38:57.758263 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly test.dbt_project.unique_stg_orders_order_id.e3b841c71a, now model.dbt_project.int_product_sales)
+[0m18:38:57.758462 [debug] [Thread-2  ]: Began compiling node model.dbt_project.dim_products
+[0m18:38:57.758661 [debug] [Thread-1  ]: Began compiling node model.dbt_project.int_product_sales
+[0m18:38:57.760199 [debug] [Thread-2  ]: Writing injected SQL for node "model.dbt_project.dim_products"
+[0m18:38:57.764446 [debug] [Thread-1  ]: Writing injected SQL for node "model.dbt_project.int_product_sales"
+[0m18:38:57.764962 [debug] [Thread-1  ]: Began executing node model.dbt_project.int_product_sales
+[0m18:38:57.765352 [debug] [Thread-1  ]: Finished running node model.dbt_project.int_product_sales
+[0m18:38:57.765592 [debug] [Thread-1  ]: Began running node test.dbt_project.not_null_stg_products_product_id.6373b0acf3
+[0m18:38:57.765832 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.dbt_project.int_product_sales, now test.dbt_project.not_null_stg_products_product_id.6373b0acf3)
+[0m18:38:57.766110 [debug] [Thread-2  ]: Began executing node model.dbt_project.dim_products
+[0m18:38:57.766377 [debug] [Thread-1  ]: Began compiling node test.dbt_project.not_null_stg_products_product_id.6373b0acf3
+[0m18:38:57.766944 [debug] [Thread-2  ]: Finished running node model.dbt_project.dim_products
+[0m18:38:57.769662 [debug] [Thread-1  ]: Writing injected SQL for node "test.dbt_project.not_null_stg_products_product_id.6373b0acf3"
+[0m18:38:57.769990 [debug] [Thread-2  ]: Began running node test.dbt_project.unique_stg_products_product_id.7d950a1467
+[0m18:38:57.770353 [debug] [Thread-2  ]: Re-using an available connection from the pool (formerly model.dbt_project.dim_products, now test.dbt_project.unique_stg_products_product_id.7d950a1467)
+[0m18:38:57.770635 [debug] [Thread-2  ]: Began compiling node test.dbt_project.unique_stg_products_product_id.7d950a1467
+[0m18:38:57.773224 [debug] [Thread-2  ]: Writing injected SQL for node "test.dbt_project.unique_stg_products_product_id.7d950a1467"
+[0m18:38:57.773491 [debug] [Thread-1  ]: Began executing node test.dbt_project.not_null_stg_products_product_id.6373b0acf3
+[0m18:38:57.774043 [debug] [Thread-1  ]: Finished running node test.dbt_project.not_null_stg_products_product_id.6373b0acf3
+[0m18:38:57.774278 [debug] [Thread-1  ]: Began running node model.dbt_project.fct_sales
+[0m18:38:57.774588 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly test.dbt_project.not_null_stg_products_product_id.6373b0acf3, now model.dbt_project.fct_sales)
+[0m18:38:57.774828 [debug] [Thread-1  ]: Began compiling node model.dbt_project.fct_sales
+[0m18:38:57.775024 [debug] [Thread-2  ]: Began executing node test.dbt_project.unique_stg_products_product_id.7d950a1467
+[0m18:38:57.776792 [debug] [Thread-1  ]: Writing injected SQL for node "model.dbt_project.fct_sales"
+[0m18:38:57.777175 [debug] [Thread-2  ]: Finished running node test.dbt_project.unique_stg_products_product_id.7d950a1467
+[0m18:38:57.777536 [debug] [Thread-1  ]: Began executing node model.dbt_project.fct_sales
+[0m18:38:57.777888 [debug] [Thread-1  ]: Finished running node model.dbt_project.fct_sales
+[0m18:38:57.778443 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m18:38:57.778659 [debug] [MainThread]: Connection 'model.dbt_project.fct_sales' was properly closed.
+[0m18:38:57.778831 [debug] [MainThread]: Connection 'test.dbt_project.unique_stg_products_product_id.7d950a1467' was properly closed.
+[0m18:38:57.780241 [debug] [MainThread]: Command end result
+[0m18:38:57.795571 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/maria/Documents/GitHub/extra/dbt_assistant/dbt_project/target/manifest.json
+[0m18:38:57.796669 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/maria/Documents/GitHub/extra/dbt_assistant/dbt_project/target/semantic_manifest.json
+[0m18:38:57.801229 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/maria/Documents/GitHub/extra/dbt_assistant/dbt_project/target/run_results.json
+[0m18:38:57.802927 [debug] [MainThread]: Resource report: {"command_name": "compile", "command_success": true, "command_wall_clock_time": 1.797592, "process_in_blocks": "0", "process_kernel_time": 0.242947, "process_mem_max_rss": "128548864", "process_out_blocks": "0", "process_user_time": 1.955898}
+[0m18:38:57.803257 [debug] [MainThread]: Command `dbt compile` succeeded at 18:38:57.803209 after 1.80 seconds
+[0m18:38:57.803481 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104850370>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1070350a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1049b3e20>]}
+[0m18:38:57.803708 [debug] [MainThread]: Flushing usage events
+[0m18:38:57.972007 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m18:48:01.041763 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1103903d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11132cc10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11132c250>]}
+
+
+============================== 18:48:01.045183 | ad5839d8-a489-48f4-b134-94efc1255d99 ==============================
+[0m18:48:01.045183 [info ] [MainThread]: Running with dbt=1.9.3
+[0m18:48:01.045546 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'config', 'fail_fast': 'False', 'version_check': 'True', 'log_path': '/Users/maria/Documents/GitHub/extra/dbt_assistant/dbt_project/logs', 'warn_error': 'None', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'log_format': 'default', 'invocation_command': 'dbt compile --profiles-dir config --target dev', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m18:48:01.317374 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'ad5839d8-a489-48f4-b134-94efc1255d99', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1066dc4f0>]}
+[0m18:48:01.358222 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'ad5839d8-a489-48f4-b134-94efc1255d99', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x110f49190>]}
+[0m18:48:01.359083 [info ] [MainThread]: Registered adapter: postgres=1.9.0
+[0m18:48:01.426224 [debug] [MainThread]: checksum: 832ccc19e5146dd41eb231211d90ac7a4e1ff8e4c869b5af4f43785a9ac82e23, vars: {}, profile: , target: dev, version: 1.9.3
+[0m18:48:01.519709 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 10 files changed.
+[0m18:48:01.520231 [debug] [MainThread]: Partial parsing: updated file: dbt_project://models/bronze/stg_orders.sql
+[0m18:48:01.520512 [debug] [MainThread]: Partial parsing: updated file: dbt_project://models/gold/dim_customers.sql
+[0m18:48:01.520770 [debug] [MainThread]: Partial parsing: updated file: dbt_project://models/bronze/stg_customers.sql
+[0m18:48:01.521009 [debug] [MainThread]: Partial parsing: updated file: dbt_project://models/gold/dim_date.sql
+[0m18:48:01.521241 [debug] [MainThread]: Partial parsing: updated file: dbt_project://models/gold/fct_orders.sql
+[0m18:48:01.521480 [debug] [MainThread]: Partial parsing: updated file: dbt_project://models/bronze/stg_products.sql
+[0m18:48:01.521711 [debug] [MainThread]: Partial parsing: updated file: dbt_project://models/silver/int_customer_orders.sql
+[0m18:48:01.521945 [debug] [MainThread]: Partial parsing: updated file: dbt_project://models/gold/fct_sales.sql
+[0m18:48:01.522181 [debug] [MainThread]: Partial parsing: updated file: dbt_project://models/gold/dim_products.sql
+[0m18:48:01.522408 [debug] [MainThread]: Partial parsing: updated file: dbt_project://models/silver/int_product_sales.sql
+[0m18:48:01.849794 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'ad5839d8-a489-48f4-b134-94efc1255d99', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x111c7ed00>]}
+[0m18:48:01.904522 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/maria/Documents/GitHub/extra/dbt_assistant/dbt_project/target/manifest.json
+[0m18:48:01.908547 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/maria/Documents/GitHub/extra/dbt_assistant/dbt_project/target/semantic_manifest.json
+[0m18:48:01.923047 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'ad5839d8-a489-48f4-b134-94efc1255d99', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1120b1ac0>]}
+[0m18:48:01.923406 [info ] [MainThread]: Found 9 data tests, 10 models, 3 sources, 433 macros
+[0m18:48:01.923626 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'ad5839d8-a489-48f4-b134-94efc1255d99', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x112203190>]}
+[0m18:48:01.924769 [info ] [MainThread]: 
+[0m18:48:01.924995 [info ] [MainThread]: Concurrency: 2 threads (target='dev')
+[0m18:48:01.925174 [info ] [MainThread]: 
+[0m18:48:01.925471 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m18:48:01.928166 [debug] [ThreadPool]: Acquiring new postgres connection 'list_sci_rx_production_transform'
+[0m18:48:01.982696 [debug] [ThreadPool]: Using postgres connection "list_sci_rx_production_transform"
+[0m18:48:01.983023 [debug] [ThreadPool]: On list_sci_rx_production_transform: BEGIN
+[0m18:48:01.983218 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m18:48:02.006007 [debug] [ThreadPool]: SQL status: BEGIN in 0.023 seconds
+[0m18:48:02.006338 [debug] [ThreadPool]: Using postgres connection "list_sci_rx_production_transform"
+[0m18:48:02.006551 [debug] [ThreadPool]: On list_sci_rx_production_transform: /* {"app": "dbt", "dbt_version": "1.9.3", "profile_name": "dev", "target_name": "dev", "connection_name": "list_sci_rx_production_transform"} */
+select
+      'sci_rx_production' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'transform'
+    union all
+    select
+      'sci_rx_production' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'transform'
+    union all
+    select
+      'sci_rx_production' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'transform'
+  
+[0m18:48:02.016857 [debug] [ThreadPool]: SQL status: SELECT 264 in 0.010 seconds
+[0m18:48:02.020571 [debug] [ThreadPool]: On list_sci_rx_production_transform: ROLLBACK
+[0m18:48:02.021059 [debug] [ThreadPool]: On list_sci_rx_production_transform: Close
+[0m18:48:02.040203 [debug] [MainThread]: Using postgres connection "master"
+[0m18:48:02.041500 [debug] [MainThread]: On master: BEGIN
+[0m18:48:02.041689 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m18:48:02.048575 [debug] [MainThread]: SQL status: BEGIN in 0.007 seconds
+[0m18:48:02.048777 [debug] [MainThread]: Using postgres connection "master"
+[0m18:48:02.049004 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.9.3", "profile_name": "dev", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v', 'm')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m18:48:02.072113 [debug] [MainThread]: SQL status: SELECT 495 in 0.023 seconds
+[0m18:48:02.089095 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'ad5839d8-a489-48f4-b134-94efc1255d99', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x111c36070>]}
+[0m18:48:02.089535 [debug] [MainThread]: On master: ROLLBACK
+[0m18:48:02.089979 [debug] [MainThread]: On master: Close
+[0m18:48:02.091602 [debug] [Thread-1  ]: Began running node model.dbt_project.dim_date
+[0m18:48:02.091833 [debug] [Thread-2  ]: Began running node model.dbt_project.stg_customers
+[0m18:48:02.092131 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly list_sci_rx_production_transform, now model.dbt_project.dim_date)
+[0m18:48:02.092418 [debug] [Thread-2  ]: Acquiring new postgres connection 'model.dbt_project.stg_customers'
+[0m18:48:02.092637 [debug] [Thread-1  ]: Began compiling node model.dbt_project.dim_date
+[0m18:48:02.092856 [debug] [Thread-2  ]: Began compiling node model.dbt_project.stg_customers
+[0m18:48:02.097193 [debug] [Thread-1  ]: Writing injected SQL for node "model.dbt_project.dim_date"
+[0m18:48:02.099091 [debug] [Thread-2  ]: Writing injected SQL for node "model.dbt_project.stg_customers"
+[0m18:48:02.100007 [debug] [Thread-2  ]: Began executing node model.dbt_project.stg_customers
+[0m18:48:02.100222 [debug] [Thread-1  ]: Began executing node model.dbt_project.dim_date
+[0m18:48:02.100626 [debug] [Thread-2  ]: Finished running node model.dbt_project.stg_customers
+[0m18:48:02.100969 [debug] [Thread-1  ]: Finished running node model.dbt_project.dim_date
+[0m18:48:02.101193 [debug] [Thread-2  ]: Began running node model.dbt_project.stg_orders
+[0m18:48:02.101514 [debug] [Thread-1  ]: Began running node model.dbt_project.stg_products
+[0m18:48:02.101782 [debug] [Thread-2  ]: Re-using an available connection from the pool (formerly model.dbt_project.stg_customers, now model.dbt_project.stg_orders)
+[0m18:48:02.102021 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.dbt_project.dim_date, now model.dbt_project.stg_products)
+[0m18:48:02.102233 [debug] [Thread-2  ]: Began compiling node model.dbt_project.stg_orders
+[0m18:48:02.102437 [debug] [Thread-1  ]: Began compiling node model.dbt_project.stg_products
+[0m18:48:02.104817 [debug] [Thread-2  ]: Writing injected SQL for node "model.dbt_project.stg_orders"
+[0m18:48:02.106575 [debug] [Thread-1  ]: Writing injected SQL for node "model.dbt_project.stg_products"
+[0m18:48:02.107220 [debug] [Thread-1  ]: Began executing node model.dbt_project.stg_products
+[0m18:48:02.107417 [debug] [Thread-2  ]: Began executing node model.dbt_project.stg_orders
+[0m18:48:02.107785 [debug] [Thread-1  ]: Finished running node model.dbt_project.stg_products
+[0m18:48:02.108143 [debug] [Thread-2  ]: Finished running node model.dbt_project.stg_orders
+[0m18:48:02.108376 [debug] [Thread-1  ]: Began running node test.dbt_project.source_not_null_raw_customers_id.bb348d55ac
+[0m18:48:02.108683 [debug] [Thread-2  ]: Began running node test.dbt_project.source_not_null_raw_orders_id.f232a64478
+[0m18:48:02.108989 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.dbt_project.stg_products, now test.dbt_project.source_not_null_raw_customers_id.bb348d55ac)
+[0m18:48:02.109218 [debug] [Thread-2  ]: Re-using an available connection from the pool (formerly model.dbt_project.stg_orders, now test.dbt_project.source_not_null_raw_orders_id.f232a64478)
+[0m18:48:02.109424 [debug] [Thread-1  ]: Began compiling node test.dbt_project.source_not_null_raw_customers_id.bb348d55ac
+[0m18:48:02.109620 [debug] [Thread-2  ]: Began compiling node test.dbt_project.source_not_null_raw_orders_id.f232a64478
+[0m18:48:02.116176 [debug] [Thread-1  ]: Writing injected SQL for node "test.dbt_project.source_not_null_raw_customers_id.bb348d55ac"
+[0m18:48:02.118652 [debug] [Thread-2  ]: Writing injected SQL for node "test.dbt_project.source_not_null_raw_orders_id.f232a64478"
+[0m18:48:02.119190 [debug] [Thread-1  ]: Began executing node test.dbt_project.source_not_null_raw_customers_id.bb348d55ac
+[0m18:48:02.119397 [debug] [Thread-2  ]: Began executing node test.dbt_project.source_not_null_raw_orders_id.f232a64478
+[0m18:48:02.119789 [debug] [Thread-1  ]: Finished running node test.dbt_project.source_not_null_raw_customers_id.bb348d55ac
+[0m18:48:02.120141 [debug] [Thread-2  ]: Finished running node test.dbt_project.source_not_null_raw_orders_id.f232a64478
+[0m18:48:02.120375 [debug] [Thread-1  ]: Began running node test.dbt_project.source_not_null_raw_products_id.ffffd25704
+[0m18:48:02.120629 [debug] [Thread-2  ]: Began running node model.dbt_project.dim_customers
+[0m18:48:02.120884 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly test.dbt_project.source_not_null_raw_customers_id.bb348d55ac, now test.dbt_project.source_not_null_raw_products_id.ffffd25704)
+[0m18:48:02.121162 [debug] [Thread-2  ]: Re-using an available connection from the pool (formerly test.dbt_project.source_not_null_raw_orders_id.f232a64478, now model.dbt_project.dim_customers)
+[0m18:48:02.121405 [debug] [Thread-1  ]: Began compiling node test.dbt_project.source_not_null_raw_products_id.ffffd25704
+[0m18:48:02.121621 [debug] [Thread-2  ]: Began compiling node model.dbt_project.dim_customers
+[0m18:48:02.124165 [debug] [Thread-1  ]: Writing injected SQL for node "test.dbt_project.source_not_null_raw_products_id.ffffd25704"
+[0m18:48:02.125792 [debug] [Thread-2  ]: Writing injected SQL for node "model.dbt_project.dim_customers"
+[0m18:48:02.126342 [debug] [Thread-1  ]: Began executing node test.dbt_project.source_not_null_raw_products_id.ffffd25704
+[0m18:48:02.126741 [debug] [Thread-1  ]: Finished running node test.dbt_project.source_not_null_raw_products_id.ffffd25704
+[0m18:48:02.126961 [debug] [Thread-2  ]: Began executing node model.dbt_project.dim_customers
+[0m18:48:02.127227 [debug] [Thread-1  ]: Began running node test.dbt_project.not_null_stg_customers_customer_id.e2cfb1f9aa
+[0m18:48:02.127603 [debug] [Thread-2  ]: Finished running node model.dbt_project.dim_customers
+[0m18:48:02.127834 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly test.dbt_project.source_not_null_raw_products_id.ffffd25704, now test.dbt_project.not_null_stg_customers_customer_id.e2cfb1f9aa)
+[0m18:48:02.128070 [debug] [Thread-2  ]: Began running node test.dbt_project.unique_stg_customers_customer_id.c7614daada
+[0m18:48:02.128286 [debug] [Thread-1  ]: Began compiling node test.dbt_project.not_null_stg_customers_customer_id.e2cfb1f9aa
+[0m18:48:02.128507 [debug] [Thread-2  ]: Re-using an available connection from the pool (formerly model.dbt_project.dim_customers, now test.dbt_project.unique_stg_customers_customer_id.c7614daada)
+[0m18:48:02.130729 [debug] [Thread-1  ]: Writing injected SQL for node "test.dbt_project.not_null_stg_customers_customer_id.e2cfb1f9aa"
+[0m18:48:02.130957 [debug] [Thread-2  ]: Began compiling node test.dbt_project.unique_stg_customers_customer_id.c7614daada
+[0m18:48:02.135039 [debug] [Thread-2  ]: Writing injected SQL for node "test.dbt_project.unique_stg_customers_customer_id.c7614daada"
+[0m18:48:02.135360 [debug] [Thread-1  ]: Began executing node test.dbt_project.not_null_stg_customers_customer_id.e2cfb1f9aa
+[0m18:48:02.135706 [debug] [Thread-1  ]: Finished running node test.dbt_project.not_null_stg_customers_customer_id.e2cfb1f9aa
+[0m18:48:02.135911 [debug] [Thread-1  ]: Began running node model.dbt_project.dim_products
+[0m18:48:02.136170 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly test.dbt_project.not_null_stg_customers_customer_id.e2cfb1f9aa, now model.dbt_project.dim_products)
+[0m18:48:02.136365 [debug] [Thread-2  ]: Began executing node test.dbt_project.unique_stg_customers_customer_id.c7614daada
+[0m18:48:02.136555 [debug] [Thread-1  ]: Began compiling node model.dbt_project.dim_products
+[0m18:48:02.136874 [debug] [Thread-2  ]: Finished running node test.dbt_project.unique_stg_customers_customer_id.c7614daada
+[0m18:48:02.138385 [debug] [Thread-1  ]: Writing injected SQL for node "model.dbt_project.dim_products"
+[0m18:48:02.138612 [debug] [Thread-2  ]: Began running node test.dbt_project.not_null_stg_products_product_id.6373b0acf3
+[0m18:48:02.138896 [debug] [Thread-2  ]: Re-using an available connection from the pool (formerly test.dbt_project.unique_stg_customers_customer_id.c7614daada, now test.dbt_project.not_null_stg_products_product_id.6373b0acf3)
+[0m18:48:02.139117 [debug] [Thread-2  ]: Began compiling node test.dbt_project.not_null_stg_products_product_id.6373b0acf3
+[0m18:48:02.141291 [debug] [Thread-2  ]: Writing injected SQL for node "test.dbt_project.not_null_stg_products_product_id.6373b0acf3"
+[0m18:48:02.141491 [debug] [Thread-1  ]: Began executing node model.dbt_project.dim_products
+[0m18:48:02.141866 [debug] [Thread-1  ]: Finished running node model.dbt_project.dim_products
+[0m18:48:02.142082 [debug] [Thread-1  ]: Began running node test.dbt_project.unique_stg_products_product_id.7d950a1467
+[0m18:48:02.142266 [debug] [Thread-2  ]: Began executing node test.dbt_project.not_null_stg_products_product_id.6373b0acf3
+[0m18:48:02.142506 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.dbt_project.dim_products, now test.dbt_project.unique_stg_products_product_id.7d950a1467)
+[0m18:48:02.142829 [debug] [Thread-2  ]: Finished running node test.dbt_project.not_null_stg_products_product_id.6373b0acf3
+[0m18:48:02.143018 [debug] [Thread-1  ]: Began compiling node test.dbt_project.unique_stg_products_product_id.7d950a1467
+[0m18:48:02.143232 [debug] [Thread-2  ]: Began running node model.dbt_project.fct_orders
+[0m18:48:02.145417 [debug] [Thread-1  ]: Writing injected SQL for node "test.dbt_project.unique_stg_products_product_id.7d950a1467"
+[0m18:48:02.145665 [debug] [Thread-2  ]: Re-using an available connection from the pool (formerly test.dbt_project.not_null_stg_products_product_id.6373b0acf3, now model.dbt_project.fct_orders)
+[0m18:48:02.145975 [debug] [Thread-2  ]: Began compiling node model.dbt_project.fct_orders
+[0m18:48:02.147575 [debug] [Thread-2  ]: Writing injected SQL for node "model.dbt_project.fct_orders"
+[0m18:48:02.147814 [debug] [Thread-1  ]: Began executing node test.dbt_project.unique_stg_products_product_id.7d950a1467
+[0m18:48:02.148285 [debug] [Thread-1  ]: Finished running node test.dbt_project.unique_stg_products_product_id.7d950a1467
+[0m18:48:02.148534 [debug] [Thread-1  ]: Began running node model.dbt_project.int_customer_orders
+[0m18:48:02.148755 [debug] [Thread-2  ]: Began executing node model.dbt_project.fct_orders
+[0m18:48:02.148994 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly test.dbt_project.unique_stg_products_product_id.7d950a1467, now model.dbt_project.int_customer_orders)
+[0m18:48:02.149344 [debug] [Thread-2  ]: Finished running node model.dbt_project.fct_orders
+[0m18:48:02.149543 [debug] [Thread-1  ]: Began compiling node model.dbt_project.int_customer_orders
+[0m18:48:02.149762 [debug] [Thread-2  ]: Began running node model.dbt_project.int_product_sales
+[0m18:48:02.152899 [debug] [Thread-1  ]: Writing injected SQL for node "model.dbt_project.int_customer_orders"
+[0m18:48:02.153158 [debug] [Thread-2  ]: Re-using an available connection from the pool (formerly model.dbt_project.fct_orders, now model.dbt_project.int_product_sales)
+[0m18:48:02.153408 [debug] [Thread-2  ]: Began compiling node model.dbt_project.int_product_sales
+[0m18:48:02.156387 [debug] [Thread-2  ]: Writing injected SQL for node "model.dbt_project.int_product_sales"
+[0m18:48:02.156651 [debug] [Thread-1  ]: Began executing node model.dbt_project.int_customer_orders
+[0m18:48:02.157009 [debug] [Thread-1  ]: Finished running node model.dbt_project.int_customer_orders
+[0m18:48:02.157198 [debug] [Thread-2  ]: Began executing node model.dbt_project.int_product_sales
+[0m18:48:02.157403 [debug] [Thread-1  ]: Began running node test.dbt_project.not_null_stg_orders_order_id.81cfe2fe64
+[0m18:48:02.157752 [debug] [Thread-2  ]: Finished running node model.dbt_project.int_product_sales
+[0m18:48:02.157971 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.dbt_project.int_customer_orders, now test.dbt_project.not_null_stg_orders_order_id.81cfe2fe64)
+[0m18:48:02.158191 [debug] [Thread-2  ]: Began running node test.dbt_project.unique_stg_orders_order_id.e3b841c71a
+[0m18:48:02.158440 [debug] [Thread-1  ]: Began compiling node test.dbt_project.not_null_stg_orders_order_id.81cfe2fe64
+[0m18:48:02.158650 [debug] [Thread-2  ]: Re-using an available connection from the pool (formerly model.dbt_project.int_product_sales, now test.dbt_project.unique_stg_orders_order_id.e3b841c71a)
+[0m18:48:02.160826 [debug] [Thread-1  ]: Writing injected SQL for node "test.dbt_project.not_null_stg_orders_order_id.81cfe2fe64"
+[0m18:48:02.161042 [debug] [Thread-2  ]: Began compiling node test.dbt_project.unique_stg_orders_order_id.e3b841c71a
+[0m18:48:02.163943 [debug] [Thread-2  ]: Writing injected SQL for node "test.dbt_project.unique_stg_orders_order_id.e3b841c71a"
+[0m18:48:02.164242 [debug] [Thread-1  ]: Began executing node test.dbt_project.not_null_stg_orders_order_id.81cfe2fe64
+[0m18:48:02.164613 [debug] [Thread-1  ]: Finished running node test.dbt_project.not_null_stg_orders_order_id.81cfe2fe64
+[0m18:48:02.164833 [debug] [Thread-1  ]: Began running node model.dbt_project.fct_sales
+[0m18:48:02.165013 [debug] [Thread-2  ]: Began executing node test.dbt_project.unique_stg_orders_order_id.e3b841c71a
+[0m18:48:02.165245 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly test.dbt_project.not_null_stg_orders_order_id.81cfe2fe64, now model.dbt_project.fct_sales)
+[0m18:48:02.165570 [debug] [Thread-2  ]: Finished running node test.dbt_project.unique_stg_orders_order_id.e3b841c71a
+[0m18:48:02.165761 [debug] [Thread-1  ]: Began compiling node model.dbt_project.fct_sales
+[0m18:48:02.167241 [debug] [Thread-1  ]: Writing injected SQL for node "model.dbt_project.fct_sales"
+[0m18:48:02.167589 [debug] [Thread-1  ]: Began executing node model.dbt_project.fct_sales
+[0m18:48:02.167915 [debug] [Thread-1  ]: Finished running node model.dbt_project.fct_sales
+[0m18:48:02.168366 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m18:48:02.168544 [debug] [MainThread]: Connection 'model.dbt_project.fct_sales' was properly closed.
+[0m18:48:02.168699 [debug] [MainThread]: Connection 'test.dbt_project.unique_stg_orders_order_id.e3b841c71a' was properly closed.
+[0m18:48:02.170007 [debug] [MainThread]: Command end result
+[0m18:48:02.184311 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/maria/Documents/GitHub/extra/dbt_assistant/dbt_project/target/manifest.json
+[0m18:48:02.185326 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/maria/Documents/GitHub/extra/dbt_assistant/dbt_project/target/semantic_manifest.json
+[0m18:48:02.190193 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/maria/Documents/GitHub/extra/dbt_assistant/dbt_project/target/run_results.json
+[0m18:48:02.198267 [debug] [MainThread]: Resource report: {"command_name": "compile", "command_success": true, "command_wall_clock_time": 1.212585, "process_in_blocks": "0", "process_kernel_time": 0.247559, "process_mem_max_rss": "126648320", "process_out_blocks": "0", "process_user_time": 1.55341}
+[0m18:48:02.198646 [debug] [MainThread]: Command `dbt compile` succeeded at 18:48:02.198597 after 1.21 seconds
+[0m18:48:02.198876 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1103903d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x110f49190>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1120b1ac0>]}
+[0m18:48:02.199103 [debug] [MainThread]: Flushing usage events
+[0m18:48:02.397254 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m11:45:24.999619 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107494050>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11091bd90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11091bed0>]}
+
+
+============================== 11:45:25.003075 | fd0948fe-6881-4dd9-97b3-c37a21f7371f ==============================
+[0m11:45:25.003075 [info ] [MainThread]: Running with dbt=1.10.9
+[0m11:45:25.003442 [debug] [MainThread]: running dbt with arguments {'warn_error': 'None', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'invocation_command': 'dbt compile --profiles-dir config --target dev', 'log_path': '/Users/maria/Documents/GitHub/extra/dbt_assistant/dbt_project/logs', 'quiet': 'False', 'fail_fast': 'False', 'send_anonymous_usage_stats': 'True', 'no_print': 'None', 'profiles_dir': 'config', 'empty': 'False', 'indirect_selection': 'eager', 'write_json': 'True', 'use_colors': 'True', 'cache_selected_only': 'False', 'printer_width': '80', 'partial_parse': 'True', 'debug': 'False', 'introspect': 'True', 'log_cache_events': 'False', 'log_format': 'default', 'version_check': 'True', 'use_experimental_parser': 'False'}
+[0m11:45:25.006265 [error] [MainThread]: Encountered an error:
+Parsing Error
+  Env var required but not provided: 'POSTGRES_HOST'
+[0m11:45:25.009227 [debug] [MainThread]: Resource report: {"command_name": "compile", "command_success": false, "command_wall_clock_time": 0.054466292, "process_in_blocks": "0", "process_kernel_time": 0.147989, "process_mem_max_rss": "105627648", "process_out_blocks": "0", "process_user_time": 0.738979}
+[0m11:45:25.009622 [debug] [MainThread]: Command `dbt compile` failed at 11:45:25.009559 after 0.06 seconds
+[0m11:45:25.009827 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11082b950>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11096f1d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1106d9bf0>]}
+[0m11:45:25.010031 [debug] [MainThread]: Flushing usage events
+[0m11:45:25.187030 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m11:46:02.722256 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1091e4050>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a61bd90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a61bed0>]}
+
+
+============================== 11:46:02.724798 | fde16029-db33-409b-bf24-08cab23dac2f ==============================
+[0m11:46:02.724798 [info ] [MainThread]: Running with dbt=1.10.9
+[0m11:46:02.725122 [debug] [MainThread]: running dbt with arguments {'cache_selected_only': 'False', 'quiet': 'False', 'log_format': 'default', 'use_experimental_parser': 'False', 'target_path': 'None', 'no_print': 'None', 'log_cache_events': 'False', 'printer_width': '80', 'static_parser': 'True', 'warn_error': 'None', 'partial_parse': 'True', 'debug': 'False', 'introspect': 'True', 'empty': 'False', 'indirect_selection': 'eager', 'use_colors': 'True', 'send_anonymous_usage_stats': 'True', 'invocation_command': 'dbt compile --profiles-dir config --target dev', 'profiles_dir': 'config', 'fail_fast': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'write_json': 'True', 'log_path': '/Users/maria/Documents/GitHub/extra/dbt_assistant/dbt_project/logs', 'version_check': 'True'}
+[0m11:46:04.102448 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'fde16029-db33-409b-bf24-08cab23dac2f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10954b820>]}
+[0m11:46:04.132747 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'fde16029-db33-409b-bf24-08cab23dac2f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a3dabe0>]}
+[0m11:46:04.133435 [info ] [MainThread]: Registered adapter: postgres=1.9.0
+[0m11:46:04.191489 [debug] [MainThread]: checksum: 29ea1ce3a69c23697e5b867170111b74ec8b8d94cb5dc8274e6fc1c7cd223092, vars: {}, profile: , target: dev, version: 1.10.9
+[0m11:46:04.248172 [info ] [MainThread]: Unable to do partial parsing because of a version mismatch
+[0m11:46:04.248506 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'fde16029-db33-409b-bf24-08cab23dac2f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c578850>]}
+[0m11:46:04.843013 [error] [MainThread]: Encountered an error:
+Compilation Error
+  Model 'model.dbt_project.stg_refunds' (models/bronze/stg_refunds.sql) depends on a source named 'raw.refunds' which was not found
+[0m11:46:04.844798 [debug] [MainThread]: Resource report: {"command_name": "compile", "command_success": false, "command_wall_clock_time": 2.1626146, "process_in_blocks": "0", "process_kernel_time": 0.187511, "process_mem_max_rss": "124796928", "process_out_blocks": "0", "process_user_time": 1.471611}
+[0m11:46:04.845046 [debug] [MainThread]: Command `dbt compile` failed at 11:46:04.845001 after 2.16 seconds
+[0m11:46:04.845234 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a6c18b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c5a34d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a5c7e70>]}
+[0m11:46:04.845417 [debug] [MainThread]: Flushing usage events
+[0m11:46:04.967731 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m11:49:38.730178 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x119df4050>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11b21bd90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11b21bed0>]}
+
+
+============================== 11:49:38.732807 | 287bef34-f47a-4786-9111-af6ba02318b8 ==============================
+[0m11:49:38.732807 [info ] [MainThread]: Running with dbt=1.10.9
+[0m11:49:38.733140 [debug] [MainThread]: running dbt with arguments {'fail_fast': 'False', 'profiles_dir': 'config', 'quiet': 'False', 'no_print': 'None', 'write_json': 'True', 'log_path': '/Users/maria/Documents/GitHub/extra/dbt_assistant/dbt_project/logs', 'empty': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'target_path': 'None', 'log_format': 'default', 'introspect': 'True', 'use_colors': 'True', 'send_anonymous_usage_stats': 'True', 'invocation_command': 'dbt compile --profiles-dir config --target dev', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'use_experimental_parser': 'False', 'printer_width': '80', 'version_check': 'True', 'cache_selected_only': 'False', 'log_cache_events': 'False', 'debug': 'False', 'static_parser': 'True', 'indirect_selection': 'eager'}
+[0m11:49:38.827539 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '287bef34-f47a-4786-9111-af6ba02318b8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11a24b820>]}
+[0m11:49:38.858069 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '287bef34-f47a-4786-9111-af6ba02318b8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11b0dabe0>]}
+[0m11:49:38.859645 [info ] [MainThread]: Registered adapter: postgres=1.9.0
+[0m11:49:38.916320 [debug] [MainThread]: checksum: 29ea1ce3a69c23697e5b867170111b74ec8b8d94cb5dc8274e6fc1c7cd223092, vars: {}, profile: , target: dev, version: 1.10.9
+[0m11:49:38.974664 [info ] [MainThread]: Unable to do partial parsing because of a version mismatch
+[0m11:49:38.974995 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '287bef34-f47a-4786-9111-af6ba02318b8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11bf50850>]}
+[0m11:49:39.567800 [error] [MainThread]: Encountered an error:
+Compilation Error
+  Model 'model.dbt_project.stg_refunds' (models/bronze/stg_refunds.sql) depends on a source named 'raw.refunds' which was not found
+[0m11:49:39.569915 [debug] [MainThread]: Resource report: {"command_name": "compile", "command_success": false, "command_wall_clock_time": 0.8814738, "process_in_blocks": "0", "process_kernel_time": 0.178268, "process_mem_max_rss": "124289024", "process_out_blocks": "0", "process_user_time": 1.449894}
+[0m11:49:39.570209 [debug] [MainThread]: Command `dbt compile` failed at 11:49:39.570160 after 0.88 seconds
+[0m11:49:39.570418 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11b2bd8b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11bf774d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11b1c7e70>]}
+[0m11:49:39.570616 [debug] [MainThread]: Flushing usage events
+[0m11:49:39.745231 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m11:49:52.598560 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10523c050>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10661bd90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10661bed0>]}
+
+
+============================== 11:49:52.601215 | bc735f72-c221-4082-b78a-438a59164da7 ==============================
+[0m11:49:52.601215 [info ] [MainThread]: Running with dbt=1.10.9
+[0m11:49:52.601553 [debug] [MainThread]: running dbt with arguments {'no_print': 'None', 'cache_selected_only': 'False', 'write_json': 'True', 'profiles_dir': 'config', 'log_cache_events': 'False', 'use_colors': 'True', 'printer_width': '80', 'log_path': '/Users/maria/Documents/GitHub/extra/dbt_assistant/dbt_project/logs', 'static_parser': 'True', 'warn_error': 'None', 'send_anonymous_usage_stats': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'fail_fast': 'False', 'indirect_selection': 'eager', 'quiet': 'False', 'use_experimental_parser': 'False', 'partial_parse': 'True', 'introspect': 'True', 'debug': 'False', 'empty': 'False', 'version_check': 'True', 'target_path': 'None', 'invocation_command': 'dbt compile --profiles-dir config --target dev', 'log_format': 'default'}
+[0m11:49:52.697648 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'bc735f72-c221-4082-b78a-438a59164da7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10554b820>]}
+[0m11:49:52.727897 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'bc735f72-c221-4082-b78a-438a59164da7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1064dabe0>]}
+[0m11:49:52.729456 [info ] [MainThread]: Registered adapter: postgres=1.9.0
+[0m11:49:52.785398 [debug] [MainThread]: checksum: 29ea1ce3a69c23697e5b867170111b74ec8b8d94cb5dc8274e6fc1c7cd223092, vars: {}, profile: , target: dev, version: 1.10.9
+[0m11:49:52.843413 [info ] [MainThread]: Unable to do partial parsing because of a version mismatch
+[0m11:49:52.843721 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'bc735f72-c221-4082-b78a-438a59164da7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107518850>]}
+[0m11:49:53.542136 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'bc735f72-c221-4082-b78a-438a59164da7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1066c18b0>]}
+[0m11:49:53.586927 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/maria/Documents/GitHub/extra/dbt_assistant/dbt_project/target/manifest.json
+[0m11:49:53.588415 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/maria/Documents/GitHub/extra/dbt_assistant/dbt_project/target/semantic_manifest.json
+[0m11:49:53.602397 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'bc735f72-c221-4082-b78a-438a59164da7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1065c7d90>]}
+[0m11:49:53.602691 [info ] [MainThread]: Found 15 models, 11 data tests, 4 sources, 434 macros
+[0m11:49:53.602868 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'bc735f72-c221-4082-b78a-438a59164da7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108b8aea0>]}
+[0m11:49:53.604161 [info ] [MainThread]: 
+[0m11:49:53.604344 [info ] [MainThread]: Concurrency: 2 threads (target='dev')
+[0m11:49:53.604491 [info ] [MainThread]: 
+[0m11:49:53.604739 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m11:49:53.607038 [debug] [ThreadPool]: Acquiring new postgres connection 'list_sci_rx_production_transform'
+[0m11:49:53.651349 [debug] [ThreadPool]: Using postgres connection "list_sci_rx_production_transform"
+[0m11:49:53.651636 [debug] [ThreadPool]: On list_sci_rx_production_transform: BEGIN
+[0m11:49:53.651790 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:49:53.676687 [debug] [ThreadPool]: SQL status: BEGIN in 0.025 seconds
+[0m11:49:53.676953 [debug] [ThreadPool]: Using postgres connection "list_sci_rx_production_transform"
+[0m11:49:53.677115 [debug] [ThreadPool]: On list_sci_rx_production_transform: /* {"app": "dbt", "dbt_version": "1.10.9", "profile_name": "dev", "target_name": "dev", "connection_name": "list_sci_rx_production_transform"} */
+select
+      'sci_rx_production' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'transform'
+    union all
+    select
+      'sci_rx_production' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'transform'
+    union all
+    select
+      'sci_rx_production' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'transform'
+  
+[0m11:49:53.711067 [debug] [ThreadPool]: SQL status: SELECT 264 in 0.034 seconds
+[0m11:49:53.714610 [debug] [ThreadPool]: On list_sci_rx_production_transform: ROLLBACK
+[0m11:49:53.715008 [debug] [ThreadPool]: On list_sci_rx_production_transform: Close
+[0m11:49:53.731649 [debug] [MainThread]: Using postgres connection "master"
+[0m11:49:53.731856 [debug] [MainThread]: On master: BEGIN
+[0m11:49:53.731990 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m11:49:53.736442 [debug] [MainThread]: SQL status: BEGIN in 0.004 seconds
+[0m11:49:53.736614 [debug] [MainThread]: Using postgres connection "master"
+[0m11:49:53.736800 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.10.9", "profile_name": "dev", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v', 'm')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m11:49:53.754859 [debug] [MainThread]: SQL status: SELECT 495 in 0.018 seconds
+[0m11:49:53.770403 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'bc735f72-c221-4082-b78a-438a59164da7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108b23890>]}
+[0m11:49:53.770676 [debug] [MainThread]: On master: ROLLBACK
+[0m11:49:53.771051 [debug] [MainThread]: On master: Close
+[0m11:49:53.773034 [debug] [Thread-1 (]: Began running node model.dbt_project.dim_date
+[0m11:49:53.773256 [debug] [Thread-2 (]: Began running node model.dbt_project.stg_customers
+[0m11:49:53.773491 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_sci_rx_production_transform, now model.dbt_project.dim_date)
+[0m11:49:53.773762 [debug] [Thread-2 (]: Acquiring new postgres connection 'model.dbt_project.stg_customers'
+[0m11:49:53.773958 [debug] [Thread-1 (]: Began compiling node model.dbt_project.dim_date
+[0m11:49:53.774145 [debug] [Thread-2 (]: Began compiling node model.dbt_project.stg_customers
+[0m11:49:53.777582 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_project.dim_date"
+[0m11:49:53.779301 [debug] [Thread-2 (]: Writing injected SQL for node "model.dbt_project.stg_customers"
+[0m11:49:53.779809 [debug] [Thread-1 (]: Began executing node model.dbt_project.dim_date
+[0m11:49:53.780144 [debug] [Thread-1 (]: Finished running node model.dbt_project.dim_date
+[0m11:49:53.780319 [debug] [Thread-2 (]: Began executing node model.dbt_project.stg_customers
+[0m11:49:53.780497 [debug] [Thread-1 (]: Began running node model.dbt_project.stg_orders
+[0m11:49:53.780811 [debug] [Thread-2 (]: Finished running node model.dbt_project.stg_customers
+[0m11:49:53.781028 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.dbt_project.dim_date, now model.dbt_project.stg_orders)
+[0m11:49:53.781273 [debug] [Thread-2 (]: Began running node model.dbt_project.stg_products
+[0m11:49:53.781452 [debug] [Thread-1 (]: Began compiling node model.dbt_project.stg_orders
+[0m11:49:53.781705 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.dbt_project.stg_customers, now model.dbt_project.stg_products)
+[0m11:49:53.783127 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_project.stg_orders"
+[0m11:49:53.783326 [debug] [Thread-2 (]: Began compiling node model.dbt_project.stg_products
+[0m11:49:53.784667 [debug] [Thread-2 (]: Writing injected SQL for node "model.dbt_project.stg_products"
+[0m11:49:53.784977 [debug] [Thread-1 (]: Began executing node model.dbt_project.stg_orders
+[0m11:49:53.785311 [debug] [Thread-1 (]: Finished running node model.dbt_project.stg_orders
+[0m11:49:53.785499 [debug] [Thread-1 (]: Began running node model.dbt_project.stg_refunds
+[0m11:49:53.785687 [debug] [Thread-2 (]: Began executing node model.dbt_project.stg_products
+[0m11:49:53.786027 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.dbt_project.stg_orders, now model.dbt_project.stg_refunds)
+[0m11:49:53.786823 [debug] [Thread-2 (]: Finished running node model.dbt_project.stg_products
+[0m11:49:53.787034 [debug] [Thread-1 (]: Began compiling node model.dbt_project.stg_refunds
+[0m11:49:53.787239 [debug] [Thread-2 (]: Began running node test.dbt_project.source_not_null_raw_customers_id.bb348d55ac
+[0m11:49:53.788752 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_project.stg_refunds"
+[0m11:49:53.789095 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.dbt_project.stg_products, now test.dbt_project.source_not_null_raw_customers_id.bb348d55ac)
+[0m11:49:53.789405 [debug] [Thread-2 (]: Began compiling node test.dbt_project.source_not_null_raw_customers_id.bb348d55ac
+[0m11:49:53.796182 [debug] [Thread-2 (]: Writing injected SQL for node "test.dbt_project.source_not_null_raw_customers_id.bb348d55ac"
+[0m11:49:53.796613 [debug] [Thread-1 (]: Began executing node model.dbt_project.stg_refunds
+[0m11:49:53.797005 [debug] [Thread-1 (]: Finished running node model.dbt_project.stg_refunds
+[0m11:49:53.797212 [debug] [Thread-1 (]: Began running node test.dbt_project.source_not_null_raw_orders_id.f232a64478
+[0m11:49:53.797399 [debug] [Thread-2 (]: Began executing node test.dbt_project.source_not_null_raw_customers_id.bb348d55ac
+[0m11:49:53.797657 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.dbt_project.stg_refunds, now test.dbt_project.source_not_null_raw_orders_id.f232a64478)
+[0m11:49:53.798007 [debug] [Thread-2 (]: Finished running node test.dbt_project.source_not_null_raw_customers_id.bb348d55ac
+[0m11:49:53.798184 [debug] [Thread-1 (]: Began compiling node test.dbt_project.source_not_null_raw_orders_id.f232a64478
+[0m11:49:53.798398 [debug] [Thread-2 (]: Began running node test.dbt_project.source_not_null_raw_products_id.ffffd25704
+[0m11:49:53.800706 [debug] [Thread-1 (]: Writing injected SQL for node "test.dbt_project.source_not_null_raw_orders_id.f232a64478"
+[0m11:49:53.800927 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.dbt_project.source_not_null_raw_customers_id.bb348d55ac, now test.dbt_project.source_not_null_raw_products_id.ffffd25704)
+[0m11:49:53.801161 [debug] [Thread-2 (]: Began compiling node test.dbt_project.source_not_null_raw_products_id.ffffd25704
+[0m11:49:53.802876 [debug] [Thread-2 (]: Writing injected SQL for node "test.dbt_project.source_not_null_raw_products_id.ffffd25704"
+[0m11:49:53.803205 [debug] [Thread-1 (]: Began executing node test.dbt_project.source_not_null_raw_orders_id.f232a64478
+[0m11:49:53.803562 [debug] [Thread-1 (]: Finished running node test.dbt_project.source_not_null_raw_orders_id.f232a64478
+[0m11:49:53.803738 [debug] [Thread-2 (]: Began executing node test.dbt_project.source_not_null_raw_products_id.ffffd25704
+[0m11:49:53.803921 [debug] [Thread-1 (]: Began running node test.dbt_project.source_not_null_raw_refunds_customer_id.7f9d6befa4
+[0m11:49:53.804237 [debug] [Thread-2 (]: Finished running node test.dbt_project.source_not_null_raw_products_id.ffffd25704
+[0m11:49:53.804414 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.dbt_project.source_not_null_raw_orders_id.f232a64478, now test.dbt_project.source_not_null_raw_refunds_customer_id.7f9d6befa4)
+[0m11:49:53.804601 [debug] [Thread-2 (]: Began running node test.dbt_project.source_not_null_raw_refunds_order_id.761684d8f9
+[0m11:49:53.804778 [debug] [Thread-1 (]: Began compiling node test.dbt_project.source_not_null_raw_refunds_customer_id.7f9d6befa4
+[0m11:49:53.804949 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.dbt_project.source_not_null_raw_products_id.ffffd25704, now test.dbt_project.source_not_null_raw_refunds_order_id.761684d8f9)
+[0m11:49:53.807015 [debug] [Thread-1 (]: Writing injected SQL for node "test.dbt_project.source_not_null_raw_refunds_customer_id.7f9d6befa4"
+[0m11:49:53.807209 [debug] [Thread-2 (]: Began compiling node test.dbt_project.source_not_null_raw_refunds_order_id.761684d8f9
+[0m11:49:53.808974 [debug] [Thread-2 (]: Writing injected SQL for node "test.dbt_project.source_not_null_raw_refunds_order_id.761684d8f9"
+[0m11:49:53.809278 [debug] [Thread-1 (]: Began executing node test.dbt_project.source_not_null_raw_refunds_customer_id.7f9d6befa4
+[0m11:49:53.809624 [debug] [Thread-1 (]: Finished running node test.dbt_project.source_not_null_raw_refunds_customer_id.7f9d6befa4
+[0m11:49:53.809826 [debug] [Thread-1 (]: Began running node model.dbt_project.dim_customers
+[0m11:49:53.810000 [debug] [Thread-2 (]: Began executing node test.dbt_project.source_not_null_raw_refunds_order_id.761684d8f9
+[0m11:49:53.810200 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.dbt_project.source_not_null_raw_refunds_customer_id.7f9d6befa4, now model.dbt_project.dim_customers)
+[0m11:49:53.810485 [debug] [Thread-2 (]: Finished running node test.dbt_project.source_not_null_raw_refunds_order_id.761684d8f9
+[0m11:49:53.810647 [debug] [Thread-1 (]: Began compiling node model.dbt_project.dim_customers
+[0m11:49:53.810833 [debug] [Thread-2 (]: Began running node test.dbt_project.not_null_stg_customers_customer_id.e2cfb1f9aa
+[0m11:49:53.811984 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_project.dim_customers"
+[0m11:49:53.812198 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.dbt_project.source_not_null_raw_refunds_order_id.761684d8f9, now test.dbt_project.not_null_stg_customers_customer_id.e2cfb1f9aa)
+[0m11:49:53.812436 [debug] [Thread-2 (]: Began compiling node test.dbt_project.not_null_stg_customers_customer_id.e2cfb1f9aa
+[0m11:49:53.814752 [debug] [Thread-2 (]: Writing injected SQL for node "test.dbt_project.not_null_stg_customers_customer_id.e2cfb1f9aa"
+[0m11:49:53.815038 [debug] [Thread-1 (]: Began executing node model.dbt_project.dim_customers
+[0m11:49:53.815359 [debug] [Thread-1 (]: Finished running node model.dbt_project.dim_customers
+[0m11:49:53.815558 [debug] [Thread-1 (]: Began running node test.dbt_project.unique_stg_customers_customer_id.c7614daada
+[0m11:49:53.815748 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.dbt_project.dim_customers, now test.dbt_project.unique_stg_customers_customer_id.c7614daada)
+[0m11:49:53.815927 [debug] [Thread-2 (]: Began executing node test.dbt_project.not_null_stg_customers_customer_id.e2cfb1f9aa
+[0m11:49:53.816114 [debug] [Thread-1 (]: Began compiling node test.dbt_project.unique_stg_customers_customer_id.c7614daada
+[0m11:49:53.816386 [debug] [Thread-2 (]: Finished running node test.dbt_project.not_null_stg_customers_customer_id.e2cfb1f9aa
+[0m11:49:53.819264 [debug] [Thread-1 (]: Writing injected SQL for node "test.dbt_project.unique_stg_customers_customer_id.c7614daada"
+[0m11:49:53.819481 [debug] [Thread-2 (]: Began running node model.dbt_project.fct_orders
+[0m11:49:53.819720 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.dbt_project.not_null_stg_customers_customer_id.e2cfb1f9aa, now model.dbt_project.fct_orders)
+[0m11:49:53.819910 [debug] [Thread-2 (]: Began compiling node model.dbt_project.fct_orders
+[0m11:49:53.820991 [debug] [Thread-2 (]: Writing injected SQL for node "model.dbt_project.fct_orders"
+[0m11:49:53.821182 [debug] [Thread-1 (]: Began executing node test.dbt_project.unique_stg_customers_customer_id.c7614daada
+[0m11:49:53.821491 [debug] [Thread-1 (]: Finished running node test.dbt_project.unique_stg_customers_customer_id.c7614daada
+[0m11:49:53.821671 [debug] [Thread-1 (]: Began running node model.dbt_project.int_customer_orders
+[0m11:49:53.821861 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.dbt_project.unique_stg_customers_customer_id.c7614daada, now model.dbt_project.int_customer_orders)
+[0m11:49:53.822047 [debug] [Thread-1 (]: Began compiling node model.dbt_project.int_customer_orders
+[0m11:49:53.824546 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_project.int_customer_orders"
+[0m11:49:53.824748 [debug] [Thread-2 (]: Began executing node model.dbt_project.fct_orders
+[0m11:49:53.825040 [debug] [Thread-2 (]: Finished running node model.dbt_project.fct_orders
+[0m11:49:53.825215 [debug] [Thread-2 (]: Began running node test.dbt_project.not_null_stg_orders_order_id.81cfe2fe64
+[0m11:49:53.825407 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.dbt_project.fct_orders, now test.dbt_project.not_null_stg_orders_order_id.81cfe2fe64)
+[0m11:49:53.825588 [debug] [Thread-2 (]: Began compiling node test.dbt_project.not_null_stg_orders_order_id.81cfe2fe64
+[0m11:49:53.827331 [debug] [Thread-2 (]: Writing injected SQL for node "test.dbt_project.not_null_stg_orders_order_id.81cfe2fe64"
+[0m11:49:53.827602 [debug] [Thread-1 (]: Began executing node model.dbt_project.int_customer_orders
+[0m11:49:53.827903 [debug] [Thread-1 (]: Finished running node model.dbt_project.int_customer_orders
+[0m11:49:53.828076 [debug] [Thread-1 (]: Began running node test.dbt_project.unique_stg_orders_order_id.e3b841c71a
+[0m11:49:53.828261 [debug] [Thread-2 (]: Began executing node test.dbt_project.not_null_stg_orders_order_id.81cfe2fe64
+[0m11:49:53.828423 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.dbt_project.int_customer_orders, now test.dbt_project.unique_stg_orders_order_id.e3b841c71a)
+[0m11:49:53.828742 [debug] [Thread-2 (]: Finished running node test.dbt_project.not_null_stg_orders_order_id.81cfe2fe64
+[0m11:49:53.828904 [debug] [Thread-1 (]: Began compiling node test.dbt_project.unique_stg_orders_order_id.e3b841c71a
+[0m11:49:53.829088 [debug] [Thread-2 (]: Began running node model.dbt_project.dim_category
+[0m11:49:53.832720 [debug] [Thread-1 (]: Writing injected SQL for node "test.dbt_project.unique_stg_orders_order_id.e3b841c71a"
+[0m11:49:53.832938 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.dbt_project.not_null_stg_orders_order_id.81cfe2fe64, now model.dbt_project.dim_category)
+[0m11:49:53.833157 [debug] [Thread-2 (]: Began compiling node model.dbt_project.dim_category
+[0m11:49:53.834257 [debug] [Thread-2 (]: Writing injected SQL for node "model.dbt_project.dim_category"
+[0m11:49:53.834552 [debug] [Thread-1 (]: Began executing node test.dbt_project.unique_stg_orders_order_id.e3b841c71a
+[0m11:49:53.834874 [debug] [Thread-1 (]: Finished running node test.dbt_project.unique_stg_orders_order_id.e3b841c71a
+[0m11:49:53.835061 [debug] [Thread-1 (]: Began running node model.dbt_project.dim_products
+[0m11:49:53.835273 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.dbt_project.unique_stg_orders_order_id.e3b841c71a, now model.dbt_project.dim_products)
+[0m11:49:53.835450 [debug] [Thread-2 (]: Began executing node model.dbt_project.dim_category
+[0m11:49:53.835613 [debug] [Thread-1 (]: Began compiling node model.dbt_project.dim_products
+[0m11:49:53.835900 [debug] [Thread-2 (]: Finished running node model.dbt_project.dim_category
+[0m11:49:53.837112 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_project.dim_products"
+[0m11:49:53.837340 [debug] [Thread-2 (]: Began running node model.dbt_project.int_product_sales
+[0m11:49:53.837585 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.dbt_project.dim_category, now model.dbt_project.int_product_sales)
+[0m11:49:53.837769 [debug] [Thread-2 (]: Began compiling node model.dbt_project.int_product_sales
+[0m11:49:53.840340 [debug] [Thread-2 (]: Writing injected SQL for node "model.dbt_project.int_product_sales"
+[0m11:49:53.840648 [debug] [Thread-1 (]: Began executing node model.dbt_project.dim_products
+[0m11:49:53.840983 [debug] [Thread-1 (]: Finished running node model.dbt_project.dim_products
+[0m11:49:53.841164 [debug] [Thread-1 (]: Began running node test.dbt_project.not_null_stg_products_product_id.6373b0acf3
+[0m11:49:53.841342 [debug] [Thread-2 (]: Began executing node model.dbt_project.int_product_sales
+[0m11:49:53.841522 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.dbt_project.dim_products, now test.dbt_project.not_null_stg_products_product_id.6373b0acf3)
+[0m11:49:53.841822 [debug] [Thread-2 (]: Finished running node model.dbt_project.int_product_sales
+[0m11:49:53.841984 [debug] [Thread-1 (]: Began compiling node test.dbt_project.not_null_stg_products_product_id.6373b0acf3
+[0m11:49:53.842173 [debug] [Thread-2 (]: Began running node test.dbt_project.unique_stg_products_product_id.7d950a1467
+[0m11:49:53.843960 [debug] [Thread-1 (]: Writing injected SQL for node "test.dbt_project.not_null_stg_products_product_id.6373b0acf3"
+[0m11:49:53.844189 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.dbt_project.int_product_sales, now test.dbt_project.unique_stg_products_product_id.7d950a1467)
+[0m11:49:53.844391 [debug] [Thread-2 (]: Began compiling node test.dbt_project.unique_stg_products_product_id.7d950a1467
+[0m11:49:53.846202 [debug] [Thread-2 (]: Writing injected SQL for node "test.dbt_project.unique_stg_products_product_id.7d950a1467"
+[0m11:49:53.846499 [debug] [Thread-1 (]: Began executing node test.dbt_project.not_null_stg_products_product_id.6373b0acf3
+[0m11:49:53.846853 [debug] [Thread-1 (]: Finished running node test.dbt_project.not_null_stg_products_product_id.6373b0acf3
+[0m11:49:53.847053 [debug] [Thread-1 (]: Began running node model.dbt_project.fct_refunds
+[0m11:49:53.847236 [debug] [Thread-2 (]: Began executing node test.dbt_project.unique_stg_products_product_id.7d950a1467
+[0m11:49:53.847422 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.dbt_project.not_null_stg_products_product_id.6373b0acf3, now model.dbt_project.fct_refunds)
+[0m11:49:53.847733 [debug] [Thread-2 (]: Finished running node test.dbt_project.unique_stg_products_product_id.7d950a1467
+[0m11:49:53.847925 [debug] [Thread-1 (]: Began compiling node model.dbt_project.fct_refunds
+[0m11:49:53.848150 [debug] [Thread-2 (]: Began running node model.dbt_project.int_customer_lifetime_value
+[0m11:49:53.849713 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_project.fct_refunds"
+[0m11:49:53.849918 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.dbt_project.unique_stg_products_product_id.7d950a1467, now model.dbt_project.int_customer_lifetime_value)
+[0m11:49:53.850149 [debug] [Thread-2 (]: Began compiling node model.dbt_project.int_customer_lifetime_value
+[0m11:49:53.851303 [debug] [Thread-2 (]: Writing injected SQL for node "model.dbt_project.int_customer_lifetime_value"
+[0m11:49:53.851712 [debug] [Thread-2 (]: Began executing node model.dbt_project.int_customer_lifetime_value
+[0m11:49:53.851884 [debug] [Thread-1 (]: Began executing node model.dbt_project.fct_refunds
+[0m11:49:53.852214 [debug] [Thread-2 (]: Finished running node model.dbt_project.int_customer_lifetime_value
+[0m11:49:53.852512 [debug] [Thread-1 (]: Finished running node model.dbt_project.fct_refunds
+[0m11:49:53.852705 [debug] [Thread-2 (]: Began running node model.dbt_project.fct_sales
+[0m11:49:53.852913 [debug] [Thread-1 (]: Began running node model.dbt_project.int_order_product_count
+[0m11:49:53.853106 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.dbt_project.int_customer_lifetime_value, now model.dbt_project.fct_sales)
+[0m11:49:53.853291 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.dbt_project.fct_refunds, now model.dbt_project.int_order_product_count)
+[0m11:49:53.853468 [debug] [Thread-2 (]: Began compiling node model.dbt_project.fct_sales
+[0m11:49:53.853644 [debug] [Thread-1 (]: Began compiling node model.dbt_project.int_order_product_count
+[0m11:49:53.854888 [debug] [Thread-2 (]: Writing injected SQL for node "model.dbt_project.fct_sales"
+[0m11:49:53.856310 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_project.int_order_product_count"
+[0m11:49:53.856705 [debug] [Thread-2 (]: Began executing node model.dbt_project.fct_sales
+[0m11:49:53.856873 [debug] [Thread-1 (]: Began executing node model.dbt_project.int_order_product_count
+[0m11:49:53.857161 [debug] [Thread-2 (]: Finished running node model.dbt_project.fct_sales
+[0m11:49:53.857441 [debug] [Thread-1 (]: Finished running node model.dbt_project.int_order_product_count
+[0m11:49:53.858144 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m11:49:53.858308 [debug] [MainThread]: Connection 'model.dbt_project.int_order_product_count' was properly closed.
+[0m11:49:53.858440 [debug] [MainThread]: Connection 'model.dbt_project.fct_sales' was properly closed.
+[0m11:49:53.860082 [debug] [MainThread]: Command end result
+[0m11:49:53.873133 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/maria/Documents/GitHub/extra/dbt_assistant/dbt_project/target/manifest.json
+[0m11:49:53.874071 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/maria/Documents/GitHub/extra/dbt_assistant/dbt_project/target/semantic_manifest.json
+[0m11:49:53.877805 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/maria/Documents/GitHub/extra/dbt_assistant/dbt_project/target/run_results.json
+[0m11:49:53.879580 [debug] [MainThread]: Resource report: {"command_name": "compile", "command_success": true, "command_wall_clock_time": 1.3222907, "process_in_blocks": "0", "process_kernel_time": 0.20681, "process_mem_max_rss": "136626176", "process_out_blocks": "0", "process_user_time": 1.776746}
+[0m11:49:53.879821 [debug] [MainThread]: Command `dbt compile` succeeded at 11:49:53.879778 after 1.32 seconds
+[0m11:49:53.880005 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109046e60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1090c05f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1090c1130>]}
+[0m11:49:53.880180 [debug] [MainThread]: Flushing usage events
+[0m11:49:54.012729 [debug] [MainThread]: An error was encountered while trying to flush usage events

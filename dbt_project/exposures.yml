@@ -1,0 +1,40 @@
+version: 2
+
+exposures:
+  - name: executive_dashboard
+    type: dashboard
+    maturity: high
+    url: https://bi.example.com/dashboards/executive
+    description: "Executive-level dashboard for revenue and customer KPIs"
+    depends_on:
+      - ref('fct_sales')
+      - ref('dim_customers')
+      - ref('dim_products')
+      - ref('dim_date')
+    owner:
+      name: "Analytics Team"
+      email: "maria.dubyaga@gmail.com"
+
+    - name: sales_dashboard
+      type: dashboard
+      maturity: high
+      url: https://dashboard.example.com/sales
+      description: "Sales dashboard for business users."
+      depends_on:
+        - ref('fct_sales')
+        - ref('dim_products')
+      owner:
+        name: Maria
+        email: maria@example.com
+
+    - name: refunds_report
+      type: report
+      maturity: medium
+      url: https://dashboard.example.com/refunds
+      description: "Refunds report for finance team."
+      depends_on:
+        - ref('fct_refunds')
+        - ref('dim_customers')
+      owner:
+        name: Finance Team
+        email: finance@example.com

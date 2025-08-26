@@ -1,0 +1,7 @@
+version: 2
+
+models:
+  - name: int_customer_orders
+    description: "Intermediate join of customers and orders"
+  - name: int_product_sales
+    description: "Intermediate join of products and sales"
