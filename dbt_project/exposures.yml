@@ -25,7 +25,7 @@ exposures:
         - ref('dim_products')
       owner:
         name: Maria
-        email: maria@example.com
+        email: kraftaa@gmail.com
 
     - name: refunds_report
       type: report
@@ -36,5 +36,5 @@ exposures:
         - ref('fct_refunds')
         - ref('dim_customers')
       owner:
-        name: Finance Team
-        email: finance@example.com
+        name: Maria
+        email: kraftaa@gmail.com
