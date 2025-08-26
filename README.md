@@ -114,6 +114,24 @@ The CLI provides the same intelligent field filtering as the API:
 - **Names**: Include `name`, `model`, or `report` to focus on model/report names
 - **Descriptions**: Include `description` to see detailed descriptions
 
+### Testing GPU/MPS Support
+
+The project includes test files to verify GPU acceleration support:
+
+#### MPS Test (Apple Silicon)
+```bash
+python test_mps.py
+```
+This script benchmarks matrix multiplication performance on CPU vs MPS (Metal Performance Shaders) for Apple Silicon Macs. It compares computation time between devices and helps verify MPS backend availability.
+
+#### GPU Test
+```bash
+python torch_gpu_test.py
+```
+A simple test to check if MPS is available and verify basic tensor operations work on the selected device. Useful for troubleshooting GPU acceleration issues.
+
+**Note**: These tests are particularly useful for Apple Silicon Mac users to ensure optimal performance when running the AI models in the agent.
+
 ## Example API Response
 
 ```json
