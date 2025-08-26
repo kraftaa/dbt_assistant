@@ -5,7 +5,7 @@
 
 
 select order_id
-from "sci_rx_production"."raw"."refunds"
+from "database_name"."raw"."refunds"
 where order_id is null
 
 

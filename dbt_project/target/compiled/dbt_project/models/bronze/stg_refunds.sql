@@ -7,6 +7,6 @@ with transformed_data as (
         customer_id as customer_id,
         refund_date as refund_date,
         refund_amount as refund_amount
-    from "sci_rx_production"."raw"."refunds"
+    from "database_name"."raw"."refunds"
 )
 select * from transformed_data

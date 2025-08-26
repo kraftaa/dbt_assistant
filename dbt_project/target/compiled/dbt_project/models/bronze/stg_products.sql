@@ -6,7 +6,7 @@ with transformed_data as (
         product_name as product_name,
         category as category,
         price as price
-    from "sci_rx_production"."raw"."products"
+    from "database_name"."raw"."products"
 )
 
 select * from transformed_data

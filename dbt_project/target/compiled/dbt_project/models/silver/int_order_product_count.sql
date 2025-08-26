@@ -3,7 +3,7 @@ with transformed_data as (
     select
         order_id as order_id,
         count(product_id) as product_count
-    from "sci_rx_production"."transform"."int_product_sales"
+    from "database_name"."transform"."int_product_sales"
     group by order_id
 )
 select * from transformed_data
