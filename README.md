@@ -62,9 +62,12 @@ You can link this API with your Superset instance by extracting YAML metadata fr
 ### 1. Build Knowledge Base
 
 First, build the knowledge base from your dbt models:
+In `dbt_project` directory:
+```
+dbt compile --target dev --profiles-dir config
+```
 
 ```bash
-
 python3 app/parser_example_compiled.py
 ```
 

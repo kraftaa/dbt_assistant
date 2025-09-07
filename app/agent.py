@@ -94,7 +94,7 @@ class ModelRouterAgent:
                 "text2text-generation",
                 model=model,
                 tokenizer=tokenizer,
-                max_length=512,
+                max_length=800,
                 do_sample=False
             )
     def build_prompt(self, user_query, embed_results=None):
@@ -104,10 +104,15 @@ class ModelRouterAgent:
             context += "Here are the most relevant candidates based on embeddings:\n"
             for match in embed_results:
                 columns = match.get("columns", [])
-                context += f"- {match.get('name', 'unknown')}: {match.get('description', '')}\n"
+                match_type = match.get("type", "unknown")
+                context += f"- {match.get('name', 'unknown')} (type: {match_type}): {match.get('description', '')}\n"
                 context += f"  Columns: {', '.join(columns) if columns else 'unknown'}\n"
 
         context += "\nUser query: \"{}\"\n".format(user_query)
+        context += "\nIMPORTANT SELECTION RULES:\n"
+        context += "- If the query asks about 'models' or 'data models', prefer items with type 'model' over 'exposure'\n"
+        context += "- If the query asks about 'dashboards' or 'reports', prefer items with type 'exposure'\n"
+        context += "- For queries about columns, data, or analysis, choose the most relevant model that contains the data\n"
         context += "\nReturn ONLY a single valid JSON object with these fields:\n"
         context += "- type: 'model' or 'exposure'\n"
         context += "- name: the model or exposure name\n"
@@ -157,7 +162,7 @@ class ModelRouterAgent:
         prompt = self.build_prompt(user_query, embed_results)
 
         if self.use_hf_model:
-            output = self.llm(prompt, max_length=600, do_sample=False)[0]["generated_text"]
+            output = self.llm(prompt, max_length=800, do_sample=False)[0]["generated_text"]
             import json
             generic_columns = set(["colA", "colB", "colC", "column1", "column2", "column3"])
             try:

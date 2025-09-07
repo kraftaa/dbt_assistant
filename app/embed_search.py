@@ -67,4 +67,13 @@ class EmbeddingSearch:
                     "conditions": info.get("conditions", []),
                     "score": float(dist)
                 })
+        
+        # Post-process results to prefer models when query is about models
+        if "model" in query.lower() and not "dashboard" in query.lower() and not "report" in query.lower():
+            # Separate models and exposures
+            models = [r for r in results if r.get("type") == "dbt_model"]
+            exposures = [r for r in results if r.get("type") == "exposure"]
+            # Reorder: models first, then exposures
+            results = models + exposures
+        
         return results

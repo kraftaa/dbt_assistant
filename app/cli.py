@@ -20,7 +20,12 @@ def filter_fields(obj, query):
     include_url = wants_field(query, "url") or wants_field(query, "link")
     include_score = wants_field(query, "score") or wants_field(query, "similarity")
 
-  
+    # For queries about models, always include name, description, and columns
+    if wants_field(query, "model") or wants_field(query, "models"):
+        include_name = True
+        include_description = True
+        include_columns = True
+
     filtered = {}
     # print("obj")
     # print(obj)
@@ -47,8 +52,8 @@ def filter_fields(obj, query):
     return filtered if filtered else obj
 
 def main():
-    agent = ModelRouterAgent("models_and_reports.yaml", use_hf_model=True)
-    searcher = EmbeddingSearch("models_and_reports.yaml")
+    agent = ModelRouterAgent("app/models_and_reports.yaml", use_hf_model=True)
+    searcher = EmbeddingSearch("app/models_and_reports.yaml")
 
     print("🔎 AI Agent with LLM + Embedding Search")
     print("Type 'exit' or 'quit' to quit.\n")
