@@ -6,7 +6,7 @@ with transformed_data as (
         product_name as product_name,
         category as category,
         price as price
-    from "database_name"."raw"."products"
+    from "postgres"."raw"."products"
 )
 
 select * from transformed_data

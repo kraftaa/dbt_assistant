@@ -1,0 +1,21 @@
+
+  
+    
+
+  create  table "postgres"."transform"."dim_customers__dbt_tmp"
+  
+  
+    as
+  
+  (
+    with transformed_data as (
+    select distinct
+        customer_id as customer_id,
+        customer_name as customer_name,
+        email as email
+    from "postgres"."transform"."stg_customers"
+)
+
+select * from transformed_data
+  );
+  

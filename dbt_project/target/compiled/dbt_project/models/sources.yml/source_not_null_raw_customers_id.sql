@@ -5,7 +5,7 @@
 
 
 select id
-from "database_name"."raw"."customers"
+from "postgres"."raw"."customers"
 where id is null
 
 

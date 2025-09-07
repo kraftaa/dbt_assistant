@@ -4,7 +4,7 @@ with transformed_data as (
         customer_id as customer_id,
         order_date as order_date,
         total_amount as total_amount
-    from "database_name"."transform"."stg_orders"
+    from "postgres"."transform"."stg_orders"
 )
 
 select * from transformed_data

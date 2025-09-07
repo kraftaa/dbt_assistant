@@ -60,6 +60,7 @@ class EmbeddingSearch:
                 # print(info)
                 results.append({
                     "name": key,                   # name of the dbt model or report
+                    "type": info.get("type", "unknown"),
                     "description": info.get("description", ""),
                     "columns": info.get("columns", []),
                     "tables": info.get("tables", []),

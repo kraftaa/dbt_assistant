@@ -20,6 +20,9 @@ sources:
           - name: id
             tests: [not_null]
           - name: customer_id
+            tests: [not_null]
+          - name: product_id
+            tests: [not_null]
           - name: order_date
           - name: total_amount
 
@@ -35,6 +38,8 @@ sources:
       - name: refunds
         description: "Raw refunds data from refunds data"
         columns:
+          - name: id
+            tests: [not_null]
           - name: order_id
             tests: [not_null]
           - name: customer_id

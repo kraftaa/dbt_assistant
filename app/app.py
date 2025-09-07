@@ -14,7 +14,7 @@ from pathlib import Path
 
 # Paths
 # models_dir = "../dbt_project/models"  # adjust path as needed
-models_dir = "../dbt_project/target/compiled/dbt_project/models/gold"  # adjust path as needed
+models_dir = "../dbt_project/target/compiled/dbt_project/models/gold"
 knowledge = build_knowledge(models_dir)
 export_knowledge(knowledge, "models_and_reports.yaml")
 
@@ -34,6 +34,8 @@ def run_search():
     # llm_response = agent.route_query(query, embed_results)
     matches = search_engine.search(query, top_k=3)
     llm_response = agent.route_query(query, matches)
+    print("llm response")
+    print(llm_response)
 
     # Remove columns from response if not requested
     def wants_field(q, field):
@@ -43,7 +45,9 @@ def run_search():
     include_columns = wants_field(query, "column") or wants_field(query, "columns")
     include_name = wants_field(query, "name") or wants_field(query, "model") or wants_field(query, "report")
     include_description = wants_field(query, "description")
-
+    include_url = wants_field(query, "url") or wants_field(query, "link")
+    include_score = wants_field(query, "score") or wants_field(query, "similarity")
+    
     def filter_fields(obj):
         if not isinstance(obj, dict):
             return obj
@@ -54,6 +58,8 @@ def run_search():
             filtered["description"] = obj["description"]
         if include_columns and "columns" in obj:
             filtered["columns"] = obj["columns"]
+        if include_url and "url" in obj:
+            filtered["url"] = obj["url"]    
         # Always include type and reasoning if present
         if "type" in obj:
             filtered["type"] = obj["type"]

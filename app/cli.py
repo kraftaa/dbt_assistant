@@ -17,14 +17,21 @@ def filter_fields(obj, query):
     include_columns = wants_field(query, "column") or wants_field(query, "columns")
     include_name = wants_field(query, "name") or wants_field(query, "model") or wants_field(query, "report")
     include_description = wants_field(query, "description")
-    
+    include_url = wants_field(query, "url") or wants_field(query, "link")
+    include_score = wants_field(query, "score") or wants_field(query, "similarity")
+
+  
     filtered = {}
+    # print("obj")
+    # print(obj)
     if include_name and "name" in obj:
         filtered["name"] = obj["name"]
     if include_description and "description" in obj:
         filtered["description"] = obj["description"]
     if include_columns and "columns" in obj:
         filtered["columns"] = obj["columns"]
+    if include_url and "url" in obj:
+        filtered["url"] = obj["url"]
     # Always include type and reasoning if present
     if "type" in obj:
         filtered["type"] = obj["type"]
@@ -35,6 +42,8 @@ def filter_fields(obj, query):
     if "score" in obj:
         filtered["score"] = obj["score"]
     
+    # print("filtered")
+    # print(filtered) 
     return filtered if filtered else obj
 
 def main():
@@ -51,10 +60,14 @@ def main():
             break
 
         # Get embedding matches first
-        embed_results = searcher.search(user_input, top_k=3)
+        embed_results = searcher.search(user_input, top_k=5)
+        # print("embed_results")
+        # print(embed_results)
         
         # Get LLM response with embedding context
         llm_response = agent.route_query(user_input, embed_results)
+        # print("llm response")
+        # print(llm_response) 
 
         print("\n" + "="*60)
         print("💡 LLM Suggestion:")

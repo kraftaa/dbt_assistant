@@ -6,6 +6,6 @@ with transformed_data as (
         customer_id as customer_id,
         refund_date as refund_date,
         refund_amount as refund_amount
-    from "database_name"."transform"."stg_refunds"
+    from "postgres"."transform"."stg_refunds"
 )
 select * from transformed_data

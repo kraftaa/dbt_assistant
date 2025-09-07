@@ -162,11 +162,18 @@ class ModelRouterAgent:
             generic_columns = set(["colA", "colB", "colC", "column1", "column2", "column3"])
             try:
                 result = json.loads(output)
+                print("result")
+                print(result)
                 # If columns, name, or description are generic/missing, replace with actual from top embedding match
                 if embed_results and len(embed_results) > 0:
                     top_match = embed_results[0]
-                    if "columns" in result and set(result["columns"]).intersection(generic_columns):
+                    print("result columns")
+                    print(result["columns"])
+                    # if "columns" in result and set(result["columns"]).intersection(generic_columns):
+                    if "columns" in result:
                         result["columns"] = top_match.get("columns", [])
+                    if "url" in result:
+                        result["url"] = top_match.get("url", [])
                     if ("name" not in result or result["name"] in ["some_model_name", "unknown", ""]):
                         result["name"] = top_match.get("name", "unknown")
                     if ("description" not in result or result["description"] in ["Short description", "", None]):
@@ -175,6 +182,8 @@ class ModelRouterAgent:
             except Exception:
                 # Fallback: try to extract model name from output and build valid JSON
                 import re
+                print("exception")
+                print(output)
                 name = None
                 description = None
                 reasoning = None

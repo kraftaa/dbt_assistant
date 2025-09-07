@@ -1,3 +1,77 @@
+# DBT Models
+stg_orders:
+  type: model
+  description: Staging orders from raw data, contains order_id, customer_id, order_date, and total_amount
+  columns: [order_id, customer_id, order_date, total_amount]
+  tables: [raw.orders]
+
+fct_orders:
+  type: model
+  description: Fact table for orders with order details
+  columns: [order_id, customer_id, order_date, total_amount]
+  tables: [stg_orders]
+
+stg_customers:
+  type: model
+  description: Staging customers from raw data
+  columns: [customer_id, name, email, created_at]
+  tables: [raw.customers]
+
+stg_products:
+  type: model
+  description: Staging products from raw data
+  columns: [product_id, product_name, category, price]
+  tables: [raw.products]
+
+stg_refunds:
+  type: model
+  description: Staging refunds from raw data
+  columns: [refund_id, order_id, customer_id, refund_date, refund_amount]
+  tables: [raw.refunds]
+
+int_customer_orders:
+  type: model
+  description: Intermediate join of customers and orders data
+  columns: [customer_id, order_id, order_date, total_amount, name, email]
+  tables: [stg_customers, stg_orders]
+
+int_product_sales:
+  type: model
+  description: Intermediate join of products and sales data with order information
+  columns: [order_id, product_id, product_name, category, total_amount]
+  tables: [stg_orders, stg_products]
+
+dim_customers:
+  type: model
+  description: Dimension table for customers
+  columns: [customer_id, name, email, created_at]
+  tables: [stg_customers]
+
+dim_products:
+  type: model
+  description: Dimension table for products
+  columns: [product_id, product_name, category, price]
+  tables: [stg_products]
+
+fct_sales:
+  type: model
+  description: Fact table for sales transactions
+  columns: [order_id, product_id, customer_id, order_date, total_amount]
+  tables: [fct_orders, dim_products]
+
+fct_refunds:
+  type: model
+  description: Fact table for refunds
+  columns: [refund_id, order_id, customer_id, refund_date, refund_amount]
+  tables: [stg_refunds]
+
+dim_date:
+  type: model
+  description: Date dimension table
+  columns: [date, year, month, day, quarter]
+  tables: []
+
+# Exposures (Dashboards/Reports)
 executive_dashboard:
   type: exposure
   url: https://bi.example.com/dashboards/executive
@@ -11,10 +85,11 @@ executive_dashboard:
   owner:
     name: Analytics Team
     email: maria.dubyaga@gmail.com
+
 sales_dashboard:
   type: exposure
   url: https://dashboard.example.com/sales
-  description: Sales dashboard for business users.
+  description: Sales dashboard for business users
   maturity: high
   depends_on:
   - ref('fct_sales')
@@ -22,10 +97,11 @@ sales_dashboard:
   owner:
     name: Maria
     email: kraftaa@gmail.com
+
 refunds_report:
   type: exposure
   url: https://dashboard.example.com/refunds
-  description: Refunds report for finance team.
+  description: Refunds report for finance team
   maturity: medium
   depends_on:
   - ref('fct_refunds')

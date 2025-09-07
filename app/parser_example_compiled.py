@@ -104,8 +104,8 @@ def export_knowledge(knowledge, output_file="models_and_reports.yaml"):
 # dbt compile --profiles-dir config --target dev
 if __name__ == "__main__":
     # Build knowledge from all model directories
-    base_models_dir = "../dbt_project/target/compiled/dbt_project/models"
-    
+    base_models_dir = "dbt_project/target/compiled/dbt_project/models"
+    # base_models_dir = "../dbt_project/target/compiled/dbt_project/models"
     print("🔍 Building knowledge base from dbt models...")
     print(f"📁 Looking in: {base_models_dir}")
     
@@ -130,7 +130,9 @@ if __name__ == "__main__":
             print(f"⚠️  {layer} directory not found, skipping...")
     
     # Parse exposures
-    exposures_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "../dbt_project/exposures.yml"))
+    exposures_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "dbt_project/exposures.yml"))
+    # exposures_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "../dbt_project/exposures.yml"))
+
     if os.path.exists(exposures_path):
         print(f"📊 Found exposures file: {exposures_path}")
         with open(exposures_path) as f:
@@ -155,7 +157,7 @@ if __name__ == "__main__":
         print(f"⚠️  Exposures file not found at: {exposures_path}")
     
     # Export the complete knowledge base
-    output_file = "models_and_reports.yaml"
+    output_file = "app/models_and_reports.yaml"
     export_knowledge(knowledge, output_file)
     
     print(f"\n🎉 Knowledge base built successfully!")

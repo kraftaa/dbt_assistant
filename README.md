@@ -64,6 +64,7 @@ You can link this API with your Superset instance by extracting YAML metadata fr
 First, build the knowledge base from your dbt models:
 
 ```bash
+
 python3 app/parser_example_compiled.py
 ```
 
@@ -164,6 +165,13 @@ curl -X POST http://localhost:5000/search \
      -H "Content-Type: application/json" \
      -d '{"query": "what is url for sales dashboard"}'
 ```
+
+Example questions:
+"Show me columns from sales models"
+"What dashboards use customer data?"
+"Which models feed into the executive dashboard?"
+"Show me all bronze layer models"
+"What's the URL for the sales dashboard?"
 
 #### Example API Response
 
