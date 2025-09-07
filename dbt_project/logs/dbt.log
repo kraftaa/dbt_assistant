@@ -28074,3 +28074,345 @@ with relation as (
 [0m14:15:05.602964 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106ad9e10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106ada7a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106ab3150>]}
 [0m14:15:05.603143 [debug] [MainThread]: Flushing usage events
 [0m14:15:05.785308 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m15:25:29.711611 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1067f4050>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11041bd90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11041bed0>]}
+
+
+============================== 15:25:29.714821 | 94b1c156-2d1d-42f0-8bd4-ff46662c206f ==============================
+[0m15:25:29.714821 [info ] [MainThread]: Running with dbt=1.10.9
+[0m15:25:29.715155 [debug] [MainThread]: running dbt with arguments {'no_print': 'None', 'printer_width': '80', 'debug': 'False', 'version_check': 'True', 'invocation_command': 'dbt compile --target dev --profiles-dir config', 'log_format': 'default', 'partial_parse': 'True', 'quiet': 'False', 'static_parser': 'True', 'log_cache_events': 'False', 'use_experimental_parser': 'False', 'empty': 'False', 'introspect': 'True', 'indirect_selection': 'eager', 'warn_error': 'None', 'log_path': '/Users/maria/Documents/GitHub/extra/dbt_assistant/dbt_project/logs', 'write_json': 'True', 'send_anonymous_usage_stats': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'config', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'use_colors': 'True', 'fail_fast': 'False'}
+[0m15:25:29.718214 [error] [MainThread]: Encountered an error:
+Parsing Error
+  Env var required but not provided: 'POSTGRES_HOST'
+[0m15:25:29.734968 [debug] [MainThread]: Resource report: {"command_name": "compile", "command_success": false, "command_wall_clock_time": 0.07058721, "process_in_blocks": "0", "process_kernel_time": 0.112094, "process_mem_max_rss": "104628224", "process_out_blocks": "0", "process_user_time": 0.681004}
+[0m15:25:29.735373 [debug] [MainThread]: Command `dbt compile` failed at 15:25:29.735310 after 0.07 seconds
+[0m15:25:29.735602 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11032b950>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11046f1d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1101d9bf0>]}
+[0m15:25:29.735813 [debug] [MainThread]: Flushing usage events
+[0m15:25:29.892196 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m15:26:11.694311 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1101f4050>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x111d1bd90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x111d1bed0>]}
+
+
+============================== 15:26:11.697073 | 8d0a6ae5-3748-46a2-a08d-a29312ef58dc ==============================
+[0m15:26:11.697073 [info ] [MainThread]: Running with dbt=1.10.9
+[0m15:26:11.697396 [debug] [MainThread]: running dbt with arguments {'log_cache_events': 'False', 'send_anonymous_usage_stats': 'True', 'write_json': 'True', 'introspect': 'True', 'fail_fast': 'False', 'warn_error': 'None', 'log_format': 'default', 'use_colors': 'True', 'debug': 'False', 'target_path': 'None', 'no_print': 'None', 'indirect_selection': 'eager', 'version_check': 'True', 'profiles_dir': 'config', 'static_parser': 'True', 'invocation_command': 'dbt compile --target dev --profiles-dir config', 'log_path': '/Users/maria/Documents/GitHub/extra/dbt_assistant/dbt_project/logs', 'empty': 'False', 'cache_selected_only': 'False', 'use_experimental_parser': 'False', 'quiet': 'False', 'partial_parse': 'True', 'printer_width': '80', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])'}
+[0m15:26:11.860204 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '8d0a6ae5-3748-46a2-a08d-a29312ef58dc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x110b4b820>]}
+[0m15:26:11.891765 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '8d0a6ae5-3748-46a2-a08d-a29312ef58dc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x111adebe0>]}
+[0m15:26:11.892576 [info ] [MainThread]: Registered adapter: postgres=1.9.0
+[0m15:26:11.951991 [debug] [MainThread]: checksum: 29ea1ce3a69c23697e5b867170111b74ec8b8d94cb5dc8274e6fc1c7cd223092, vars: {}, profile: , target: dev, version: 1.10.9
+[0m15:26:12.032244 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 3 files changed.
+[0m15:26:12.032725 [debug] [MainThread]: Partial parsing: updated file: dbt_project://models/bronze/schema.yml
+[0m15:26:12.032962 [debug] [MainThread]: Partial parsing: updated file: dbt_project://models/silver/int_product_sales.sql
+[0m15:26:12.033177 [debug] [MainThread]: Partial parsing: updated file: dbt_project://models/bronze/stg_orders.sql
+[0m15:26:12.291024 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '8d0a6ae5-3748-46a2-a08d-a29312ef58dc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11224ce50>]}
+[0m15:26:12.336603 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/maria/Documents/GitHub/extra/dbt_assistant/dbt_project/target/manifest.json
+[0m15:26:12.338433 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/maria/Documents/GitHub/extra/dbt_assistant/dbt_project/target/semantic_manifest.json
+[0m15:26:12.353541 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '8d0a6ae5-3748-46a2-a08d-a29312ef58dc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x112a016d0>]}
+[0m15:26:12.353891 [info ] [MainThread]: Found 15 models, 16 data tests, 4 sources, 434 macros
+[0m15:26:12.354092 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '8d0a6ae5-3748-46a2-a08d-a29312ef58dc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1121b65f0>]}
+[0m15:26:12.355622 [info ] [MainThread]: 
+[0m15:26:12.355837 [info ] [MainThread]: Concurrency: 2 threads (target='dev')
+[0m15:26:12.355992 [info ] [MainThread]: 
+[0m15:26:12.356257 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m15:26:12.358760 [debug] [ThreadPool]: Acquiring new postgres connection 'list_postgres_transform'
+[0m15:26:12.410650 [debug] [ThreadPool]: Using postgres connection "list_postgres_transform"
+[0m15:26:12.410935 [debug] [ThreadPool]: On list_postgres_transform: BEGIN
+[0m15:26:12.411099 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m15:26:12.577276 [debug] [ThreadPool]: SQL status: BEGIN in 0.166 seconds
+[0m15:26:12.577648 [debug] [ThreadPool]: Using postgres connection "list_postgres_transform"
+[0m15:26:12.577903 [debug] [ThreadPool]: On list_postgres_transform: /* {"app": "dbt", "dbt_version": "1.10.9", "profile_name": "dev", "target_name": "dev", "connection_name": "list_postgres_transform"} */
+select
+      'postgres' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'transform'
+    union all
+    select
+      'postgres' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'transform'
+    union all
+    select
+      'postgres' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'transform'
+  
+[0m15:26:12.600453 [debug] [ThreadPool]: SQL status: SELECT 15 in 0.022 seconds
+[0m15:26:12.601854 [debug] [ThreadPool]: On list_postgres_transform: ROLLBACK
+[0m15:26:12.613925 [debug] [ThreadPool]: On list_postgres_transform: Close
+[0m15:26:12.618766 [debug] [MainThread]: Using postgres connection "master"
+[0m15:26:12.619043 [debug] [MainThread]: On master: BEGIN
+[0m15:26:12.619252 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m15:26:12.627457 [debug] [MainThread]: SQL status: BEGIN in 0.008 seconds
+[0m15:26:12.627796 [debug] [MainThread]: Using postgres connection "master"
+[0m15:26:12.628087 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.10.9", "profile_name": "dev", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v', 'm')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m15:26:12.674058 [debug] [MainThread]: SQL status: SELECT 4 in 0.046 seconds
+[0m15:26:12.674939 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '8d0a6ae5-3748-46a2-a08d-a29312ef58dc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x112ca0460>]}
+[0m15:26:12.675223 [debug] [MainThread]: On master: ROLLBACK
+[0m15:26:12.675554 [debug] [MainThread]: On master: Close
+[0m15:26:12.677717 [debug] [Thread-2 (]: Began running node model.dbt_project.stg_customers
+[0m15:26:12.678035 [debug] [Thread-1 (]: Began running node model.dbt_project.dim_date
+[0m15:26:12.678454 [debug] [Thread-2 (]: Acquiring new postgres connection 'model.dbt_project.stg_customers'
+[0m15:26:12.678750 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_postgres_transform, now model.dbt_project.dim_date)
+[0m15:26:12.679002 [debug] [Thread-2 (]: Began compiling node model.dbt_project.stg_customers
+[0m15:26:12.679238 [debug] [Thread-1 (]: Began compiling node model.dbt_project.dim_date
+[0m15:26:12.683893 [debug] [Thread-2 (]: Writing injected SQL for node "model.dbt_project.stg_customers"
+[0m15:26:12.684960 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_project.dim_date"
+[0m15:26:12.685783 [debug] [Thread-2 (]: Began executing node model.dbt_project.stg_customers
+[0m15:26:12.686013 [debug] [Thread-1 (]: Began executing node model.dbt_project.dim_date
+[0m15:26:12.686417 [debug] [Thread-2 (]: Finished running node model.dbt_project.stg_customers
+[0m15:26:12.686765 [debug] [Thread-1 (]: Finished running node model.dbt_project.dim_date
+[0m15:26:12.686980 [debug] [Thread-2 (]: Began running node model.dbt_project.stg_orders
+[0m15:26:12.687250 [debug] [Thread-1 (]: Began running node model.dbt_project.stg_products
+[0m15:26:12.687598 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.dbt_project.stg_customers, now model.dbt_project.stg_orders)
+[0m15:26:12.687838 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.dbt_project.dim_date, now model.dbt_project.stg_products)
+[0m15:26:12.688129 [debug] [Thread-2 (]: Began compiling node model.dbt_project.stg_orders
+[0m15:26:12.688384 [debug] [Thread-1 (]: Began compiling node model.dbt_project.stg_products
+[0m15:26:12.689919 [debug] [Thread-2 (]: Writing injected SQL for node "model.dbt_project.stg_orders"
+[0m15:26:12.691719 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_project.stg_products"
+[0m15:26:12.692265 [debug] [Thread-2 (]: Began executing node model.dbt_project.stg_orders
+[0m15:26:12.692722 [debug] [Thread-2 (]: Finished running node model.dbt_project.stg_orders
+[0m15:26:12.692933 [debug] [Thread-2 (]: Began running node model.dbt_project.stg_refunds
+[0m15:26:12.693217 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.dbt_project.stg_orders, now model.dbt_project.stg_refunds)
+[0m15:26:12.693422 [debug] [Thread-2 (]: Began compiling node model.dbt_project.stg_refunds
+[0m15:26:12.693638 [debug] [Thread-1 (]: Began executing node model.dbt_project.stg_products
+[0m15:26:12.694916 [debug] [Thread-2 (]: Writing injected SQL for node "model.dbt_project.stg_refunds"
+[0m15:26:12.695304 [debug] [Thread-1 (]: Finished running node model.dbt_project.stg_products
+[0m15:26:12.695590 [debug] [Thread-1 (]: Began running node test.dbt_project.source_not_null_raw_customers_id.bb348d55ac
+[0m15:26:12.695831 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.dbt_project.stg_products, now test.dbt_project.source_not_null_raw_customers_id.bb348d55ac)
+[0m15:26:12.696084 [debug] [Thread-1 (]: Began compiling node test.dbt_project.source_not_null_raw_customers_id.bb348d55ac
+[0m15:26:12.702574 [debug] [Thread-2 (]: Began executing node model.dbt_project.stg_refunds
+[0m15:26:12.703252 [debug] [Thread-1 (]: Writing injected SQL for node "test.dbt_project.source_not_null_raw_customers_id.bb348d55ac"
+[0m15:26:12.703650 [debug] [Thread-2 (]: Finished running node model.dbt_project.stg_refunds
+[0m15:26:12.703906 [debug] [Thread-2 (]: Began running node test.dbt_project.source_not_null_raw_orders_customer_id.3962c6ab03
+[0m15:26:12.704146 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.dbt_project.stg_refunds, now test.dbt_project.source_not_null_raw_orders_customer_id.3962c6ab03)
+[0m15:26:12.704340 [debug] [Thread-2 (]: Began compiling node test.dbt_project.source_not_null_raw_orders_customer_id.3962c6ab03
+[0m15:26:12.706639 [debug] [Thread-2 (]: Writing injected SQL for node "test.dbt_project.source_not_null_raw_orders_customer_id.3962c6ab03"
+[0m15:26:12.706989 [debug] [Thread-1 (]: Began executing node test.dbt_project.source_not_null_raw_customers_id.bb348d55ac
+[0m15:26:12.707431 [debug] [Thread-1 (]: Finished running node test.dbt_project.source_not_null_raw_customers_id.bb348d55ac
+[0m15:26:12.707641 [debug] [Thread-1 (]: Began running node test.dbt_project.source_not_null_raw_orders_id.f232a64478
+[0m15:26:12.707835 [debug] [Thread-2 (]: Began executing node test.dbt_project.source_not_null_raw_orders_customer_id.3962c6ab03
+[0m15:26:12.708095 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.dbt_project.source_not_null_raw_customers_id.bb348d55ac, now test.dbt_project.source_not_null_raw_orders_id.f232a64478)
+[0m15:26:12.708428 [debug] [Thread-2 (]: Finished running node test.dbt_project.source_not_null_raw_orders_customer_id.3962c6ab03
+[0m15:26:12.708617 [debug] [Thread-1 (]: Began compiling node test.dbt_project.source_not_null_raw_orders_id.f232a64478
+[0m15:26:12.708812 [debug] [Thread-2 (]: Began running node test.dbt_project.source_not_null_raw_orders_product_id.47f01cfc3d
+[0m15:26:12.711115 [debug] [Thread-1 (]: Writing injected SQL for node "test.dbt_project.source_not_null_raw_orders_id.f232a64478"
+[0m15:26:12.711392 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.dbt_project.source_not_null_raw_orders_customer_id.3962c6ab03, now test.dbt_project.source_not_null_raw_orders_product_id.47f01cfc3d)
+[0m15:26:12.711994 [debug] [Thread-2 (]: Began compiling node test.dbt_project.source_not_null_raw_orders_product_id.47f01cfc3d
+[0m15:26:12.713968 [debug] [Thread-2 (]: Writing injected SQL for node "test.dbt_project.source_not_null_raw_orders_product_id.47f01cfc3d"
+[0m15:26:12.714293 [debug] [Thread-1 (]: Began executing node test.dbt_project.source_not_null_raw_orders_id.f232a64478
+[0m15:26:12.714631 [debug] [Thread-1 (]: Finished running node test.dbt_project.source_not_null_raw_orders_id.f232a64478
+[0m15:26:12.714824 [debug] [Thread-1 (]: Began running node test.dbt_project.source_not_null_raw_products_id.ffffd25704
+[0m15:26:12.715071 [debug] [Thread-2 (]: Began executing node test.dbt_project.source_not_null_raw_orders_product_id.47f01cfc3d
+[0m15:26:12.715310 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.dbt_project.source_not_null_raw_orders_id.f232a64478, now test.dbt_project.source_not_null_raw_products_id.ffffd25704)
+[0m15:26:12.715654 [debug] [Thread-2 (]: Finished running node test.dbt_project.source_not_null_raw_orders_product_id.47f01cfc3d
+[0m15:26:12.715848 [debug] [Thread-1 (]: Began compiling node test.dbt_project.source_not_null_raw_products_id.ffffd25704
+[0m15:26:12.716115 [debug] [Thread-2 (]: Began running node test.dbt_project.source_not_null_raw_refunds_customer_id.7f9d6befa4
+[0m15:26:12.718138 [debug] [Thread-1 (]: Writing injected SQL for node "test.dbt_project.source_not_null_raw_products_id.ffffd25704"
+[0m15:26:12.718426 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.dbt_project.source_not_null_raw_orders_product_id.47f01cfc3d, now test.dbt_project.source_not_null_raw_refunds_customer_id.7f9d6befa4)
+[0m15:26:12.718723 [debug] [Thread-2 (]: Began compiling node test.dbt_project.source_not_null_raw_refunds_customer_id.7f9d6befa4
+[0m15:26:12.723229 [debug] [Thread-2 (]: Writing injected SQL for node "test.dbt_project.source_not_null_raw_refunds_customer_id.7f9d6befa4"
+[0m15:26:12.723582 [debug] [Thread-1 (]: Began executing node test.dbt_project.source_not_null_raw_products_id.ffffd25704
+[0m15:26:12.723960 [debug] [Thread-1 (]: Finished running node test.dbt_project.source_not_null_raw_products_id.ffffd25704
+[0m15:26:12.724165 [debug] [Thread-1 (]: Began running node test.dbt_project.source_not_null_raw_refunds_id.95eba866ca
+[0m15:26:12.724343 [debug] [Thread-2 (]: Began executing node test.dbt_project.source_not_null_raw_refunds_customer_id.7f9d6befa4
+[0m15:26:12.724565 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.dbt_project.source_not_null_raw_products_id.ffffd25704, now test.dbt_project.source_not_null_raw_refunds_id.95eba866ca)
+[0m15:26:12.724875 [debug] [Thread-2 (]: Finished running node test.dbt_project.source_not_null_raw_refunds_customer_id.7f9d6befa4
+[0m15:26:12.725084 [debug] [Thread-1 (]: Began compiling node test.dbt_project.source_not_null_raw_refunds_id.95eba866ca
+[0m15:26:12.725309 [debug] [Thread-2 (]: Began running node test.dbt_project.source_not_null_raw_refunds_order_id.761684d8f9
+[0m15:26:12.727368 [debug] [Thread-1 (]: Writing injected SQL for node "test.dbt_project.source_not_null_raw_refunds_id.95eba866ca"
+[0m15:26:12.727615 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.dbt_project.source_not_null_raw_refunds_customer_id.7f9d6befa4, now test.dbt_project.source_not_null_raw_refunds_order_id.761684d8f9)
+[0m15:26:12.727836 [debug] [Thread-2 (]: Began compiling node test.dbt_project.source_not_null_raw_refunds_order_id.761684d8f9
+[0m15:26:12.729831 [debug] [Thread-2 (]: Writing injected SQL for node "test.dbt_project.source_not_null_raw_refunds_order_id.761684d8f9"
+[0m15:26:12.730117 [debug] [Thread-1 (]: Began executing node test.dbt_project.source_not_null_raw_refunds_id.95eba866ca
+[0m15:26:12.730476 [debug] [Thread-1 (]: Finished running node test.dbt_project.source_not_null_raw_refunds_id.95eba866ca
+[0m15:26:12.730701 [debug] [Thread-1 (]: Began running node model.dbt_project.dim_customers
+[0m15:26:12.730871 [debug] [Thread-2 (]: Began executing node test.dbt_project.source_not_null_raw_refunds_order_id.761684d8f9
+[0m15:26:12.731072 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.dbt_project.source_not_null_raw_refunds_id.95eba866ca, now model.dbt_project.dim_customers)
+[0m15:26:12.731382 [debug] [Thread-2 (]: Finished running node test.dbt_project.source_not_null_raw_refunds_order_id.761684d8f9
+[0m15:26:12.731564 [debug] [Thread-1 (]: Began compiling node model.dbt_project.dim_customers
+[0m15:26:12.731752 [debug] [Thread-2 (]: Began running node test.dbt_project.not_null_stg_customers_customer_id.e2cfb1f9aa
+[0m15:26:12.733412 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_project.dim_customers"
+[0m15:26:12.733636 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.dbt_project.source_not_null_raw_refunds_order_id.761684d8f9, now test.dbt_project.not_null_stg_customers_customer_id.e2cfb1f9aa)
+[0m15:26:12.733842 [debug] [Thread-2 (]: Began compiling node test.dbt_project.not_null_stg_customers_customer_id.e2cfb1f9aa
+[0m15:26:12.735736 [debug] [Thread-2 (]: Writing injected SQL for node "test.dbt_project.not_null_stg_customers_customer_id.e2cfb1f9aa"
+[0m15:26:12.736044 [debug] [Thread-1 (]: Began executing node model.dbt_project.dim_customers
+[0m15:26:12.736365 [debug] [Thread-1 (]: Finished running node model.dbt_project.dim_customers
+[0m15:26:12.736553 [debug] [Thread-1 (]: Began running node test.dbt_project.unique_stg_customers_customer_id.c7614daada
+[0m15:26:12.736731 [debug] [Thread-2 (]: Began executing node test.dbt_project.not_null_stg_customers_customer_id.e2cfb1f9aa
+[0m15:26:12.736942 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.dbt_project.dim_customers, now test.dbt_project.unique_stg_customers_customer_id.c7614daada)
+[0m15:26:12.737248 [debug] [Thread-2 (]: Finished running node test.dbt_project.not_null_stg_customers_customer_id.e2cfb1f9aa
+[0m15:26:12.737424 [debug] [Thread-1 (]: Began compiling node test.dbt_project.unique_stg_customers_customer_id.c7614daada
+[0m15:26:12.737614 [debug] [Thread-2 (]: Began running node model.dbt_project.fct_orders
+[0m15:26:12.741045 [debug] [Thread-1 (]: Writing injected SQL for node "test.dbt_project.unique_stg_customers_customer_id.c7614daada"
+[0m15:26:12.741312 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.dbt_project.not_null_stg_customers_customer_id.e2cfb1f9aa, now model.dbt_project.fct_orders)
+[0m15:26:12.741555 [debug] [Thread-2 (]: Began compiling node model.dbt_project.fct_orders
+[0m15:26:12.742807 [debug] [Thread-2 (]: Writing injected SQL for node "model.dbt_project.fct_orders"
+[0m15:26:12.743105 [debug] [Thread-1 (]: Began executing node test.dbt_project.unique_stg_customers_customer_id.c7614daada
+[0m15:26:12.743459 [debug] [Thread-1 (]: Finished running node test.dbt_project.unique_stg_customers_customer_id.c7614daada
+[0m15:26:12.743768 [debug] [Thread-1 (]: Began running node model.dbt_project.int_customer_orders
+[0m15:26:12.743972 [debug] [Thread-2 (]: Began executing node model.dbt_project.fct_orders
+[0m15:26:12.744210 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.dbt_project.unique_stg_customers_customer_id.c7614daada, now model.dbt_project.int_customer_orders)
+[0m15:26:12.744575 [debug] [Thread-2 (]: Finished running node model.dbt_project.fct_orders
+[0m15:26:12.744777 [debug] [Thread-1 (]: Began compiling node model.dbt_project.int_customer_orders
+[0m15:26:12.744994 [debug] [Thread-2 (]: Began running node test.dbt_project.not_null_stg_orders_order_id.81cfe2fe64
+[0m15:26:12.748166 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_project.int_customer_orders"
+[0m15:26:12.748473 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.dbt_project.fct_orders, now test.dbt_project.not_null_stg_orders_order_id.81cfe2fe64)
+[0m15:26:12.748764 [debug] [Thread-2 (]: Began compiling node test.dbt_project.not_null_stg_orders_order_id.81cfe2fe64
+[0m15:26:12.751032 [debug] [Thread-2 (]: Writing injected SQL for node "test.dbt_project.not_null_stg_orders_order_id.81cfe2fe64"
+[0m15:26:12.751426 [debug] [Thread-1 (]: Began executing node model.dbt_project.int_customer_orders
+[0m15:26:12.751846 [debug] [Thread-1 (]: Finished running node model.dbt_project.int_customer_orders
+[0m15:26:12.752061 [debug] [Thread-1 (]: Began running node test.dbt_project.unique_stg_orders_order_id.e3b841c71a
+[0m15:26:12.752259 [debug] [Thread-2 (]: Began executing node test.dbt_project.not_null_stg_orders_order_id.81cfe2fe64
+[0m15:26:12.752520 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.dbt_project.int_customer_orders, now test.dbt_project.unique_stg_orders_order_id.e3b841c71a)
+[0m15:26:12.752889 [debug] [Thread-2 (]: Finished running node test.dbt_project.not_null_stg_orders_order_id.81cfe2fe64
+[0m15:26:12.753078 [debug] [Thread-1 (]: Began compiling node test.dbt_project.unique_stg_orders_order_id.e3b841c71a
+[0m15:26:12.753278 [debug] [Thread-2 (]: Began running node model.dbt_project.dim_category
+[0m15:26:12.755416 [debug] [Thread-1 (]: Writing injected SQL for node "test.dbt_project.unique_stg_orders_order_id.e3b841c71a"
+[0m15:26:12.755648 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.dbt_project.not_null_stg_orders_order_id.81cfe2fe64, now model.dbt_project.dim_category)
+[0m15:26:12.755869 [debug] [Thread-2 (]: Began compiling node model.dbt_project.dim_category
+[0m15:26:12.757086 [debug] [Thread-2 (]: Writing injected SQL for node "model.dbt_project.dim_category"
+[0m15:26:12.757377 [debug] [Thread-1 (]: Began executing node test.dbt_project.unique_stg_orders_order_id.e3b841c71a
+[0m15:26:12.757699 [debug] [Thread-1 (]: Finished running node test.dbt_project.unique_stg_orders_order_id.e3b841c71a
+[0m15:26:12.757896 [debug] [Thread-1 (]: Began running node model.dbt_project.dim_products
+[0m15:26:12.758066 [debug] [Thread-2 (]: Began executing node model.dbt_project.dim_category
+[0m15:26:12.758269 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.dbt_project.unique_stg_orders_order_id.e3b841c71a, now model.dbt_project.dim_products)
+[0m15:26:12.758606 [debug] [Thread-2 (]: Finished running node model.dbt_project.dim_category
+[0m15:26:12.758791 [debug] [Thread-1 (]: Began compiling node model.dbt_project.dim_products
+[0m15:26:12.758983 [debug] [Thread-2 (]: Began running node model.dbt_project.int_product_sales
+[0m15:26:12.760548 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_project.dim_products"
+[0m15:26:12.760782 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.dbt_project.dim_category, now model.dbt_project.int_product_sales)
+[0m15:26:12.761004 [debug] [Thread-2 (]: Began compiling node model.dbt_project.int_product_sales
+[0m15:26:12.762900 [debug] [Thread-2 (]: Writing injected SQL for node "model.dbt_project.int_product_sales"
+[0m15:26:12.763172 [debug] [Thread-1 (]: Began executing node model.dbt_project.dim_products
+[0m15:26:12.763514 [debug] [Thread-1 (]: Finished running node model.dbt_project.dim_products
+[0m15:26:12.763708 [debug] [Thread-1 (]: Began running node test.dbt_project.not_null_stg_products_product_id.6373b0acf3
+[0m15:26:12.763896 [debug] [Thread-2 (]: Began executing node model.dbt_project.int_product_sales
+[0m15:26:12.764105 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.dbt_project.dim_products, now test.dbt_project.not_null_stg_products_product_id.6373b0acf3)
+[0m15:26:12.764415 [debug] [Thread-2 (]: Finished running node model.dbt_project.int_product_sales
+[0m15:26:12.764593 [debug] [Thread-1 (]: Began compiling node test.dbt_project.not_null_stg_products_product_id.6373b0acf3
+[0m15:26:12.764776 [debug] [Thread-2 (]: Began running node test.dbt_project.unique_stg_products_product_id.7d950a1467
+[0m15:26:12.766949 [debug] [Thread-1 (]: Writing injected SQL for node "test.dbt_project.not_null_stg_products_product_id.6373b0acf3"
+[0m15:26:12.767217 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.dbt_project.int_product_sales, now test.dbt_project.unique_stg_products_product_id.7d950a1467)
+[0m15:26:12.767440 [debug] [Thread-2 (]: Began compiling node test.dbt_project.unique_stg_products_product_id.7d950a1467
+[0m15:26:12.769403 [debug] [Thread-2 (]: Writing injected SQL for node "test.dbt_project.unique_stg_products_product_id.7d950a1467"
+[0m15:26:12.769736 [debug] [Thread-1 (]: Began executing node test.dbt_project.not_null_stg_products_product_id.6373b0acf3
+[0m15:26:12.770136 [debug] [Thread-1 (]: Finished running node test.dbt_project.not_null_stg_products_product_id.6373b0acf3
+[0m15:26:12.770341 [debug] [Thread-1 (]: Began running node model.dbt_project.fct_refunds
+[0m15:26:12.770523 [debug] [Thread-2 (]: Began executing node test.dbt_project.unique_stg_products_product_id.7d950a1467
+[0m15:26:12.770734 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.dbt_project.not_null_stg_products_product_id.6373b0acf3, now model.dbt_project.fct_refunds)
+[0m15:26:12.771074 [debug] [Thread-2 (]: Finished running node test.dbt_project.unique_stg_products_product_id.7d950a1467
+[0m15:26:12.771310 [debug] [Thread-1 (]: Began compiling node model.dbt_project.fct_refunds
+[0m15:26:12.771537 [debug] [Thread-2 (]: Began running node test.dbt_project.not_null_stg_refunds_refund_id.e885f4bdde
+[0m15:26:12.772799 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_project.fct_refunds"
+[0m15:26:12.773055 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.dbt_project.unique_stg_products_product_id.7d950a1467, now test.dbt_project.not_null_stg_refunds_refund_id.e885f4bdde)
+[0m15:26:12.773329 [debug] [Thread-2 (]: Began compiling node test.dbt_project.not_null_stg_refunds_refund_id.e885f4bdde
+[0m15:26:12.775414 [debug] [Thread-2 (]: Writing injected SQL for node "test.dbt_project.not_null_stg_refunds_refund_id.e885f4bdde"
+[0m15:26:12.775720 [debug] [Thread-1 (]: Began executing node model.dbt_project.fct_refunds
+[0m15:26:12.776086 [debug] [Thread-1 (]: Finished running node model.dbt_project.fct_refunds
+[0m15:26:12.776282 [debug] [Thread-1 (]: Began running node test.dbt_project.unique_stg_refunds_refund_id.eec3c63081
+[0m15:26:12.776480 [debug] [Thread-2 (]: Began executing node test.dbt_project.not_null_stg_refunds_refund_id.e885f4bdde
+[0m15:26:12.776703 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.dbt_project.fct_refunds, now test.dbt_project.unique_stg_refunds_refund_id.eec3c63081)
+[0m15:26:12.777141 [debug] [Thread-2 (]: Finished running node test.dbt_project.not_null_stg_refunds_refund_id.e885f4bdde
+[0m15:26:12.777357 [debug] [Thread-1 (]: Began compiling node test.dbt_project.unique_stg_refunds_refund_id.eec3c63081
+[0m15:26:12.777591 [debug] [Thread-2 (]: Began running node model.dbt_project.int_customer_lifetime_value
+[0m15:26:12.779787 [debug] [Thread-1 (]: Writing injected SQL for node "test.dbt_project.unique_stg_refunds_refund_id.eec3c63081"
+[0m15:26:12.780054 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.dbt_project.not_null_stg_refunds_refund_id.e885f4bdde, now model.dbt_project.int_customer_lifetime_value)
+[0m15:26:12.780293 [debug] [Thread-2 (]: Began compiling node model.dbt_project.int_customer_lifetime_value
+[0m15:26:12.781601 [debug] [Thread-2 (]: Writing injected SQL for node "model.dbt_project.int_customer_lifetime_value"
+[0m15:26:12.781932 [debug] [Thread-1 (]: Began executing node test.dbt_project.unique_stg_refunds_refund_id.eec3c63081
+[0m15:26:12.782323 [debug] [Thread-1 (]: Finished running node test.dbt_project.unique_stg_refunds_refund_id.eec3c63081
+[0m15:26:12.782597 [debug] [Thread-1 (]: Began running node model.dbt_project.fct_sales
+[0m15:26:12.782844 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.dbt_project.unique_stg_refunds_refund_id.eec3c63081, now model.dbt_project.fct_sales)
+[0m15:26:12.783035 [debug] [Thread-2 (]: Began executing node model.dbt_project.int_customer_lifetime_value
+[0m15:26:12.783220 [debug] [Thread-1 (]: Began compiling node model.dbt_project.fct_sales
+[0m15:26:12.783543 [debug] [Thread-2 (]: Finished running node model.dbt_project.int_customer_lifetime_value
+[0m15:26:12.785178 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_project.fct_sales"
+[0m15:26:12.785442 [debug] [Thread-2 (]: Began running node model.dbt_project.int_order_product_count
+[0m15:26:12.785724 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.dbt_project.int_customer_lifetime_value, now model.dbt_project.int_order_product_count)
+[0m15:26:12.785917 [debug] [Thread-2 (]: Began compiling node model.dbt_project.int_order_product_count
+[0m15:26:12.787151 [debug] [Thread-2 (]: Writing injected SQL for node "model.dbt_project.int_order_product_count"
+[0m15:26:12.787416 [debug] [Thread-1 (]: Began executing node model.dbt_project.fct_sales
+[0m15:26:12.787765 [debug] [Thread-1 (]: Finished running node model.dbt_project.fct_sales
+[0m15:26:12.787980 [debug] [Thread-2 (]: Began executing node model.dbt_project.int_order_product_count
+[0m15:26:12.788283 [debug] [Thread-2 (]: Finished running node model.dbt_project.int_order_product_count
+[0m15:26:12.788854 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m15:26:12.789009 [debug] [MainThread]: Connection 'model.dbt_project.fct_sales' was properly closed.
+[0m15:26:12.789138 [debug] [MainThread]: Connection 'model.dbt_project.int_order_product_count' was properly closed.
+[0m15:26:12.791031 [debug] [MainThread]: Command end result
+[0m15:26:12.805675 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/maria/Documents/GitHub/extra/dbt_assistant/dbt_project/target/manifest.json
+[0m15:26:12.806952 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/maria/Documents/GitHub/extra/dbt_assistant/dbt_project/target/semantic_manifest.json
+[0m15:26:12.811709 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/maria/Documents/GitHub/extra/dbt_assistant/dbt_project/target/run_results.json
+[0m15:26:12.813482 [debug] [MainThread]: Resource report: {"command_name": "compile", "command_success": true, "command_wall_clock_time": 1.1591245, "process_in_blocks": "0", "process_kernel_time": 0.225364, "process_mem_max_rss": "133447680", "process_out_blocks": "0", "process_user_time": 1.360344}
+[0m15:26:12.813770 [debug] [MainThread]: Command `dbt compile` succeeded at 15:26:12.813720 after 1.16 seconds
+[0m15:26:12.813984 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x111ae1850>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x112cbf070>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x112cbfee0>]}
+[0m15:26:12.814188 [debug] [MainThread]: Flushing usage events
+[0m15:26:12.951604 [debug] [MainThread]: An error was encountered while trying to flush usage events

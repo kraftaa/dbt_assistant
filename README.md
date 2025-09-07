@@ -1,18 +1,27 @@
-# dbt Assistant API
+# dbt Assistant
 
 ## Overview
 
-This project is a dbt-powered assistant API that makes your data models and business reports searchable and explainable. It combines embedding search, LLM reasoning, and flexible API responses to answer questions about dbt models, columns, and published reports (exposures).
+This project is an AI-powered dbt assistant that makes your data models and business reports searchable and explainable. It combines **semantic search** with **LLM reasoning** to answer natural language questions about dbt models, columns, and published reports (exposures).
 
-## Project Structure
+## Key Features
+
+- 🔍 **Semantic Search**: Uses FAISS vector embeddings to find relevant models based on meaning, not just keywords
+- 🤖 **LLM Reasoning**: Applies AI to select the best match and provide structured responses
+- 🎯 **Smart Filtering**: Automatically includes relevant fields (name, description, columns) based on your query
+- 🚀 **Dual Interface**: Both CLI and web API with identical functionality
+- 📊 **Model vs Dashboard Distinction**: Intelligently distinguishes between dbt models and business dashboards
+
+## Architecture
 
 ```
 dbt_assistant/
 ├── dbt_project/           # Your dbt models and configuration
 ├── app/                   # Main application source code
+│   ├── core.py           # 🆕 Shared business logic (DbtAssistant class)
 │   ├── agent.py          # AI agent for query routing
-│   ├── app.py            # Flask web API
-│   ├── cli.py            # Command-line interface
+│   ├── app.py            # Flask web API (uses core.py)
+│   ├── cli.py            # Command-line interface (uses core.py)
 │   ├── embed_search.py   # Embedding-based search engine
 │   ├── parser_example_compiled.py  # Knowledge base builder
 │   └── models_and_reports.yaml     # Knowledge base data
@@ -28,6 +37,23 @@ dbt_assistant/
 ├── requirements.txt       # Python dependencies
 └── README.md             # This file
 ```
+
+## How It Works
+
+1. **Knowledge Base**: Extracts dbt models and exposures into a searchable YAML format
+2. **Embedding Search**: Converts model names/descriptions to vectors for semantic similarity
+3. **Smart Reordering**: Prioritizes dbt models over dashboards when query mentions "models"
+4. **LLM Selection**: Uses AI to choose the best match and provide reasoning
+5. **Response Filtering**: Intelligently includes relevant fields based on query context
+
+## Architecture Benefits
+
+The project uses a **shared core architecture** (`core.py`) that both CLI and web API interfaces use:
+
+- **🔄 Consistent Behavior**: CLI and web API provide identical responses
+- **🛠️ Easy Maintenance**: Business logic changes only need to be made in one place
+- **🧪 Better Testing**: Core logic can be tested independently
+- **📦 Clean Separation**: Each interface focuses only on its presentation layer
 
 ## Features
 
@@ -117,36 +143,44 @@ Type 'exit' or 'quit' to quit.
 ============================================================
 💡 LLM Suggestion:
 ------------------------------
-  type: model
   name: fct_sales
-  description: Fact table containing sales transactions with revenue metrics
-  columns: order_id, product_id, customer_id, sales_amount, order_date
-  reasoning: This model contains sales data with detailed transaction information
+  description: DBT model located at ../dbt_project/target/compiled/dbt_project/models/gold/fct_sales.sql
+  columns: order_id AS order_id, product_id AS product_id, total_amount AS sales_amount
+  type: model
+  reasoning: Selected based on embedding match.
 
 💡 Embedding-based Top Matches:
 ------------------------------
   1. fct_sales
-     Description: Fact table containing sales transactions with revenue metrics
-     Columns: order_id, product_id, customer_id, sales_amount, order_date
-     Score: 0.847
+     Description: DBT model located at ../dbt_project/target/compiled/dbt_project/models/gold/fct_sales.sql
+     Columns: order_id AS order_id, product_id AS product_id, total_amount AS sales_amount
+     Score: 0.320
 
-  2. sales_dashboard
-     Description: Executive dashboard showing sales performance metrics
-     Columns: total_sales, sales_count, avg_order_value
-     Score: 0.623
+  2. dim_products
+     Description: DBT model located at ../dbt_project/target/compiled/dbt_project/models/gold/dim_products.sql
+     Columns: product_id AS product_id, product_name AS product_name, category AS category, price AS price
+     Score: 0.291
 
-  3. dim_products
-     Description: Product dimension table with category information
-     Columns: product_id, product_name, category, price
-     Score: 0.412
+  3. dim_customers
+     Description: DBT model located at ../dbt_project/target/compiled/dbt_project/models/gold/dim_customers.sql
+     Columns: customer_id AS customer_id, customer_name AS customer_name, email AS email
+     Score: 0.252
+
+  4. sales_dashboard
+     Description: Sales dashboard for business users.
+     Score: 0.469
+
+  5. executive_dashboard
+     Description: Executive-level dashboard for revenue and customer KPIs
+     Score: 0.296
 
 ============================================================
 ```
 
-The CLI provides intelligent field filtering based on your query:
-- **Columns**: Include `column` or `columns` in your query to see column details
-- **Names**: Include `name`, `model`, or `report` to focus on model/report names
-- **Descriptions**: Include `description` to see detailed descriptions
+**Key Features:**
+- **Smart Model Selection**: When you ask about "models", it prioritizes actual dbt models over dashboards
+- **Automatic Field Inclusion**: Queries about "models" automatically include name, description, and columns
+- **Semantic Understanding**: Finds `fct_sales` even though it doesn't contain the word "sales" in the name
 
 ### API Server
 
@@ -181,14 +215,31 @@ Example questions:
 ```json
 {
   "llm_suggestion": {
-    "type": "exposure",
-    "name": "sales_dashboard",
     "description": "Sales dashboard for business users.",
-    "columns": ["order_id", "product_id", "sales_amount"],
-    "url": "https://dashboard.example.com/sales",
-    "reasoning": "This exposure is a published dashboard for sales."
+    "name": "sales_dashboard",
+    "reasoning": "Selected based on embedding match.",
+    "type": "model"
   },
-  "embedding_matches": [ ... ]
+  "embedding_matches": [
+    {
+      "description": "Sales dashboard for business users.",
+      "name": "sales_dashboard",
+      "score": 0.6779011487960815,
+      "type": "exposure"
+    },
+    {
+      "description": "Executive-level dashboard for revenue and customer KPIs",
+      "name": "executive_dashboard",
+      "score": 0.45495134592056274,
+      "type": "exposure"
+    },
+    {
+      "description": "DBT model located at ../dbt_project/target/compiled/dbt_project/models/gold/fct_sales.sql",
+      "name": "fct_sales",
+      "score": 0.2082435041666031,
+      "type": "dbt_model"
+    }
+  ]
 }
 ```
 

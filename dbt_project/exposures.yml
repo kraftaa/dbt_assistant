@@ -4,7 +4,7 @@ exposures:
   - name: executive_dashboard
     type: dashboard
     maturity: high
-    url: https://bi.example.com/dashboards/executive
+    url: https://dashboard1.example.com/dashboards/executive
     description: "Executive-level dashboard for revenue and customer KPIs"
     depends_on:
       - ref('fct_sales')
@@ -18,7 +18,7 @@ exposures:
   - name: sales_dashboard
     type: dashboard
     maturity: high
-    url: https://dashboard.example.com/sales
+    url: https://dashboard2.example.com/sales
     description: "Sales dashboard for business users."
     depends_on:
       - ref('fct_sales')
@@ -30,7 +30,7 @@ exposures:
   - name: refunds_report
     type: report
     maturity: medium
-    url: https://dashboard.example.com/refunds
+    url: https://dashboard3.example.com/refunds
     description: "Refunds report for finance team."
     depends_on:
       - ref('fct_refunds')

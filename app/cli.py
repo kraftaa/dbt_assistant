@@ -1,59 +1,9 @@
-# cli_combined.py
+# cli.py - Command Line Interface for dbt assistant
 
-from agent import ModelRouterAgent
-from embed_search import EmbeddingSearch
-import json
-
-def wants_field(query, field):
-    """Check if the query wants a specific field"""
-    return field in query.lower()
-
-def filter_fields(obj, query):
-    """Filter fields based on query content, similar to Flask app"""
-    if not isinstance(obj, dict):
-        return obj
-    
-    # Determine which fields to include
-    include_columns = wants_field(query, "column") or wants_field(query, "columns")
-    include_name = wants_field(query, "name") or wants_field(query, "model") or wants_field(query, "report")
-    include_description = wants_field(query, "description")
-    include_url = wants_field(query, "url") or wants_field(query, "link")
-    include_score = wants_field(query, "score") or wants_field(query, "similarity")
-
-    # For queries about models, always include name, description, and columns
-    if wants_field(query, "model") or wants_field(query, "models"):
-        include_name = True
-        include_description = True
-        include_columns = True
-
-    filtered = {}
-    # print("obj")
-    # print(obj)
-    if include_name and "name" in obj:
-        filtered["name"] = obj["name"]
-    if include_description and "description" in obj:
-        filtered["description"] = obj["description"]
-    if include_columns and "columns" in obj:
-        filtered["columns"] = obj["columns"]
-    if include_url and "url" in obj:
-        filtered["url"] = obj["url"]
-    # Always include type and reasoning if present
-    if "type" in obj:
-        filtered["type"] = obj["type"]
-    if "reasoning" in obj:
-        filtered["reasoning"] = obj["reasoning"]
-    if "url" in obj:
-        filtered["url"] = obj["url"]
-    if "score" in obj:
-        filtered["score"] = obj["score"]
-    
-    # print("filtered")
-    # print(filtered) 
-    return filtered if filtered else obj
+from core import DbtAssistant
 
 def main():
-    agent = ModelRouterAgent("app/models_and_reports.yaml", use_hf_model=True)
-    searcher = EmbeddingSearch("app/models_and_reports.yaml")
+    assistant = DbtAssistant("app/models_and_reports.yaml", use_hf_model=True)
 
     print("🔎 AI Agent with LLM + Embedding Search")
     print("Type 'exit' or 'quit' to quit.\n")
@@ -64,48 +14,40 @@ def main():
             print("👋 Goodbye!")
             break
 
-        # Get embedding matches first
-        embed_results = searcher.search(user_input, top_k=5)
-        # print("embed_results")
-        # print(embed_results)
-        
-        # Get LLM response with embedding context
-        llm_response = agent.route_query(user_input, embed_results)
-        # print("llm response")
-        # print(llm_response) 
+        # Process query using shared core logic
+        result = assistant.process_query(user_input, top_k=5)
 
         print("\n" + "="*60)
         print("💡 LLM Suggestion:")
         print("-" * 30)
         
-        # Filter and display LLM response
-        llm_filtered = filter_fields(llm_response, user_input)
-        if isinstance(llm_filtered, dict):
-            for key, value in llm_filtered.items():
+        # Display LLM response
+        llm_suggestion = result["llm_suggestion"]
+        if isinstance(llm_suggestion, dict):
+            for key, value in llm_suggestion.items():
                 if key == "columns" and isinstance(value, list):
                     print(f"  {key}: {', '.join(value[:10])}{'...' if len(value) > 10 else ''}")
                 else:
                     print(f"  {key}: {value}")
         else:
-            print(f"  {llm_filtered}")
+            print(f"  {llm_suggestion}")
 
         print("\n💡 Embedding-based Top Matches:")
         print("-" * 30)
         
-        # Filter and display embedding results
-        for i, res in enumerate(embed_results, 1):
-            filtered_res = filter_fields(res, user_input)
-            print(f"  {i}. {filtered_res.get('name', 'Unknown')}")
-            if 'description' in filtered_res:
-                desc = filtered_res['description']
+        # Display embedding results
+        for i, res in enumerate(result["embedding_matches"], 1):
+            print(f"  {i}. {res.get('name', 'Unknown')}")
+            if 'description' in res:
+                desc = res['description']
                 if len(desc) > 80:
                     desc = desc[:80] + "..."
                 print(f"     Description: {desc}")
-            if 'columns' in filtered_res and filtered_res['columns']:
-                cols = filtered_res['columns'][:5]  # Show first 5 columns
-                print(f"     Columns: {', '.join(cols)}{'...' if len(filtered_res['columns']) > 5 else ''}")
-            if 'score' in filtered_res:
-                print(f"     Score: {filtered_res['score']:.3f}")
+            if 'columns' in res and res['columns']:
+                cols = res['columns'][:5]  # Show first 5 columns
+                print(f"     Columns: {', '.join(cols)}{'...' if len(res['columns']) > 5 else ''}")
+            if 'score' in res:
+                print(f"     Score: {res['score']:.3f}")
             print()
 
         print("="*60)

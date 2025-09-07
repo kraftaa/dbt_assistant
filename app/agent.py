@@ -177,8 +177,8 @@ class ModelRouterAgent:
                     # if "columns" in result and set(result["columns"]).intersection(generic_columns):
                     if "columns" in result:
                         result["columns"] = top_match.get("columns", [])
-                    if "url" in result:
-                        result["url"] = top_match.get("url", [])
+                    if "url" in top_match and top_match.get("url"):
+                        result["url"] = top_match.get("url", "")
                     if ("name" not in result or result["name"] in ["some_model_name", "unknown", ""]):
                         result["name"] = top_match.get("name", "unknown")
                     if ("description" not in result or result["description"] in ["Short description", "", None]):
@@ -214,15 +214,18 @@ class ModelRouterAgent:
                     reasoning = match_reasoning.group(1)
                 else:
                     reasoning = "Selected based on embedding match."
-                # Always use columns from top embedding match
+                # Always use columns and URL from top embedding match
                 columns = []
+                url = ""
                 if embed_results and len(embed_results) > 0:
                     columns = embed_results[0].get("columns", [])
+                    url = embed_results[0].get("url", "")
                 return {
                     "type": "model",
                     "name": name,
                     "description": description,
                     "columns": columns,
+                    "url": url,
                     "reasoning": reasoning
                 }
         else:

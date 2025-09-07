@@ -65,6 +65,7 @@ class EmbeddingSearch:
                     "columns": info.get("columns", []),
                     "tables": info.get("tables", []),
                     "conditions": info.get("conditions", []),
+                    "url": info.get("url", ""),
                     "score": float(dist)
                 })
         

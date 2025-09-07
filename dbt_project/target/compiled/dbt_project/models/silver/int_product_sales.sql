@@ -1,19 +1,20 @@
 
 
 with transformed_data as (
-    select
-        o.order_id,
-        o.product_id,
-        p.product_name,
-        p.category,
-        o.total_amount,
-        o.order_date
-    from "postgres"."transform"."stg_orders" o
-    join "postgres"."transform"."stg_products" p on o.product_id = p.product_id
-    WHERE 1=1
-    
-        AND order_date > coalesce((select max(order_date) from "postgres"."transform"."int_product_sales"), '1900-01-01'::timestamp)
-    
+select
+    o.order_id as order_id,
+    p.product_id as product_id,
+    p.product_name as product_name,
+    p.category as category,
+    o.total_amount as total_amount
+from "postgres"."transform"."stg_orders" o
+join "postgres"."transform"."stg_products" p
+    on true  -- placeholder join
+
+
+  -- Only bring in orders newer than what we've already processed
+  where o.order_date > (select max(order_date) from "postgres"."transform"."int_product_sales")
+
 )
 
 select * from transformed_data
