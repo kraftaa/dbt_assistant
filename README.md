@@ -23,7 +23,7 @@ dbt_assistant/
 │   ├── app.py            # Flask web API (uses core.py)
 │   ├── cli.py            # Command-line interface (uses core.py)
 │   ├── embed_search.py   # Embedding-based search engine
-│   ├── parser_example_compiled.py  # Knowledge base builder
+│   ├── parser_dbt_compiled.py  # Knowledge base builder
 │   └── models_and_reports.yaml     # Knowledge base data
 ├── deploy/                # Deployment configurations
 │   ├── Dockerfile        # Docker container setup
@@ -94,7 +94,7 @@ dbt compile --target dev --profiles-dir config
 ```
 
 ```bash
-python3 app/parser_example_compiled.py
+python3 app/parser_dbt_compiled.py
 ```
 
 ### 2. Run the Assistant
@@ -282,7 +282,7 @@ For manual deployment:
 pip3 install -r requirements.txt
 
 # Build knowledge base
-python3 app/parser_example_compiled.py
+python3 app/parser_dbt_compiled.py
 
 # Run with Gunicorn
 gunicorn --bind 0.0.0.0:5000 --workers 1 --threads 2 app.app:app
