@@ -5,7 +5,7 @@ import os
 # sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 from embed_search import EmbeddingSearch
 from agent import ModelRouterAgent
-from parser_example_compiled import build_knowledge, export_knowledge
+from parser_dbt_compiled import build_knowledge, export_knowledge
 import json
 
 app = Flask(__name__)

@@ -2,7 +2,7 @@
 
 from flask import Flask, request, jsonify
 from core import DbtAssistant
-from parser_example_compiled import build_knowledge, export_knowledge
+from parser_dbt_compiled import build_knowledge, export_knowledge
 
 app = Flask(__name__)
 
