@@ -3,3 +3,7 @@ venv
 .idea
 .DS*
 __pycache__
+
+# local artifacts
+dbt_project/logs/
+**/.DS_Store
