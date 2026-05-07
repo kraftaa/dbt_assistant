@@ -7,3 +7,4 @@ __pycache__
 # local artifacts
 dbt_project/logs/
 **/.DS_Store
+/logs
